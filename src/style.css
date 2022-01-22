@@ -318,7 +318,6 @@ a:focus {
 .gatsby-highlight {
   font-size: 14.5px;
   background-color: white;
-  margin-bottom: var(--spacing-8);
 }
 
 /* Media queries */

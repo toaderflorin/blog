@@ -1,7 +1,8 @@
-import * as React from "react"
-import { Link, graphql } from "gatsby"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import * as React from 'react'
+import { Link, graphql } from 'gatsby'
+import Layout from '../components/Layout'
+import Seo from '../components/Seo'
+import Header from '../components/Header'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -23,18 +24,15 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <Seo title="All posts" />
-
       {posts.map(post => {
         const title = post.frontmatter.title || post.fields.slug
 
         return (
-
           <article
             key={post.fields.slug}
             className="post-list-item"
             itemScope
-            itemType="http://schema.org/Article"
-          >
+            itemType="http://schema.org/Article">
             <header>
               <h2>
                 <Link to={post.fields.slug} itemProp="url">
@@ -43,8 +41,9 @@ const BlogIndex = ({ data, location }) => {
               </h2>
               <small>{post.frontmatter.date}</small>
             </header>
-            <section>
-              <p
+            <section style={{ padding: 0, padding: 0 }}>
+              <img style={{ float: 'left', marginRight: '7px', width: '64px', height: '64px', marginTop: '6px' }} />
+              <span
                 dangerouslySetInnerHTML={{
                   __html: post.frontmatter.description || post.excerpt,
                 }}
