@@ -5,7 +5,7 @@ date:   2020-04-02 09:39:37 +0300
 description: "
 Since a single database server can support a considerable load, it's worth starting off by saying that needing to scale out your database server means your business is doing several things right, so this is a good problem to have. While getting a machine with more processor cores, memory and disk space can alleviate your problems in the short term, at some point needing to distribute your database across multiple machines becomes unavoidable.
 "
-icon: "reactivity/reactivity-icon.png"
+icon: "./images/reactivity-icon.png"
 categories:
 ---
 Before getting into library-specific details, it's worth starting with a definition of what constitutes reactivity. A typical example would be an Excel spreadsheet: if a cell aggregates data from other cells, that cell instantly changes if we change a value in any of the aggregated cells. In reactive programming, if a variable A depends on B and C, a change in either B or C would also trigger a change in A. While there seems to be an ongoing debate whether React is truly reactive, there's no doubt that the UI reacts to changes in the data model, even if parts of the model itself don't react to other parts being changed, so from now on, we'll consider this definition of reactivity.

@@ -5,7 +5,7 @@ date:   2019-07-28 09:39:37 +0300
 description: "
 There are quite a lot of developers that when it comes to web application security they rely on whatever framework they are using to take care of that for them, but don't really have an understanding of what's happening behind the scenes. Web application security is quite a complex topic, we will be covering: 1. Cross-site scripting, also called XSS scripting, 2. Session hijacking, 3. SQL Injection. Both cross-site scripting and SQL injection are cases of code injection...
 "
-icon: "security/lock.png"
+icon: "./images/lock.png"
 categories:
 ---
 I can testify that a lot of people confided in me they considered doing this (including yours truly) under the frustration of the bi-monthly administrative policies that mandated we change our workstation password:

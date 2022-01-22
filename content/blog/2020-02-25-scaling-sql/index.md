@@ -5,7 +5,7 @@ date:   2020-02-25 09:39:37 +0300
 description: "
 Since a single database server can support a considerable load, it's worth starting off by saying that needing to scale out your database server means your business is doing several things right, so this is a good problem to have. While getting a machine with more processor cores, memory and disk space can alleviate your problems in the short term, at some point needing to distribute your database across multiple machines becomes unavoidable.
 "
-icon: "scaling-sql/shard-icon (1).jpg"
+icon: "./images/shard-icon (1).jpg"
 categories:
 ---
 Since a single database server can support a considerable load, it's worth starting by saying that the need to scale out your database server means your business is doing several things right, so this is a good problem to have. While getting a machine with more processor cores, memory and disk space can alleviate your problems in the short term, at some point needing to distribute your database across multiple machines becomes unavoidable.
