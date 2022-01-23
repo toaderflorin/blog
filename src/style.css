@@ -320,6 +320,10 @@ a:focus {
   background-color: white;
 }
 
+.img {
+  width: 100%;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {

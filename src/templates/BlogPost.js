@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 
@@ -7,7 +7,7 @@ export default function BlogPostTemplate(props) {
   const { data, location } = props
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
+  // const { previous, next } = data
 
   return (
     <Layout location={location} title={siteTitle}>

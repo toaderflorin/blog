@@ -12,7 +12,7 @@ While the rumors about Redux's demise are most likely mostly exaggerated, there 
 
 Let's first take a look at the Redux data flow.
 
-![diagram2](./images/arch.png)
+<img src="./images/arch.png" class="img" />
 
 First of all, it's worth pointing out that the data flow is unidirectional. The user can trigger actions from the UI, which act on the application state via a *reducer*, which in turn triggers rerendering of the UI. The is aim to replicate this flow using the built in React functionality.
 
@@ -25,11 +25,11 @@ Another relatively new addition to React is the Context API. If you're not famil
 
 We'll go with option number two because that's what Redux does, and most developers are familiar with that approach. The aim is to create a personal organizer application that has two sections: notes and tasks. The note page and task page structure are similar, so we'll present the code for notes as an example.
 
-![diagram2](./images/pic2.png)
+<img src="./images/pic2.png" class="img" />
 
 Since we plan to lay the groundwork for a complex app, we'll assume that this application has multiple *modules*. Each module will have a *components* folder, which contains the UI code, and a *store* folder which contains the action creators and the reducer logic.
 
-<!-- ![diagram2](./images/proj.png) -->
+<img src="./images/proj.png" class="img" />
 
 The reducer created with the <span class="code">useReducer</span> hook works similar to a Redux reducer. It's just a function that takes a *state* object and an *action* object, and based on that, it returns a new state object. One way of thinking about it is it's a way of mutating state, but of course we're not really mutate the existing state, but rather creating a new state object (immutability is one of the central tenets of functional programming).
 

@@ -1,6 +1,4 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import Header from '../components/Header'
+import * as React from 'react'
 
 export default function Layout(props) {
   const { location, title, children } = props

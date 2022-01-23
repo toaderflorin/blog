@@ -5,14 +5,14 @@ date:   2021-01-09 00:39:37 +0300
 description: "
 In the previous example, we went over a global store app pattern that emulates Redux. The main advantage of this approach is familiarity, meaning that developers can structure their projects using a similar folder/code structure. There is, however, an alternative approach popularized by  Svelte, which is less verbose. While this is a familiar approach, many developers feel that the single-store architectural approach leads to bad software patterns.
 "
-icon: "hook-store/icon.png"
+icon: "/src/images/gatsby-icon.png"
 categories:
 ---
 When implementing simple React applications, Redux might cause significant overhead, and just using component state is enough. There are however differences between class components and function components related to how hooks work, which we'll look at next.
 
 With classes, component state is accessible via this.state, and updating it (and triggering component rerendering) is done via this.setState. In functional components, we use the useState hook and instead of merging the object we're passing in, the state is replaced. It can be used several times and the intention is to be used for each field we want to track - for example, if we have multiple inputs on the page, we can use the hook for the state of each one of them.
 
-![diagram2](./images/x.png)
+<img src="./images/x.png" class="img" />
 
 On first look it seems there's a simple solution - we can simply merge the state ourselves.
 

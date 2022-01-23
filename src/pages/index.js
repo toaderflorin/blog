@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-import Header from '../components/Header'
+// import Header from '../components/Header'
 
 export default function BlogIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
