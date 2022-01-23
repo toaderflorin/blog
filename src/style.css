@@ -270,7 +270,6 @@ a:focus {
 
 .post-list-item h2 {
   font-size: var(--fontSize-4);
-  color: red;
   margin-bottom: var(--spacing-2);
   margin-top: var(--spacing-0);}
 
@@ -336,3 +335,4 @@ a:focus {
     list-style-position: inside;
   }
 }
+

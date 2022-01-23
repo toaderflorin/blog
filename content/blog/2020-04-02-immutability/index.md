@@ -5,7 +5,7 @@ date:   2020-04-02 09:39:37 +0300
 description: "
 Since a single database server can support a considerable load, it's worth starting off by saying that needing to scale out your database server means your business is doing several things right, so this is a good problem to have. While getting a machine with more processor cores, memory and disk space can alleviate your problems in the short term, at some point needing to distribute your database across multiple machines becomes unavoidable.
 "
-icon: "./images/reactivity-icon.png"
+icon: "./images/redux.png"
 categories:
 ---
 Before getting into library-specific details, it's worth starting with a definition of what constitutes reactivity. A typical example would be an Excel spreadsheet: if a cell aggregates data from other cells, that cell instantly changes if we change a value in any of the aggregated cells. In reactive programming, if a variable A depends on B and C, a change in either B or C would also trigger a change in A. While there seems to be an ongoing debate whether React is truly reactive, there's no doubt that the UI reacts to changes in the data model, even if parts of the model itself don't react to other parts being changed, so from now on, we'll consider this definition of reactivity.
@@ -32,7 +32,7 @@ The WPF rendering system receives these events and then uses .NET's reflection s
 
 VueJS does something similar, but it's a little bit less transparent; it looks at the model the component was initialized with and then wraps the existing fields in getters and setters that also notify it. These wrappers aren't directly visible to the user, which is why it is crucial to understand what the library does under the hood — adding a property to the model that wasn't present when the component was initialized means that property isn't observable.
 
-![diagram2](/images/reactivity/vue-reactivity.png)
+<img src="./images/vue-reactivity" class="img" />
 
 Mutations play a central role when it comes to observability in these libraries, but React works a little bit differently because it is much more functional in nature. Rendering here is done by calling the setState method on a component, or the component receives new props from a parent. Of course, changing the whole thing is simple because react does a diff. But by using a little functional trick called *immutability* in our code, we avoid even this diffing process.
 

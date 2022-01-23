@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
+import { StaticImage } from 'gatsby-plugin-image'
 // import Header from '../components/Header'
 
 export default function BlogIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-
-
-
   const [showPosts, setShowPosts] = useState(false)
 
   useEffect(() => {
@@ -58,7 +56,9 @@ export default function BlogIndex({ data, location }) {
                 <small>{post.frontmatter.date}</small>
               </header>
               <section style={{ padding: 0 }}>
-                <img src={post.frontmatter.icon} style={{ float: 'left', marginRight: '7px', width: '64px', height: '64px', marginTop: '6px' }} />
+                {/* <img src={post.frontmatter.icon} style={{ float: 'left', marginRight: '7px', width: '64px', height: '64px', marginTop: '6px' }} /> */}
+                <StaticImage src={'2022-01-12-hooks-store/images/icon.png'} />
+                {JSON.stringify(post)}
                 <span
                   dangerouslySetInnerHTML={{
                     __html: post.frontmatter.description || post.excerpt,
