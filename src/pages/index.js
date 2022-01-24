@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-import { StaticImage } from 'gatsby-plugin-image'
 // import Header from '../components/Header'
 
 export default function BlogIndex({ data, location }) {
@@ -29,6 +28,10 @@ export default function BlogIndex({ data, location }) {
       </Layout>
     )
   }
+  
+  function navigateToPost(url) {
+    navigate(url)
+  }
 
   return (
     <div>
@@ -42,31 +45,32 @@ export default function BlogIndex({ data, location }) {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-            <article
-              key={post.fields.slug}
-              className="post-list-item"
-              itemScope
-              itemType="http://schema.org/Article">
-              <header>
-                <h2>
-                  <Link to={post.fields.slug} itemProp="url">
+              <article
+                key={post.fields.slug}
+                className="post-list-item"
+                itemScope
+                itemType="http://schema.org/Article"
+                onClick={() => navigateToPost(post.fields.slug)}>
+                <header>
+                  <h2>
+                    {/* <Link to={post.fields.slug} itemProp="url"> */}
                     <span itemProp="headline">{title}</span>
-                  </Link>
-                </h2>
-                <small>{post.frontmatter.date}</small>
-              </header>
-              <section style={{ padding: 0 }}>
-                {/* <img src={post.frontmatter.icon} style={{ float: 'left', marginRight: '7px', width: '64px', height: '64px', marginTop: '6px' }} /> */}
-                <StaticImage src={'2022-01-12-hooks-store/images/icon.png'} />
-                {JSON.stringify(post)}
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: post.frontmatter.description || post.excerpt,
-                  }}
-                  itemProp="description"
-                />
-              </section>
-            </article>
+                    {/* </Link> */}
+                  </h2>
+                  <small>{post.frontmatter.date}</small>
+                </header>
+                <section style={{ padding: 0 }}>
+                  {/* <img src={post.frontmatter.icon} style={{ float: 'left', marginRight: '7px', width: '64px', height: '64px', marginTop: '6px' }} /> */}
+                  {/* <StaticImage src={'2022-01-12-hooks-store/images/icon.png'} /> */}
+                  <img src={`${post.fields.slug}/images/${post.frontmatter.icon}`} style={{ height: '64px', width: '64px', float: 'left', marginRight: '8px', marginTop: '6px' }} />
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: post.frontmatter.description || post.excerpt,
+                    }}
+                    itemProp="description"
+                  />
+                </section>
+              </article>
           )
         })}
       </Layout>
