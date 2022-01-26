@@ -5,7 +5,7 @@ date:   2020-02-25 09:39:37 +0300
 description: "
 Since a single database server can support a considerable load, it's worth starting off by saying that needing to scale out your database server means your business is doing several things right, so this is a good problem to have. While getting a machine with more processor cores, memory and disk space can alleviate your problems in the short term, at some point needing to distribute your database across multiple machines becomes unavoidable.
 "
-icon: "./images/shard-icon (1).jpg"
+icon: "shard-icon (1).jpg"
 categories:
 ---
 Since a single database server can support a considerable load, it's worth starting by saying that the need to scale out your database server means your business is doing several things right, so this is a good problem to have. While getting a machine with more processor cores, memory and disk space can alleviate your problems in the short term, at some point needing to distribute your database across multiple machines becomes unavoidable.
@@ -36,13 +36,13 @@ We'll mostly be looking at this approach from now on.
 ## A Real World Example
 Let's imagine we're building a social media application where users can create posts on their profile and comment on other users' posts. The most natural strategy for splitting our data would be to do it by how that particular data is related to a user. The database would look similar to this.
 
-![diagram1](./images/diag1.png)
+<img src="diag1.png" class="img" />
 
 We can immediately see that we have a small predicament -- a comment is tied to both a post of a certain user *and* to the user making the comment. So how would we go about partitioning? While we can store the comments in each user's shard, that's a really bad way to do it because displaying comments on a single post involves querying multiple shards, so it is much better to tie the comment to the post and in turn to the user to which the post belongs to.
 
 So what happens if we want to create something like a *history* page, a central log of the user's actions which contains all the comments a user posted or the friends he or she added in chronological order? We could of course query all the shards and get that info, but if you're a company like Facebook (and have millions of users) that's not feasible. The alternative is to duplicate information in something like a *History* table, so every time a user posts a comment we also add an entry there. 
 
-![diagram2](./images/diag2.png)
+<img src="diag2.png" class="img" />
 
 Almost always sharding means we need to denormalize our data structure, so we'll unavoidably have some data duplication. 
 
@@ -51,7 +51,7 @@ A typical case of duplication is catalog data (reference tables) which needs to 
 ## Multi Shard Queries
 Regardless of how you're structuring your data, there's probably no escaping multi shard queries. To explain why here's what a typical feed from [500px]() looks like:
 
-![diagram2](./images/feed.jpg)
+<img src="feed.jpg" class="img" />
 
 While we can show a user's timeline by querying just one shard, we can't do that for feeds, because individual users are most likely following a multitude of users residing on multiple shards. Social media sites implement a system called infinite scrolling whereas the user scrolls the page down, more content is loaded with multiple shards being hit.
 
@@ -66,7 +66,7 @@ What happens if the data for one user is too big for one node? In that case, our
 ## Using A Mixed Approach
 So far, projecting our data across the user dimension worked just fine, but what if we have a more complex system where this isn't as straightforward? Let's say we introduce one additional complication, that of social *groups* where users can post.
 
-![diagram3](./images/diag3.png)
+<img src="diag3.png" class="img" />
 
 For groups, sharding by user id isn't the optimal approach because again it would mean we would have to query multiple shards to display the messages in a group conversation. But since the group functionality tends to be somewhat isolated from the rest of the application, this lends itself well to a mixed or functional scale-out approach where the related tables can reside on their node(s). If we also need to implement sharding, we can do it independently along the *group_id* dimension.
 

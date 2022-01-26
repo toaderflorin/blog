@@ -5,12 +5,12 @@ date:   2019-07-28 09:39:37 +0300
 description: "
 There are quite a lot of developers that when it comes to web application security they rely on whatever framework they are using to take care of that for them, but don't really have an understanding of what's happening behind the scenes. Web application security is quite a complex topic, we will be covering: 1. Cross-site scripting, also called XSS scripting, 2. Session hijacking, 3. SQL Injection. Both cross-site scripting and SQL injection are cases of code injection...
 "
-icon: "./images/lock.png"
+icon: "lock.png"
 categories:
 ---
 I can testify that a lot of people confided in me they considered doing this (including yours truly) under the frustration of the bi-monthly administrative policies that mandated we change our workstation password:
 
-<img src="./images/my-password.jpg" class="img" />
+<img src="my-password.jpg" class="img" />
 
 This sort of thing happens more than you would imagine—what a lot of people don't know is that hackers rely a lot on *social engineering* to gain access to systems. [Kevin Mitnick](https://en.wikipedia.org/wiki/Kevin_Mitnick) was famous for calling in, pretending to be somebody he wasn't and asking for somebody's password to "perform some maintenance".
 
@@ -35,7 +35,7 @@ XSS refers to a vulnerability where an attacker can "inject" Javascript code tha
 
 A typical example of XSS is *persistent cross-site scripting*. If a page isn't properly *sanitizing* the user input (a field in a for, for example), a user could type invalid Javascript code, which is going to be saved by the application in its database and be subsequently rendered every time it displays a page. Imagine you have a page that is visible to multiple users (such as a product page) which allows users to add comments. If the page is not escaping user input, a malicious user can write actual a script block, which will then be rendered to all users as part of the page HTML. The Javascript code has access to the cookies of that user and it can send that information to the attacker.
 
-<img src="./images/attack.jpg" class="img" />
+<img src="attack.jpg" class="img" />
 
 An alternative is the *reflected* (or non-persistent) XSS attack, whereby the user's input is not stored in the database but returned in the same way it was inputted. It works like this: Say you have a page that allows you to search for products. The user types some text in the search box and clicks the search button which sends a GET request to the server.
 
@@ -88,7 +88,7 @@ Since the attacker knows the session id, he/she can also log to that page and se
 ## Cross-Site Request Forgery
 CSRF is an attack that tricks the victim into submitting a malicious request and relies on the fact that the user is logged in. Since the browser usually sends the session cookie with the request, the server perceives the request as legitimate. An important part of CSRF attacks is *social engineering*.
 
-<img src="./images/csfr.png" class="img" />
+<img src="csfr.jpg" class="img" />
 
 Let's say a site exposes some functionality in the form of a web request, like so:
 
@@ -109,7 +109,7 @@ How about PUT and DELETE? Turns out that the *same-origin policy* helps us here 
 ## SQL Injection
 And last (in our article), but certainly not least, we have SQL injection. I think most of us remember this:
 
-<img src="./images/exploit.png" class="img" />
+<img src="exploit.png" class="img" />
 
 For SQL injection to work, you'd have to be writing your SQL queries using string interpolation/concatenation.
 

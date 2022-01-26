@@ -12,7 +12,7 @@ When implementing simple React applications, Redux might cause significant overh
 
 With classes, component state is accessible via this.state, and updating it (and triggering component rerendering) is done via this.setState. In functional components, we use the useState hook and instead of merging the object we're passing in, the state is replaced. It can be used several times and the intention is to be used for each field we want to track - for example, if we have multiple inputs on the page, we can use the hook for the state of each one of them.
 
-<img src="./images/x.png" class="img" />
+<img src="x.png" class="img" />
 
 On first look it seems there's a simple solution - we can simply merge the state ourselves.
 

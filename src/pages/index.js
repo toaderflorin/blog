@@ -59,10 +59,8 @@ export default function BlogIndex({ data, location }) {
                   </h2>
                   <small>{post.frontmatter.date}</small>
                 </header>
-                <section style={{ padding: 0 }}>
-                  {/* <img src={post.frontmatter.icon} style={{ float: 'left', marginRight: '7px', width: '64px', height: '64px', marginTop: '6px' }} /> */}
-                  {/* <StaticImage src={'2022-01-12-hooks-store/images/icon.png'} /> */}
-                  <img src={`${post.fields.slug}/images/${post.frontmatter.icon}`} style={{ height: '64px', width: '64px', float: 'left', marginRight: '8px', marginTop: '6px' }} />
+                <section style={{ padding: 0 }}>                  
+                  <img src={`${post.fields.slug}/${post.frontmatter.icon}`} style={{ height: '64px', width: '64px', float: 'left', marginRight: '8px', marginTop: '6px' }} />
                   <span
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
