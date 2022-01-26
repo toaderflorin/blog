@@ -5,7 +5,7 @@ date:   2021-01-08 00:39:37 +0300
 description: "
 In the previous example, we went over a global store app pattern that emulates Redux. The main advantage of this approach is familiarity, meaning that developers can structure their projects using a similar folder/code structure. There is, however, an alternative approach popularized by  Svelte, which is less verbose. While this is a familiar approach, many developers feel that the single-store architectural approach leads to bad software patterns.
 "
-icon: "icon.png"
+icon: "store.jpg"
 categories:
 ---
 In the previous example, we went over a global store app pattern that emulates Redux. The main advantage of this approach is familiarity, meaning that developers can structure their projects using a similar folder/code structure. There is, however, an alternative approach popularized by  Svelte, which is less verbose. While this is a familiar approach, many developers feel that the single-store architectural approach leads to bad software patterns. Dan Abramov has famously likened asynchronicity and state mutations, yet having a global state object can easily lead to situations where existing functionality can rely on existing state (state that was fetched previously). Moreover, oftentimes users bookmark or refresh pages, which can lead to problems.

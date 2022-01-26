@@ -5,7 +5,7 @@ date:   2021-01-09 00:39:37 +0300
 description: "
 In the previous example, we went over a global store app pattern that emulates Redux. The main advantage of this approach is familiarity, meaning that developers can structure their projects using a similar folder/code structure. There is, however, an alternative approach popularized by  Svelte, which is less verbose. While this is a familiar approach, many developers feel that the single-store architectural approach leads to bad software patterns.
 "
-icon: "/src/images/gatsby-icon.png"
+icon: "usestate.jpg"
 categories:
 ---
 When implementing simple React applications, Redux might cause significant overhead, and just using component state is enough. There are however differences between class components and function components related to how hooks work, which we'll look at next.
