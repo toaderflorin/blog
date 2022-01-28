@@ -157,4 +157,4 @@ const todosReducer = (state = [], action) => {
 }
 ```
 
-Instead of calling `setState()`, we dispatch an action which is received by a reducer which returns a new value for the application state based on the existing state and the action. Just like setState, a reducer typically leaves the existing fields untouched and just overrides what we want to change but the result is a new instance. In case we don't want to change anything, we should return state instead of `{ ...state }`. Instance comparison still works.
+Instead of calling `setState()`, we dispatch an action which is received by a reducer which returns a new value for the application state based on the existing state and the action. Just like setState, a reducer typically leaves the existing fields untouched and just overrides what we want to change but the result is a new instance. In case we don't want to change anything, we should return state instead of `{...state}`. Instance comparison still works.

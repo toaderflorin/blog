@@ -3,12 +3,13 @@ import { graphql, navigate } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import Header from '../components/Header'
+import TagMain from '../components/TagMain'
 
 export default function BlogIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const headerRef = useRef(null)
-  const [showHeader, setShowHeader] = useState(true)
+  const [showHeader, setShowHeader] = useState(true)  
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -45,6 +46,8 @@ export default function BlogIndex({ data, location }) {
           <Header />
         </div>
       )}
+
+      <TagMain />
 
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />

@@ -7,15 +7,31 @@
   background-color: black;
   color: white;
   position: fixed;
-  background-image: url('/img/header.jpeg');
+  /* background-image: url('/img/header.jpeg'); */
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-size: cover; */
+  background-size: cover;
+}
+
+#header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 900px;
+  height: 600px;
+  background-color: #333;
+  padding: 12px;
+  border-radius: 5px;
 }
 
 .trans {
   opacity: 0;
   transition: 0.7s;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
