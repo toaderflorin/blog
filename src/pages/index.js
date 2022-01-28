@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { graphql, navigate } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
-// import Header from '../components/Header'
+import Header from '../components/Header'
 
 export default function BlogIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-  const [showPosts, setShowPosts] = useState(false)
+  const headerRef = useRef(null)
+  const [showHeader, setShowHeader] = useState(true)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      // alert('!')
-      setShowPosts(true)
+      if (headerRef.current) {
+        headerRef.current.className = 'trans'
+        setTimeout(() => {
+          setShowHeader(false)
+        }, 700)
+      }
     })
   }, [])
 
@@ -28,16 +33,18 @@ export default function BlogIndex({ data, location }) {
       </Layout>
     )
   }
-  
+
   function navigateToPost(url) {
     navigate(url)
   }
 
   return (
     <div>
-      {/* {!showPosts && (
-        <Header />
-      )} */}
+      {showHeader && (
+        <div ref={headerRef}>
+          <Header />
+        </div>
+      )}
 
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />
@@ -45,37 +52,36 @@ export default function BlogIndex({ data, location }) {
           const title = post.frontmatter.title || post.fields.slug
 
           return (
-              <article
-                key={post.fields.slug}
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-                onClick={() => navigateToPost(post.fields.slug)}>
-                <header>
-                  <h2>
-                    {/* <Link to={post.fields.slug} itemProp="url"> */}
-                    <span itemProp="headline">{title}</span>
-                    {/* </Link> */}
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section style={{ padding: 0 }}>                  
-                  <img src={`${post.fields.slug}/${post.frontmatter.icon}`} style={{ height: '64px', width: '64px', float: 'left', marginRight: '8px', marginTop: '6px' }} />
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
+            <article
+              key={post.fields.slug}
+              className="post-list-item"
+              itemScope
+              itemType="http://schema.org/Article"
+              onClick={() => navigateToPost(post.fields.slug)}>
+              <header>
+                <h2>
+                  <span itemProp="headline">{title}</span>
+                </h2>
+                <small>{post.frontmatter.date}</small>
+              </header>
+              <section style={{ padding: 0 }}>
+                <img src={`${post.fields.slug}/${post.frontmatter.icon}`} className="article-icon" />
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: post.frontmatter.description || post.excerpt,
+                  }}
+                  itemProp="description"
+                />
+
+                <p style={{ fontSize: '14px', color: 'black' }}>Read more..</p>
+              </section>
+            </article>
           )
         })}
       </Layout>
     </div>
   )
 }
-
 
 export const pageQuery = graphql`
   query {

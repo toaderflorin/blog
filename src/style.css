@@ -204,7 +204,6 @@ blockquote {
   font-size: var(--fontSize-2);
   font-style: italic;
   margin-bottom: var(--spacing-8);
-  color: red;
 }
 
 blockquote > :last-child {
@@ -243,7 +242,6 @@ a:focus {
 .global-wrapper {
   margin: auto;
   max-width: var(--maxWidth-wrapper);
-  /* padding: var(--spacing-10) var(--spacing-5); */
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {
@@ -259,11 +257,15 @@ a:focus {
   margin: 0;
 }
 
-.post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
+.post-list-item {  
   cursor: pointer;
+  padding: 25px;
 }
+
+.post-list-item:hover {
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
+}
+
 
 .post-list-item p {
   margin-bottom: var(--spacing-0);
@@ -322,6 +324,19 @@ a:focus {
 
 .img {
   width: 100%;
+}
+
+.article-icon {
+  height: 64px;
+  width: 64px;
+  float: left;
+  margin-right: 8px;
+  margin-top: 6px;
+}
+
+.icon {
+  font-size: 14px;
+  color: black;
 }
 
 /* Media queries */
