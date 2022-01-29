@@ -3,7 +3,6 @@ import { graphql, navigate } from 'gatsby'
 import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import Header from '../components/Header'
-import TagMain from '../components/TagMain'
 
 export default function BlogIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -45,10 +44,6 @@ export default function BlogIndex({ data, location }) {
         <div ref={headerRef}>
           <Header />
         </div>
-      )}
-
-      {!showHeader && (
-        <TagMain />
       )}
 
       <Layout location={location} title={siteTitle}>

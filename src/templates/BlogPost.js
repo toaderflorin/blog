@@ -2,6 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
+import TagMain from '../components/TagMain'
 
 export default function BlogPostTemplate(props) {
   const { data, location } = props
@@ -15,6 +16,8 @@ export default function BlogPostTemplate(props) {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
+
+      <TagMain />
 
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>

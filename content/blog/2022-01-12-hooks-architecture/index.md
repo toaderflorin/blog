@@ -29,8 +29,6 @@ We'll go with option number two because that's what Redux does, and most develop
 
 Since we plan to lay the groundwork for a complex app, we'll assume that this application has multiple *modules*. Each module will have a *components* folder, which contains the UI code, and a *store* folder which contains the action creators and the reducer logic.
 
-<img src="proj.png" class="img" />
-
 The reducer created with the `useReducer` hook works similar to a Redux reducer. It's just a function that takes a *state* object and an *action* object, and based on that, it returns a new state object. One way of thinking about it is it's a way of mutating state, but of course we're not really mutate the existing state, but rather creating a new state object (immutability is one of the central tenets of functional programming).
 
 We'll need to create reducer actions for:
