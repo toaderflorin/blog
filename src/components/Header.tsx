@@ -7,10 +7,8 @@ export default function Header() {
       <div id="header">
         <div>
           <h1>Florin Toader</h1>
-          <p>Abc asds</p>
-        </div>
-        <div>
-
+          <p>Wether x.</p>
+          <p style={{ textAlign: 'center' }}>Down</p>
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@
   bottom: 0;
   top: 0;
   grid-template-columns: 1fr 1fr;
-  background-color: black;
+  background-color: #111;
   color: white;
   position: fixed;
   /* background-image: url('/img/header.jpeg'); */
@@ -15,13 +15,15 @@
 }
 
 #header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  color: white;
   width: 900px;
-  height: 600px;
-  background-color: #333;
+  /* height: 600px; */
   padding: 12px;
   border-radius: 5px;
+}
+
+#header h1 {
+  color: white;
 }
 
 .trans {

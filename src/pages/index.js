@@ -9,7 +9,7 @@ export default function BlogIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const headerRef = useRef(null)
-  const [showHeader, setShowHeader] = useState(true)  
+  const [showHeader, setShowHeader] = useState(true)
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -17,7 +17,7 @@ export default function BlogIndex({ data, location }) {
         headerRef.current.className = 'trans'
         setTimeout(() => {
           setShowHeader(false)
-        }, 700)
+        }, 500)
       }
     })
   }, [])
@@ -47,7 +47,9 @@ export default function BlogIndex({ data, location }) {
         </div>
       )}
 
-      <TagMain />
+      {!showHeader && (
+        <TagMain />
+      )}
 
       <Layout location={location} title={siteTitle}>
         <Seo title="All posts" />

@@ -199,7 +199,7 @@ Since we are no longer merging the old state into the big state object, we no lo
 
 A fundamental difference between the old approach and the new one is the addition of the `useEffect` hook, which is called after the functional component has rendered, making it behave like the `componentWillReceiveProps` function. This approach is interesting because using this method to make API calls (and therefore changing the state) leads to rerendering. Reacting to state changes in the application is generally considered bad practice because it can also lead to complicated dependency chains, making the code hard to follow. Infinite loops are also a common problem in code written by newcomers.
 
-```
+```typescript
 useEffect(() => {
   fetchTasks(currentUser)
 })

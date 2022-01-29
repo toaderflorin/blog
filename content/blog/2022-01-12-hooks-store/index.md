@@ -31,7 +31,7 @@ Since we plan to lay the groundwork for a complex app, we'll assume that this ap
 
 <img src="proj.png" class="img" />
 
-The reducer created with the <span class="code">useReducer</span> hook works similar to a Redux reducer. It's just a function that takes a *state* object and an *action* object, and based on that, it returns a new state object. One way of thinking about it is it's a way of mutating state, but of course we're not really mutate the existing state, but rather creating a new state object (immutability is one of the central tenets of functional programming).
+The reducer created with the `useReducer` hook works similar to a Redux reducer. It's just a function that takes a *state* object and an *action* object, and based on that, it returns a new state object. One way of thinking about it is it's a way of mutating state, but of course we're not really mutate the existing state, but rather creating a new state object (immutability is one of the central tenets of functional programming).
 
 We'll need to create reducer actions for:
 
@@ -187,7 +187,7 @@ import React, { useReducer, Dispatch } from 'react'
 import { AppState, ChildrenProps } from './modules/types'
 import appReducer, { initialAppState, Action } from './appReducer'
 
-export type ExecuteFunc = (state: AppState, dispatch: Dispatch<any>;) 
+export type ExecuteFunc = (state: AppState, dispatch: Dispatch<any>) 
   => Promise<void> | void
 
 export type AppContextType = {

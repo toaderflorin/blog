@@ -51,7 +51,7 @@ A typical case of duplication is catalog data (reference tables) which needs to 
 ## Multi Shard Queries
 Regardless of how you're structuring your data, there's probably no escaping multi shard queries. To explain why here's what a typical feed from [500px]() looks like:
 
-<img src="feed.jpg" class="img" />
+<img src="500px.png" class="img" />
 
 While we can show a user's timeline by querying just one shard, we can't do that for feeds, because individual users are most likely following a multitude of users residing on multiple shards. Social media sites implement a system called infinite scrolling whereas the user scrolls the page down, more content is loaded with multiple shards being hit.
 
