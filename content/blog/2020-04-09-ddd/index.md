@@ -34,7 +34,7 @@ You never want to do something like this because you want the calling code to ch
 ## Lasagna Code
 This concept naturally leads to hierarchical code where callers and parent components depend on callees and child components, but not vice-versa. An example of that would be the typical web application layered architecture, where we have a presentation layer, a business logic layer, and a database layer, sitting on top of each other in that order.
 
-<img src="./images/arch.png" class="img" />
+<img src="arch.png" class="img" />
 
 The database layer shouldn't have any knowledge of complicated business flows, and the business layer shouldn't know about how it's being rendered. And it most certainly shouldn't trigger redirects in the application, which is an anti-pattern that's unfortunately encountered quite often. This essentially boils down to another architectural idea: the single responsibility principle. As an example, a piece of code that updates a record should only be concerned about updating that record and its children alone. It shouldn't trigger mutations in other parts of the global state because that would break encapsulation and increase coupling. 
 
@@ -55,7 +55,7 @@ Let us imagine the following scenario -- the team is tasked with creating creati
 
 We can identify some domain entities from the start -- users need to log in so we'll have a *User* object, and we also need multiple types of users (for example, an admin and a regular customer), so we will also have a *Permission* object. Of course, we need to have a catalog of products that we're going to sell, so we will define a *Product* object, and these products have to be kept in stock so we'll have *Warehouse* and *WarehouseProduct* entries. And last but not least, as this is the whole purpose of the app, *Order*, *OrderItem* and *PaymentInfo* for accepting orders and processing payments.
 
-<img src="./images/ddd.png" class="img" />
+<img src="ddd.png" class="img" />
 
 If we want to fill in the object fields and relations, we can use a database modeling tool. And while domain experts aren't interested in things like databases (SQL vs. NoSQL, whether we use microservices or not, etc., and other implementation details), sketching tools like that can come in handy when designing the domain model.
 

@@ -16,7 +16,7 @@ The functional syntax became popular with quite a few developers -- after all, l
 
 The question then becomes: how does one keep the functional syntax and, at the same time, allows for the use of state in a component? The answer is, of course, hooks. Also, changing the syntax doesn't mean the component state or lifecycle are going away. 
 
-There's a <span class="code">useState</span> hook, for example. There's also a <span class="code">useEffect</span>, and we'll look at both in a moment. Let's consider a simple application that fetches some data from an API and then does something with it.
+There's a `useState` hook, for example. There's also a `useEffect`, and we'll look at both in a moment. Let's consider a simple application that fetches some data from an API and then does something with it.
 
 ```typescript
 function App(props) {
@@ -45,7 +45,7 @@ function App(props) {
 }
 ```
 
-The first thing that's very apparent with hooks is we no longer have lifecycle methods like `componentDidMount` or  `componentWillReceiveProps`, so we need to rely on a different mechanism -- the  `useEffect` hook fills that role now. If we want to react to the component being mounted, we can pass in an empty dependency array. If we want to emulate the `componentWillReceiveProps` we can pass in the props as dependencies.
+The first thing that's very apparent with hooks is we no longer have lifecycle methods like `componentDidMount` or `componentWillReceiveProps`, so we need to rely on a different mechanism -- the  `useEffect` hook fills that role now. If we want to react to the component being mounted, we can pass in an empty dependency array. If we want to emulate the `componentWillReceiveProps` we can pass in the props as dependencies.
 
 ```typescript
 function App(props) {
@@ -74,13 +74,13 @@ function App(props) {
 }
 ```
 
-It's worth pointing out that the way <span class="code">useState</span> works with hooks is different that the way <span class="code">useState</span> works with class components.
+It's worth pointing out that the way `useState` works with hooks is different that the way `useState` works with class components.
 
 1. With class components, it merges the new state into the old state, via the JS spread syntax.
 2. With functional components, it simply replaces the state object. 
-3. You can use <span class="code">useState</span> multiple times in functional components and have different instances of state.
+3. You can use `useState` multiple times in functional components and have different instances of state.
 
-And extremely important, with functional components there is no <span class="code">this.state</span>. Also, functional components are *closures*, which means they have their own lexical context, and so they capture the values of variables declared in the function when those functions were called. So in our case, when the response comes back from the server, the value of <span class="code">state</span> is the same as it was when the component was called. Typically, this wouldn't be a problem, especially because you can use the <span class="code">useState</span> hook multiple times, and you can have different disjointed pieces of state.
+And extremely important, with functional components there is no `this.state`. Also, functional components are *closures*, which means they have their own lexical context, and so they capture the values of variables declared in the function when those functions were called. So in our case, when the response comes back from the server, the value of <span class="code">state` is the same as it was when the component was called. Typically, this wouldn't be a problem, especially because you can use the <span class="code">useState</span> hook multiple times, and you can have different disjointed pieces of state.
 
 *The main problem with this approach arises if you are trying to use one single view model object as state and merge new state prop values into it if you have to deal with concurrency.*
 

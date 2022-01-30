@@ -1,13 +1,14 @@
 .tag {
   position: fixed;
   left: 0;
-  top: 30px;
-  padding: 10px 2px;
+  top: 40px;
+  padding: 12px 4px;
   background-color: black;
   color: white;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   border-radius:  0 5px 5px 0;
   cursor: pointer;
+  font-size: 13px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3)
 }

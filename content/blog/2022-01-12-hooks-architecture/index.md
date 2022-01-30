@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What If We Wanted To Use Hooks Instead Of Redux?"
-date:   2021-01-08 00:39:37 +0300
+date:   2022-01-08 00:39:37 +0300
 description: "
 While the rumors about Redux's demise are most likely mostly exaggerated, that there is no doubt we can achieve a lot of the functionality it provides with hooks. Also, as a rule of thumb, we should avoid using as many external libraries as possible because chances are they could become deprecated in the future. While using the useReducer hook is relatively straightforward, React doesn't provide a prescription on how to structure a relatively large application.
 "
