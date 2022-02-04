@@ -71,16 +71,16 @@
 }
 
 html {
-  line-height: var(--lineHeight-normal);
+  line-height: 1.7;
   font-size: var(--fontSize-root);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--fontSize-1);
-  color: var(--color-text);
+  font-family: "Avenir";
+  font-size: 16px;
+  color: black;
 }
 
 footer {
