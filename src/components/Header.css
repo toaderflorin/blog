@@ -12,24 +12,52 @@
   align-items: center;
   justify-content: center;
   background-size: cover;
+  background-position: center;
+  z-index: 2;
 }
 
 #header {
   color: white;
   width: 900px;
-  /* height: 600px; */
   padding: 12px;
   border-radius: 5px;
-  background: linear-gradient(rgba(0,0, 0, 0), rgba(0, 0, 0, 0.2));
 }
 
 #header h1 {
   color: white;
 }
 
+.rex {
+  animation-duration: 0.8s;
+  animation-name: fadein;
+  animation-fill-mode: forwards;
+}
+
 .trans {
-  opacity: 0;
-  transition: 0.7s;
+  pointer-events: none;
+  animation-duration: 2s;
+  animation-name: fadeout;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .centered {

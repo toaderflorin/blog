@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React Hooks Can Be Confusing"
-date:   2020-11-18 09:39:37 +0300
+date:   2021-11-18 09:39:37 +0300
 description: "
 React's development history is widely documented and was developed for internal use at Facebook, as it is the case with a lot of librarie, and for quite some time it was ES5 only - ES6 support of course followed, but the team quite quickly realized that if a component doesn't need to maintain an internal state, there's no need for it to be a class, and one of the major additions of v14.0 were stateless functional components. Not long after, the container / presentational pattern appeared, where the state changes would be handled in a wrapping class component, and the inner child component would handle the presentation part.
 "
