@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Architecting Applications With DDD"
-date:   2020-04-09 09:39:37 +0300
+date:   2022-02-02 09:39:37 +0300
 description: "
 Few developers dispute the fact that high coupling is a bad thing, yet achieving the opposite is easier said than done. When writing code, if a component depends on another component, they are said to be coupled, which is part of everyday development, so it's impossible to eliminate coupling altogether. What we should be striving for is low-coupling. The term spaghetti code gets thrown around quite a bit, and the reason for that is highly entangled codebases have very long and complicated dependency chains.
 "

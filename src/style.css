@@ -346,17 +346,17 @@ a:focus {
   top: 0;
   left:0;   
   grid-column: 1;
-  background-color: #eee;
+  background-color: #111;
   color: white;
-  height: 250px;
+  height: 350px;
 }
 
 #second {
   grid-column: 2 / span 2;
-  background-color: #222;
+  background-color: #1a1a1a;
   color: white;
-  height: 250px;
-  padding: 15px;
+  height: 350px;
+  padding: 30px 15px 15px 15px;
 }
 
 .content-container {
