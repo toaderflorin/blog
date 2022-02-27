@@ -329,6 +329,11 @@ a:focus {
   width: 100%;
 }
 
+.img-side {
+  width: 300px;
+  float: left;
+}
+
 .article-icon {
   height: 64px;
   width: 64px;

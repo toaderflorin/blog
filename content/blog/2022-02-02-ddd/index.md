@@ -9,9 +9,7 @@ icon: "ddd-icon.jpg"
 url: "./images/ddd.png"
 categories:
 ---
-Few developers dispute the fact that high coupling is a bad thing, yet achieving the opposite is easier said than done. When writing code, if a component depends on another component, they are said to be coupled, which is part of everyday development, so it's impossible to eliminate coupling altogether. What we should be striving for is low-coupling.
-
-The term spaghetti code gets thrown around quite a bit, and the reason for that is highly entangled codebases have very long and complicated dependency chains. A developer might want to make changes on component A, only to realize that those changes that mean changing component B, which in turn leads to changing component C, etc., and it's not uncommon for teams to rewrite the app from scratch. So what's the opposite of spaghetti code? It's lasagna code, which we'll get to in a moment.
+Few developers dispute the fact that high coupling is a bad thing, yet achieving the opposite is easier said than done. When writing code, if a component depends on another component, they are said to be coupled, which is part of everyday development, so it's impossible to eliminate coupling altogether. What we should be striving for is low-coupling. The term spaghetti code gets thrown around quite a bit, and the reason for that is highly entangled codebases have very long and complicated dependency chains. A developer might want to make changes on component A, only to realize that those changes that mean changing component B, which in turn leads to changing component C, etc., and it's not uncommon for teams to rewrite the app from scratch. So what's the opposite of spaghetti code? It's lasagna code, which we'll get to in a moment.
 
 As a general rule, we want to avoid two-way dependencies between components or functions. Pure functions are a perfect example of the right way to structure your code. They don't have any side effects (like mutating arguments or the global state), nor do they have any knowledge of the context from where they're being called (other than their parameters), which is excellent because it makes them reusable. Here's an example of this rule being broken and why that's bad:
 
@@ -34,7 +32,7 @@ You never want to do something like this because you want the calling code to ch
 ## Lasagna Code
 This concept naturally leads to hierarchical code where callers and parent components depend on callees and child components, but not vice-versa. An example of that would be the typical web application layered architecture, where we have a presentation layer, a business logic layer, and a database layer, sitting on top of each other in that order.
 
-<img src="arch.png" class="img" />
+<img src="arch.png" class="img-side" />
 
 The database layer shouldn't have any knowledge of complicated business flows, and the business layer shouldn't know about how it's being rendered. And it most certainly shouldn't trigger redirects in the application, which is an anti-pattern that's unfortunately encountered quite often. This essentially boils down to another architectural idea: the single responsibility principle. As an example, a piece of code that updates a record should only be concerned about updating that record and its children alone. It shouldn't trigger mutations in other parts of the global state because that would break encapsulation and increase coupling. 
 
