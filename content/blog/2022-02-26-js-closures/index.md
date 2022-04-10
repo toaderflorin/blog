@@ -1,18 +1,20 @@
 ---
 layout: post
-title:  "Javascript Closures"
+title:  "Javascript Executution Contexts, Scopes and Closures"
 date:   2022-02-26 09:39:37 +0300
 description: "Closures are interesting because they can be used to emulate private class data. While there are classes in JS, they just are syntactical sugar over prototypical inheritance, and you can't have private fields. Normally most developers wouldn't need to know how closures work, but given how popular React's functional components are (which make use of closures) and the amount of frustration not understanding them, a guide to explain them in detail is needed."
 icon: "hook-icon.png"
 categories: 
 
 ---
-Closures are probably one of the most unintuitive features for newcomers to Javascript, especially if they come from languages such as Java or C#. The notion of a function within another function itself isn't hard to understand. The unintuitive part comes when the outer function returns.
+Closures are probably one of the most unintuitive features for newcomers to Javascript, especially if they come from languages such as Java or C#. The notion of a function within another function itself isn't hard to understand, the significant hurdle in understanding comes with preserving the lexical environment around these functions once the parent function has finished executing.
 
-There are also quite a few articles that use misleading terminology - for example, context versus execution context, lexical environment versus scope, etc. We'll aim to clarify the terms. The main idea is that classes are first-class citizens in Javascript, whereas in C# / Java, it's the classes that are first-class citizens.
+There are also quite a few articles that use misleading terminology -- for example, context versus execution context, lexical environment versus scope, etc. We'll aim to clarify the terms. 
+
+* The main idea is that classes are first-class citizens in Javascript, whereas in C# / Java, it's the classes that are first-class citizens.
 
 ### Scope
-Let's look at what "scope" means first. Scoping simply means reducing the visibility of variables based on the block where they have been declared. That is the "scope" of the variable. Let's look at the following example:
+Let's look at what *scope* means first. Scoping simply means reducing the visibility of variables based on the block where they have been declared. Let's look at the following example:
 
 ```javascript
 const arrayItems = [1, 2, 3, 4]
@@ -37,7 +39,7 @@ The JS engine recognizes three types of scopes:
 
 This is how it looks like:
 
-<img src="scopes.png" class="img" />
+<img src="xxxx.png" class="img" />
 
 In this case, the global scope contains `arrayItems`, `i` is in the function scope and `message` is in the block scope. Let's look at a more complicated example:
 
@@ -60,9 +62,13 @@ const f = f2()
 f()
 ```
 
+For this, it looks like:
+
+<img src="xxxx.png" class="img" />
 
 ### Execution context
-The execution context is a general abstract term and refers to several things taken as a whole:
+The term *context* refers to what the *this* object points to. Since JS is not a class based language, *this* on how the function are called (for example with *bind* or *apply*), but explaining it is beyond the scope of this article.  The *execution context* is a general abstract term and refers to several things taken as a whole:
+
 * The value of this.
 * The lexical environment in which the code runs in - in the case of functions, that's the outer scope.
 * The code/function's own variables.
@@ -71,6 +77,23 @@ When the JS engine starts a script, it creates something which is called a *glob
 
 1. The creation phase.
 2. The execution phase.
+
+Also we have:
+
+1. A global execution context.
+2. A function execution context.
+
+In the creation phase, all the variables are 
+
+```
+function myFunction() {
+  console.log('x is ', x)
+  console.log('y is ', y)
+}
+
+const x = 12
+const y = 14
+```
 
 
 ### Closures
@@ -106,4 +129,6 @@ console.log(person1.incrementAge === person2.incrementAge) // false
 ```
 
 Let's try to unpack what happens here. The methods `incrementAge` and `showStats` live inside the `Person` function scope. They "see" `firstName`, `lastName`, `age` and `_age` (which acts as a private variable). They constitute the lexical environment for these functions. When the outer function returns an object referencing these functions (and again keep in mind they are simply objects).
+
+### A Look At C# Closures
 

@@ -10,15 +10,22 @@ url: "./images/ddd.png"
 categories:
 ---
 CQRS has been popular for quite a few years (more than a decade old at this point), and while it's no longer in the hype phase of adoption, it still gets brought up quite a bit during architectural discussions for new projects (usually in conjunction with microservices). A few years after the pattern became popular, there was mounting criticism against it, mainly because of the complexity it introduces - with critics citing it as a typical example of over-engineering / premature optimization. As with most new technologies, this is captured very well by the Gartner hype cycle graph. 
-
  
 <br/><img src="hype.png" class="img" />
 
-The adoption curve for microservices was similar: they were initially everywhere and eventually, then there was a backlash against the approach, and eventually teams began using them more judiciously. Dismissing CQRS out of hand would be a mistake however, as it does serve a purpose, albeit a very specific one. The purpose of this article is to give a birds-eye view of the pattern, encourage its use where it's suitable, and potentially dissuade developer teams from adopting it where it isn't. 
+The adoption curve for microservices was similar: they were initially everywhere, then there was a backlash against the approach, and eventually teams began using them more judiciously. This pattern is typical for many new frameworks as well:
+
+1. Phase 1: Hey, look, a new shinny toy is out -- I want to play with it.
+2. Phase 2: OK, this isn't really what I expected, it's really bad.
+3. Phase 3: Maybe we shouldn't have used it for everything, but it does have a place for certain usecases.
+
+Dismissing CQRS out of hand would be a mistake however, as it does serve a purpose, albeit a very specific one. The purpose of this article is to give a birds-eye view of the pattern, encourage its use where it's suitable, and potentially dissuade developer teams from adopting it where it isn't. 
 
 ### Architecture
 
-CQRS stands for Command Query Responsibility Segregation. In a nutshell, it means that the read and write parts of the application are separated. Here are high-level schematics of the topologies of the two architectures, presented side by side.
+Before CQRS we had CQS (Command Query Segregation) which is a pattern that can be attributed to Bertrand Mayer. You are probably using this pattern without even know you are -- in a nutshell it posits that asking a *question shouldn't change the answer*. This means you don't want a method to mutate your state and return a value at the same time.
+
+CQRS stands for Command Query Responsibility Segregation. It means that the read and write parts of the application are separated. Here are high-level schematics of the topologies of the two architectures, presented side by side.
 
 <img src="x.png" class="img" />
 
