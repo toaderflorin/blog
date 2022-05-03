@@ -3,7 +3,7 @@ layout: post
 title:  "The CAP Theorem Hugely Oversimplifies Things"
 date:   2022-04-09 09:39:37 +0300
 description: "
-CQRS has been popular for quite a few years (more than a decade old at this point), and while it's no longer in the hype phase of adoption, it still gets brought up quite a bit during architectural discussions for new projects (usually in conjunction with microservices). A few years after the pattern became popular, there was mounting criticism against it, mainly because of the complexity it introduces - with critics citing it as a typical example of over-engineering / premature optimization.
+The CAP theorem is usually the first thing that comes up when discussing replication / data-store options on distributed systems, but considering how popular it is, it’s surprising that it’s not understood correctly most of the time. The CAP letters refer to Consistency, Availability, and Partition tolerance, and it’s worth mentioning that it is merely an idealization (abstraction) because real-world situations are significantly more complicated.
 "
 icon: "cqrs.png"
 url: "./images/ddd.png"
