@@ -37,9 +37,11 @@ logArrayItems()
 ```
 This is how it looks like:
 
-<img src="xxxx.png" class="img" />
+<img src="stack.svg" class="img" />
 
 In this case, the global scope contains *arrayItems*, *i* is in the function scope and *message* is in the block scope. So far, this is intuitive, and it's not that much different than what we would expect from a language like C#, Java, or C. 
+
+Scopes form a chain. Variable resolution works as follows: if a variable isn't available in the current scope, it goes up the chain.
 
 ### Execution context
 The term *context* refers to what the *this* keyword points to, which is different from *execution context*, as we will see in a moment. Since JS is not an OOP imperative language (classes are just syntactic sugar), the value of the *this* keyword depends on how the function is called (see *bind* or *apply*), but explaining it is beyond the scope of this article.  The *execution context* is a general abstract term and refers to several things taken as a whole:
@@ -55,11 +57,6 @@ When the JS engine starts a script, it creates something which is called a *glob
 
 Javascript also introduces a concept called "hoisting". This refers to variables being available before being declared, but contrary to what the term would intuitively suggest, nothing is actually being hoisted. Instead, what happens is the JS engine first does a pass through the code and determines which variables are declared and assigns an undefined value for them. The term "hoisting" comes from the illusion this gives that the declaration has been moved to the beginning of the block.
 
-Also we have:
-
-1. A global execution context.
-2. A function execution context.
-
 ```javascript
 function showXandY() {
   console.log('x is ', x)
@@ -73,6 +70,10 @@ const y = 14
 
 showXandY() // here, we get 12 and 14
 ```
+Also we have:
+
+1. A global execution context.
+2. A function execution context.
 
 *<b>Remember:</b> scope refers to the visibility of the variables, and context refers to the object within which a function is executed.*
 
@@ -80,35 +81,45 @@ showXandY() // here, we get 12 and 14
 Let's look at a more complicated example:
 
 ```javascript
-let name = 'outer scope'
+let name = 'global variable'
 
 function f1() {
   console.log(name)
 }
 
-function f2() {
-  let name = 'inner scope'
-  
-  function f3() {
+function createClosure(name) {    
+  function f2() {
     console.log(name)
   }
 
   return function() {
+    console.log('starting...')
     f1()
-    f3()
+    f2()
   }
 }
 
-const f = f2()
-f()
+const g1 = createClosure('a')
+const g2 = createClosure('b')
+
+c1()
+c2()
 ```
-This seriously complicates things.
+This seriously complicates things. First, we can see we can see thate *createClosure* returns another function -- so they really are objects. We create two instances, *g1* and *g2*. The first question would be which *name* variable the *f1* function "sees", because it's being run from *createClosure*, but it's being declared outside. The answer is it seems the variable in the global scope.  
 
-For this, it looks like:
+If we run this, we get:
 
-<img src="xxxx.png" class="img" />
+```
+starting...
+outer variable
+a
+starting...
+outer variable
+b
+```
+What's interesting is that *f2* is able to display the value of the name parameter even though the *createClosure* function has finished executing. This aspect captures what closures are all about.
 
-### Closures For Private
+### Closures For Private Fields
 If a function returns a value that is another function (functions are objects), the JS engine creates a "closure" around it and preserves the returned function's lexical environment that the inner function lives in at the moment it was created. This has several potential uses and also side-effects -- a simple side effect is the one mentioned before -- since React components are closures, they keep the value of *state* at the moment the function was called (it acts as a render function), you cannot use a global state object per component and you cannot merge new partial state asynchroniously because other actions might have changed the state in the meantime. A simple example of closure can be the result returned by a React higher order component.
 
 Closures are also interesting because they can be used to emulate private class data. While there are classes in JS, they are simply syntactical sugar over prototypical inheritance, and you can't have private fields. Normally most developers wouldn't need to know how closures work, but given how popular React's functional components are (which make use of closures) and the amount of frustration not understanding them, a guide to explain them in detail is needed. With the advent of TypeScript however, we don't need to do this.
@@ -135,7 +146,6 @@ const person1 = new Person('John', 'Doe', 32)
 const person2 = new Person('Jane', 'Doe', 24)
 
 console.log(person1.incrementAge === person2.incrementAge) // false
-// not the same reference
 ```
 
 Let's try to unpack what happens here. The methods *incrementAge* and *showStats* live inside the *Person* function scope. They "see" *firstName*, *lastName*, *age* and *_age* (which acts as a private variable). They constitute the lexical environment for these functions. When the outer function returns an object referencing these functions (and again keep in mind they are simply objects).
@@ -146,10 +156,13 @@ To illustrate how remarkable closures are, it's worth pointing out what the .NET
 With C# / VB.NET in general, there has been a move towards a hybrid imperative/functional language, so support for "functions in functions" wasn't unexpected. And, of course, scoping requires closures -- so let's look at how .NET achieves them.
 
 ```csharp
-int x = 10;
-Action a = delegate { Console.WriteLine($"The value of x is: {x}"); };
-x = 100;
-a();
+int a = 10;
+Action del = delegate 
+{ 
+  Console.WriteLine($"a is {x}."); 
+};
+
+del();
 ```
 
 C# uses the concept of a "delegate" to refer function objects that can be passed around - they are essentially reference types. The problem with delegates is that they don't have any state, so when the C# compiler detects a delegate that forms a closure returned to the outside scope, the function and its associated local variables are promoted to a compiler-generated class. The compiler then treats the delegate as a method in this class.
@@ -158,14 +171,12 @@ C# uses the concept of a "delegate" to refer function objects that can be passed
 [CompilerGenerated]
 private sealed class <>c__DisplayClass0_0
 {
-    public int x;
+    public int a;
     internal void <M>b__0()
     {
-        Console.WriteLine(string.Format("The value of x is: {0}", x));
+        Console.WriteLine(string.Format("a is {0}.", x));
     }
 }
 ```
 
-### Conclusion
-
-As we can see from the .NET implementation, we really just have a function with some data. But we can also get into interesting concepts such as multi level closures -- so a function that returns a function that returns another function. 
+As we can see from the .NET implementation, we really just have a function with some data.
