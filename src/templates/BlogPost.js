@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+// import Seo from "../components/Seo"
 import TagMain from '../components/TagMain'
 
 export default function BlogPostTemplate(props) {
@@ -12,10 +12,10 @@ export default function BlogPostTemplate(props) {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <Seo
+      {/* <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-      />
+      /> */}
 
       <TagMain />
 

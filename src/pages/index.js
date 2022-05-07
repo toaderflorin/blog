@@ -24,7 +24,7 @@ export default function BlogIndex({ data, location }) {
   if (posts.length === 0) {
     return (
       <div>
-        <Seo title="All posts" />
+        {/* <Seo title="All posts" /> */}
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
@@ -51,7 +51,7 @@ export default function BlogIndex({ data, location }) {
           Some text goes here.
         </div>
         <div className="content">
-          <Seo title="All posts" />
+          {/* <Seo title="All posts" /> */}
           <h1 style={{ marginLeft: '25px' }}>Blog</h1>
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug
