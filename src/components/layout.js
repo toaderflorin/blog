@@ -1,3 +1,4 @@
+import "@fontsource/poppins" 
 import * as React from 'react'
 
 export default function Layout(props) {

@@ -17,7 +17,7 @@ export default function BlogPostTemplate(props) {
         description={post.frontmatter.description || post.excerpt}
       /> */}
 
-      <TagMain />
+      {/* <TagMain /> */}
 
       <article className="blog-post" itemScope itemType="http://schema.org/Article">
         <header>
