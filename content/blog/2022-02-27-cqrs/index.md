@@ -66,9 +66,24 @@ We start with an empty catalog, and we define events such as:
 3. Adding stock.
 4. Selling items.
 
-The primary advantage here is we have a log of actions and this can be used for accounting purposes.
+Auditing is important when it comes to a wide variety of applications. You might be a financial controller. You might be maintainging an inspections sofwware and an audit trail is mandatory. 
+
+<!-- The primary advantage here is we have a log of actions and this can be used for accounting purposes. Event sourcing  -->
 
 If your application is using "event sourcing", then it's also customary to use CQRS.
+
+### Materialized Views
+
+This isn't a new concept. It has been around in relational database systems for quite some time now. The idea behind it was always to precompute the result of queries in order to improve response time. Sure, adding indexes can go a long way in improving read performance (at the expense of write performance), but if you're reading the same data set again and agin, it makes sense to store it. In fact, adding views to your application might be one of the most efficient ways to improve performance.
+
+When we're dealing with cloud native applications / distributed transactions etc., things are a bit more complicated. There is still value in the concept, but we can't rely on our RDBMS system to do it for us -- we'll need to do it ourselves. A RDMS wil rely on its internal system of triggers -- we'll need a messaging system.
+
+As mentioned in other articles, distributed systems rely heavily on denormalization / data duplication. So even if we don't need to keep a ledger to track our actions, thing such as "fan-out" (distributing data in the feed of various users on social media on say Twitter require data duplicationd).
+
+* You have the "primary source of truth", which his what an individual user posted.
+* And you also have a "materialized view", which is the individual user's feed.
+
+As an approach, CQRS is useful when we want to achieve these "cloud native" materialized views.
 
 ### Conclusion
 As with most debates, 

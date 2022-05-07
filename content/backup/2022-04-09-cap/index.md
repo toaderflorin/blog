@@ -3,7 +3,7 @@ layout: post
 title:  "The CAP Theorem Hugely Oversimplifies Things"
 date:   2022-04-09 09:39:37 +0300
 description: "
-CQRS has been popular for quite a few years (more than a decade old at this point), and while it's no longer in the hype phase of adoption, it still gets brought up quite a bit during architectural discussions for new projects (usually in conjunction with microservices). A few years after the pattern became popular, there was mounting criticism against it, mainly because of the complexity it introduces - with critics citing it as a typical example of over-engineering / premature optimization.
+The CAP theorem is usually the first thing that comes up when discussing replication / data-store options on distributed systems, but considering how popular it is, it's surprising that it's not understood correctly most of the time. The CAP letters refer to Consistency, Availability, and Partition tolerance, and it's worth mentioning that it is merely an idealization (abstraction) because real-world situations are significantly more complicated. 
 "
 icon: "cqrs.png"
 url: "./images/ddd.png"
@@ -17,7 +17,9 @@ First, let's consider a replicated datastore:
 
 ### The Actual Theorem 
 
-The CAP letters in the appellation refer to *Consistency*, *Availability*, and *Partition tolerance*. 
+The CAP letters in the appellation refer to *Consistency*, *Availability*, and *Partition tolerance*, but these usually mean something different than what we mean in practice when we refer to these concepts.
+
+*The theorem says that you can only have a maximum of two out of the three. Of course, you can also have one or none.*
 
 <img src="cap.png" class="img" />
 
@@ -28,8 +30,6 @@ Where:
 * **Availability** refers to the fact that it can respond if a node is online. The CAP theorem is quite specific here: it means that *all* available nodes must be able to respond, not just some of them.
 
 * **Partition tolerance** (quite the misnomer) means that the datastore can continue to work even if the connection between nodes is severed due to network issues. This means that nodes might not sync.
-
-*The theorem says that you can only have a maximum of two out of the three. Of course, you can also have one or none.*
 
 Usually, all networks have issues such as dropped packets or nodes not being able to communicate, so P isn't an option - it needs to be there, which means we're usually left with CA or AP databases. Here's how that works: if we opt for availability, we must keep all nodes online (and fault-tolerant). Since it takes some time to sync the data between nodes, the nodes will not be consistent. If, on the other hand, we choose consistency over availability and we write to one node, we will need to take the other nodes offline until they sync, which means they won't be available. And lastly, if you want to have both availability and consistency, your database won't be fault-tolerant because if the connection is severed, the nodes can't be in sync.
 
