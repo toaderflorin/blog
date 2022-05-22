@@ -348,28 +348,19 @@ a:focus {
 
 #first {
   top: 0;
-  left:0;   
-  grid-column: 1;
+  left:0;
+  right: 0;
   background-color: #111;
   color: white;
-  height: 350px;
+  height: 100px;
+  position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-#second {
-  grid-column: 2 / span 2;
-  background-color: #1a1a1a;
-  color: white;
-  height: 350px;
-  padding: 30px 15px 15px 15px;
-}
-
-.content-container {
-  display: grid;
-  grid-template-columns: 1fr 800px 1fr;
-}
-
-.content {
-  grid-column: 2;
+#inner {
+  width: 680px;
+  margin: 0 auto;
+  padding: 15px;
 }
 
 .padding {
@@ -388,4 +379,3 @@ a:focus {
     list-style-position: inside;
   }
 }
-

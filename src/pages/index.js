@@ -1,11 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { graphql, navigate } from 'gatsby'
-import Layout from '../components/Layout'
-import Seo from '../components/Seo'
-import Header from '../components/Header'
+import Home from '../components/Home'
 
 export default function BlogIndex({ data, location }) {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
   const headerRef = useRef(null)
 
@@ -14,9 +11,10 @@ export default function BlogIndex({ data, location }) {
       if (headerRef.current) {
         if (window.scrollY > 0) {
           headerRef.current.className = 'trans'
-        } else if (window.scrollY === 0) {
-          headerRef.current.className = 'rex'
-        }
+        } 
+        // else if (window.scrollY === 0) {
+        //   headerRef.current.className = 'rex'
+        // }
       }
     })
   }, [])
@@ -41,17 +39,11 @@ export default function BlogIndex({ data, location }) {
   return (
     <div>
       <div ref={headerRef}>
-        <Header />
+        <Home />
       </div>
-      <div className="content-container">
-        <div id="first">
-          First.
-        </div>
-        <div id="second">
-          Some text goes here.
-        </div>
-        <div className="content">
-          {/* <Seo title="All posts" /> */}
+      <div>
+         */}
+        <div style={{ margin: '130px auto 0 auto', width: '700px' }}>
           <h1 style={{ marginLeft: '25px' }}>Blog</h1>
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug
