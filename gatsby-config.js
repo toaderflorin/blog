@@ -6,12 +6,13 @@ module.exports = {
       summary: `who lives and works in San Francisco building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://florintoader.me/`,
     social: {
       twitter: `kylemathews`,
     },
   },
   plugins: [
+    'gatsby-plugin-cname',
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

@@ -10,6 +10,7 @@
   "dependencies": {
     "@fontsource/poppins": "^4.5.8",
     "gatsby": "^4.13.1",
+    "gatsby-plugin-cname": "^1.0.0",
     "gatsby-plugin-feed": "^4.5.0",
     "gatsby-plugin-gatsby-cloud": "^4.5.2",
     "gatsby-plugin-google-analytics": "^4.5.0",
