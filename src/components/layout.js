@@ -10,10 +10,7 @@ export default function Layout(props) {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
-      <main>
-        <div style={{ height: '500px', background: 'red' }}>
-          Some stuff here
-        </div>
+      <main>       
         {children}
       </main>
     </div>

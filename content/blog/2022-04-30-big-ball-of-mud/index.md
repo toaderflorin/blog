@@ -18,7 +18,7 @@ Let's consider now what happens when component A needs a change in component D. 
 
 But direct dependencies aren't the only culprit. Client-side apps are notorious for posing problems for maintainability, because of their event driven nature. Async events that trigger other portions of the application to redraw which in turn trigger other events (for example a *textChanged* event might trigger another API call that would trigger update event etc.). This was quite typical in the days of jQuery and it led many teams to just scrap their frontends altogether and rebuild the UI using newer libraries such as Knockout or Ember.
 
-### MVVM To the Resque?
+### A Glimpse Of Hope: MVVM To the Resque?
 Event based big balls of mud were such a problem for WinForms applications that Microsoft came up with a pattern called MVVM when they introduced out Windows Presentation Foundation. The fundamental idea here is there is a view-model that's being updated (which acts as an abstraction layer), and not the UI itself. The WPF engine knows how to keep the view and the view model in sync smartly. This means that a lot of events such as a text being changed are triggered only as a result of a user action, not internal updates. KnockoutJS and Angular use a similar approach.
 
 <img src="MVVM.svg" class="img" />

@@ -42,7 +42,6 @@ export default function BlogIndex({ data, location }) {
         <Home />
       </div>
       <div>
-         */}
         <div style={{ margin: '130px auto 0 auto', width: '700px' }}>
           <h1 style={{ marginLeft: '25px' }}>Blog</h1>
           {posts.map(post => {
