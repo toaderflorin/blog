@@ -75,7 +75,7 @@ Also we have:
 1. A global execution context.
 2. A function execution context.
 
-*<b>Remember:</b> scope refers to the visibility of the variables, and context refers to the object within which a function is executed.*
+*<b>Remember:</b> scope refers to the visibility of the variables, and context refers to where the code is executed.*
 
 ### Closures
 Let's look at a more complicated example:
@@ -119,9 +119,9 @@ b
 ```
 What's interesting is that *f2* is able to display the value of the name parameter even though the *createClosure* function has finished executing. This aspect captures what closures are all about.
 
-### Closures For Private Fields
 If a function returns a value that is another function (functions are objects), the JS engine creates a "closure" around it and preserves the returned function's lexical environment that the inner function lives in at the moment it was created. This has several potential uses and also side-effects -- a simple side effect is the one mentioned before -- since React components are closures, they keep the value of *state* at the moment the function was called (it acts as a render function), you cannot use a global state object per component and you cannot merge new partial state asynchroniously because other actions might have changed the state in the meantime. A simple example of closure can be the result returned by a React higher order component.
 
+### Closures For Private Fields
 Closures are also interesting because they can be used to emulate private class data. While there are classes in JS, they are simply syntactical sugar over prototypical inheritance, and you can't have private fields. Normally most developers wouldn't need to know how closures work, but given how popular React's functional components are (which make use of closures) and the amount of frustration not understanding them, a guide to explain them in detail is needed. With the advent of TypeScript however, we don't need to do this.
 
 ```javascript

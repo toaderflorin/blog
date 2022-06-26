@@ -2,7 +2,7 @@
 layout: post
 title:  "The Trouble With Estimations"
 date:   2022-05-30 09:39:37 +0300
-description: "Let's consider several classes with public methods. Let's also consider that they are  on the same hierarchical level and they can all see each other and call methods on one another. We can draw the following schematic indicating the dependency topology. Let's consider now what happens when component A needs a change in component D. We can obviously go ahead and make that change, but odds are that is going to have a  knock-on effect on other components that depend on it such as X and Y. Changes on these would potentially have more cascading effects and so on.
+description: "The Sydney Opera house is such an iconic building that, for many people, it's almost the first thing that comes to mind when they think of Sydney, yet few people are aware of its troubled history and how it came to be built. In 1995, the then prime minister (who?) launched an international design contest, where no fewer than X showed up. After reviewing 233 entries from architects in x countries, Danish architect X was declared the winner, who simply entered a simple pencil sketch outlining the shape of the building.
 "
 icon: "clock.jpg"
 categories: 
