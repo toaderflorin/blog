@@ -4,7 +4,7 @@ title:  "Modern Big Balls Of Mud"
 date:   2022-04-26 09:39:37 +0300
 description: "Let's consider several classes with public methods. Let's also consider that they are  on the same hierarchical level and they can all see each other and call methods on one another. We can draw the following schematic indicating the dependency topology. Let's consider now what happens when component A needs a change in component D. We can obviously go ahead and make that change, but odds are that is going to have a  knock-on effect on other components that depend on it such as X and Y. Changes on these would potentially have more cascading effects and so on.
 "
-icon: "hook-icon.png"
+icon: "big-ball-icon.png"
 categories: 
 
 ---
