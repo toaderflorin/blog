@@ -68,7 +68,7 @@ export default function BlogIndex({ data, location }) {
                     }}
                     itemProp="description"
                   />
-
+                  FLORIN
                   <p style={{ fontWeight: 'bold', fontSize: '14px', color: 'black' }}>Read more..</p>
                 </section>
               </article>
