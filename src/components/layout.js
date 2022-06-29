@@ -10,7 +10,7 @@ export default function Layout(props) {
   return (
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
-      <main>       
+      <main>
         {children}
       </main>
     </div>
