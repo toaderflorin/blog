@@ -5,8 +5,8 @@ date:   2022-02-27 09:39:37 +0300
 description: "
 CQRS has been popular for quite a few years (more than a decade old at this point), and while it's no longer in the hype phase of adoption, it still gets brought up quite a bit during architectural discussions for new projects (usually in conjunction with microservices). A few years after the pattern became popular, there was mounting criticism against it, mainly because of the complexity it introduces - with critics citing it as a typical example of over-engineering / premature optimization.
 "
-icon: "cqrs.png"
-url: "./images/ddd.png"
+icon: "cqrs-icon.png"
+# url: "./images/cqrs.png"
 categories:
 ---
 CQRS has been popular for quite a few years (more than a decade old at this point), and while it's no longer in the hype phase of adoption, it still gets brought up quite a bit during architectural discussions for new projects (usually in conjunction with microservices). A few years after the pattern became popular, there was mounting criticism against it, mainly because of the complexity it introduces - with critics citing it as a typical example of over-engineering / premature optimization. As with most new technologies, this is captured very well by the Gartner hype cycle graph. 
@@ -27,7 +27,7 @@ Before CQRS we had CQS (Command Query Segregation) which is a pattern that can b
 
 CQRS stands for Command Query Responsibility Segregation. It means that the read and write parts of the application are separated. Here are high-level schematics of the topologies of the two architectures, presented side by side.
 
-<img src="x.png" class="img" />
+<img src=".png" class="img" />
 
 At first look, CQRS looks significantly more complicated than the standard approach because not only are there two pipelines now, it also involves using two data stores. We’ll clarify the purpose behind this in a moment.
 

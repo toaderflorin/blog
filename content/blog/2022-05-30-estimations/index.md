@@ -2,29 +2,42 @@
 layout: post
 title:  "Why It's So Hard To Get Estimations Right"
 date:   2022-05-30 09:39:37 +0300
-description: "The Sydney Opera house is such an iconic building that, for many people, it's almost the first thing that comes to mind when they think of Sydney, yet few people are aware of its troubled history and how it came to be built. In 1995, the then prime minister (who?) launched an international design contest, where no fewer than X showed up. After reviewing 233 entries from architects in x countries, Danish architect X was declared the winner, who simply entered a simple pencil sketch outlining the shape of the building.
+description: "The Sydney Opera house is such an iconic building that, for many people, it's almost the first thing that comes to mind when they think of Sydney, yet few people are aware of its troubled history and how it came to be built. In 1995, the then prime minister Joseph Cahill launched an international design contest and after reviewing 233 entries from architects in thirtytwo countries, Danish architect Jørn Utzon was declared the winner, despite the fact that he simply entered a collection of pencil sketches outlining only the shape of the building.
 "
-icon: "clock.jpg"
+icon: "burndown.jpg"
 categories: 
 
 ---
-The Sydney Opera house is such an iconic building that, for many people, it's almost the first thing that comes to mind when they think of Sydney, yet few people are aware of its troubled history and how it came to be built. In 1995, the then prime minister (who?) launched an international design contest, where no fewer than X showed up. After reviewing 233 entries from architects in x countries, Danish architect X was declared the winner, who simply entered a simple pencil sketch outlining the shape of the building.
+The Sydney Opera house is such an iconic building that for many people it's the first thing that comes to mind when they think of Sydney, yet few people are aware of its troubled history and how it came to be built. In 1995, the then prime minister Joseph Cahill launched an international design contest and after reviewing 233 entries from architects in thirtytwo countries, Danish architect Jørn Utzon was declared the winner, despite the fact that he simply entered a collection of pencil sketches outlining only the shape of the building.
 
 <img src="sketch.jpeg" class="img" />
 
-They pushed for starting the 
-
-The idea was bold. But there were no interior plans, no support structure, nothing. Nevertheless, based on this vision, the Australian government set out to build, even before the schematics were finalized. Little would they know that the project would exceed the budget by a factor of ten, and the whole process would take ten years, more than the three initially devised. By now, this story will have sounded all too familiar if you're a software project manager or developer, but let's not get ahead of ourselves.
+There were no interior plans, and plans for the support structure. Nevertheless, based on Utzon's bold vision, the Australian government began constrcuction, even before the schematics were finalized, in order to capitalize on the existing enthusiasm. Little would they know that the project would exceed the budget by a factor of ten, and the whole process would take ten years, more than the three initially devised. 
 
 To maximize time, the support columns were built before the design of the roof was finalized. And once the design was completed, the columns proved too weak to support it, so all of them had to be removed and replaced. So why did the roof design take so long? Since such a structure had never been built before, the engineers didn't know how to go about it, and no less than 14 designs had to be proposed before settling on the final one, a design that would be feasible.
 
-The opera house scenario bears a lot of similarities with most software projects. These start with the ideation phase, and then investors are keen to move fast to capture a market segment. Agile methodologies are all the rage.
+The opera house scenario bears a lot of similarities with a lot of software projects. These start with the ideation phase, and then investors are keen to move fast to capture a market segment, since agile methodologies are all the rage.
 
-When building a house, it would be extremely uncommon to start building anything without detailed plans. 
+Let's examine some concepts involved.
 
-<img src="failure.webp" class="img" />
+### Brook's Law
+In his famous book, The Mythical Man Month, Fred Brooks argues that adding developers to a late project makes it even more late (which has since came to be known as Brook's law). 
 
-Let's look at some of the common pitfalls. 
+*Another way to put it is, if a woman can deliver a baby in nine months, it doesn't mean that three women can deliver a baby in three months.*
+
+<img src="dilbert.png" class="img" />
+
+Throwing more people at a problem is one of the most common productivity traps that you can fall into, and not just because of the increase in coordination efforts. Studies show that as the size of a group increases, individual members tend to become less productive. Some tasks cannot be partitioned effectively and don't scale well with more developers. In fact, attempting to do it makes matters worse because there is now communication overhead, potential blocking and merging conflicts, etc. 
+
+Like communication between components, the number of pathways scales with O(n^2). It also takes quite a bit of time for developers to become productive on a specific project if they aren't familiar with it, and they will need support, which takes away productive time from the experienced devs.
+
+### Exactly Predicting The Behavior Of Nonlinear Systems Is Hard
+
+Let's consider a double [pendulum system](https://en.wikipedia.org/wiki/Double_pendulum). Even if this is a system that's very simple and its behavior is fully deterministic (we can write down the equations of motion), its time evolution is chaotic.
+
+<img src="chaos.jpeg" class="img" />
+
+Teams of developers are complex systems. Communication between team members, dependencies, etc., all play a role, which makes exact progress tracking difficult, so in many ways a team behaves as a chaotical physical system. 
 
 ### The Dunning Kruger Effect And Optimism Bias
 
@@ -44,9 +57,7 @@ We tend to be overly optimistic when we don't know enough about a certain subjec
 * In the process of implementation, they might find bugs in some of the libraries they are using, or simply that the libraries don't support what they are trying to do.
 * After implementing the functionality, the performance might not be acceptable.
 
-When estimating, most developers think they can go from A to B in a straight line, but that's rarely the case because software development is a highly nonlinear process. You might get to where you think you're 90% done, only for you to discover there's another 90% to go (to paraphraze John Carmack).
-
-### Cone of uncertainty / Not enough spikes
+When estimating, most developers think they can go from A to B in a straight line, but that's rarely the case because of software development's nonlinearity, as mentioned earlier. You might get to where you think you're 90% done, only for you to discover there's another 90% to go (to paraphrase John Carmack).
 
 Simply looking at a map doesn't tell you how long a road will be, because you can't go from A to B in a straight like -- usually some prospecting is needed. Software is the same.
 
@@ -56,28 +67,21 @@ If developers don't know enough about how to tackle a piece of functionality, th
 
 Normally teams use estimation poker, but there will usually be different developers that specialize in different areas of the application. Somebody that's very familiar with the code in one area might come up with a higher estimations in their heads, but succumb to social pressure from the team to revise their estimation lower. Normally they would be in the minority.
 
-<img src="cone.png" class="img" />
+Sometimes developers might pretend to think that something is easy knowing it reflects well on them and it isn't them who will build that piece of functionality (which is a form of office politics).
 
-Sometimes developers might perform
-
-### Finessing UX
+### Finessing UX Is Time Consuming
 
 Design tools don't work like CSS / HTML. The layout in CSS was designed to flow and wrap, whereas design tools tend to use absolute positioning. What usually ends up happening is the output is subtly different from what the designer expects, which means they will come back with changes. 
 
 <img src="dash.webp" class="img" />
 
-In some cases, it is possible to do them; in other cases, a compromise will have to be reached, which takes time, and several iterative steps might be needed.  Another issue is developers tend to think in components, and when using a framework such as React, they will have a set of building reusable blocks already prebuilt. Designers focus more on UX and 
-
-### Brook's Law
-In the famous Mythical Man Month, Fred Brooks argues that adding developers to a late project makes it even more late, which has since came to be known as Brook's law. 
-
-*Or put it differently, if a woman can deliver a baby in nine months, it doesn't mean that three women can deliver a baby in three months.*
-
-Some tasks cannot be partitioned effectively and don't scale well with more developers. In fact, attempting to do it makes matters worse because there is now communication overhead, potential blocking and merging conflicts, etc. Like communication between components, the number of pathways scales with O(n^2). It also takes quite a bit of time for developers to become productive on a specific project if they aren't familiar with it, and they will need support, which takes away productive time from the experienced devs.
+In some cases, it is possible to do them; in other cases, a compromise will have to be reached, which takes time, and several iterative steps might be needed.  Another issue is developers tend to think in components, and when using a framework such as React, they will have a set of building reusable blocks already prebuilt. Designers focus more on UX and that might not translate well into reusable components. Communication and collaboration is key to ensure that designers don't come up with a design that isn't pheasible.
 
 ### Time Estimations Are Flawed
 
-First of all, developers don't work full eight hours per day. This is quite self-explanatory, and most teams consider effective work to be six hours per day, but this isn't accurate. In his book The Shallows: What The Internet Is Doing To Our Brins, Nichlas Karr explains how the advent of the internet, multi-tasking, and social media has changed how our brain works. Since a lot of the applications we use are designed to be addictive.
+First of all, developers don't work full eight hours per day. This is quite self-explanatory, and most teams consider effective work to be six hours per day, but even this is inaccurate. In his book The Shallows: What The Internet Is Doing To Our Brins, Nichlas Karr explains how the advent of the internet, multi-tasking, and social media has changed how our brain works. 
+
+Since a lot of the applications we use are designed to be addictive.
 
 * Checking email.
 * Checking social media.
@@ -88,13 +92,17 @@ On top of that:
 * Being interrupted by coworkers on Slack.
 * Working from home poses new challenges - like being interrupted by family members.
 
-It takes an average of about 25 minutes (23 minutes and 15 seconds, to be exact) to return to the original task after an interruption, according to Gloria Mark, who studies digital distraction at the University of California, Irvine. Multiple studies confirm this, so it's safe to say that the actual effective time spent coding is significantly less than six hours. When we do estimations, we need to consider relative ones. So a story point should not be defined in time but rather in relation to another user story. This way we can escape the pitfall of unreliable time-based estimations.
+It takes an average of about 25 minutes (23 minutes and 15 seconds, to be exact) to return to the original task after an interruption, according to Gloria Mark, who studies digital distraction at the University of California, Irvine. Multiple studies confirm this, so it's safe to say that the actual effective time spent coding is significantly less than six hours. 
+
+When we do estimations, we need to consider relative ones. So a story point should not be defined in time but rather in relation to another user story. This way we can escape the pitfall of unreliable time-based estimations.
+
+<img src="fibo.svg" class="img" />
 
 ### In Closing
 
-There isn't a onesize fit all solution.
+There are several things teams can do in order to improve estimates:
 
-* Use a strict domain language.
+* Use a strict domain language -- this way important details aren't lost in translation between product owners and developers.
 * Make sure stakeholders understand the value of spikes.
 * Get your designers on board with Atomic Design. If they are familiar with CSS and HTML, even better.
 * Before building UI pages, get into the habit of first indentifying and building the needed components. 
