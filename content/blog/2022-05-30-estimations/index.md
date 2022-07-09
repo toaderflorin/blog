@@ -2,23 +2,26 @@
 layout: post
 title:  "Why It's So Hard To Get Estimations Right"
 date:   2022-05-30 09:39:37 +0300
-description: "The Sydney Opera house is such an iconic building that, for many people, it's almost the first thing that comes to mind when they think of Sydney, yet few people are aware of its troubled history and how it came to be built. In 1995, the then prime minister Joseph Cahill launched an international design contest and after reviewing 233 entries from architects in thirtytwo countries, Danish architect Jørn Utzon was declared the winner, despite the fact that he simply entered a collection of pencil sketches outlining only the shape of the building.
+description: "Estimations and estimation pressure are probably some of the most contentious aspects of software development. It is usual for project managers to try to push down estimations made by developers because they know that projects tend to take up the allotted time in its entirety, but it's also important not to come up with unrealistic estimations. A whopping 70% of projects are considered failures based on initial targets. Even if the teams use agile methodologies, a large number of the sprints will fail to meet their story point target.
 "
-icon: "burndown.jpg"
+icon: "opera-icon.png"
 categories: 
 
 ---
-The Sydney Opera house is such an iconic building that for many people it's the first thing that comes to mind when they think of Sydney, yet few people are aware of its troubled history and how it came to be built. In 1995, the then prime minister Joseph Cahill launched an international design contest and after reviewing 233 entries from architects in thirtytwo countries, Danish architect Jørn Utzon was declared the winner, despite the fact that he simply entered a collection of pencil sketches outlining only the shape of the building.
+Estimations and estimation pressure are probably some of the most contentious aspects of software development. It is usual for project managers to try to push down estimations made by developers because they know that projects tend to take up the allotted time in its entirety, but it's also important not to come up with unrealistic estimations. A whopping 70% of projects are considered "failures" based on initial targets. Even if the teams use agile methodologies, a large number of the sprints will fail to meet their story point target.
+
+An argument being made is that software development is different than painting the walls in a house (or any kind of construction work for that matter), and that it doesn't scale linearly. That's correct -- in fact scaling linearly doesn't even apply to construction.
+
+### An All Too Familiar Story
+The Sydney Opera house is such an iconic building that for many people it's the first thing that comes to mind when they think of Australia's famous city, yet not many are aware of its troubled history and how it came to be built. In 1995, the then prime minister Joseph Cahill launched an international design contest and after reviewing 233 entries from architects in thirtytwo countries, Danish architect Jørn Utzon was declared the winner, despite the fact that he simply entered a collection of pencil sketches outlining only the shape of the building.
 
 <img src="sketch.jpeg" class="img" />
 
-There were no interior plans, and plans for the support structure. Nevertheless, based on Utzon's bold vision, the Australian government began constrcuction, even before the schematics were finalized, in order to capitalize on the existing enthusiasm. Little would they know that the project would exceed the budget by a factor of ten, and the whole process would take ten years, more than the three initially devised. 
+There were no interior plans, or plans for the support structure. Nevertheless, based on Utzon's bold vision, the Australian government gave construction works the green light, even before the schematics could be finalized, in order to capitalize on the existing enthusiasm and political support for the project. Little would they know that the project would exceed the budget by a factor of ten, and the whole process would take ten years, more than the three initially devised. 
 
 To maximize time, the support columns were built before the design of the roof was finalized. And once the design was completed, the columns proved too weak to support it, so all of them had to be removed and replaced. So why did the roof design take so long? Since such a structure had never been built before, the engineers didn't know how to go about it, and no less than 14 designs had to be proposed before settling on the final one, a design that would be feasible.
 
-The opera house scenario bears a lot of similarities with a lot of software projects. These start with the ideation phase, and then investors are keen to move fast to capture a market segment, since agile methodologies are all the rage.
-
-Let's examine some concepts involved.
+The opera house scenario bears a lot of similarities with a lot of software projects. These start with the ideation phase, and then investors are keen to move fast to capture a market segment, since agile methodologies very popular right now. Let's examine some concepts involved.
 
 ### Brook's Law
 In his famous book, The Mythical Man Month, Fred Brooks argues that adding developers to a late project makes it even more late (which has since came to be known as Brook's law). 
@@ -27,13 +30,13 @@ In his famous book, The Mythical Man Month, Fred Brooks argues that adding devel
 
 <img src="dilbert.png" class="img" />
 
-Throwing more people at a problem is one of the most common productivity traps that you can fall into, and not just because of the increase in coordination efforts. Studies show that as the size of a group increases, individual members tend to become less productive. Some tasks cannot be partitioned effectively and don't scale well with more developers. In fact, attempting to do it makes matters worse because there is now communication overhead, potential blocking and merging conflicts, etc. 
+Throwing more people at a problem is one of the most common productivity traps that you can fall into, and not just because of the increase in coordination efforts. Some tasks cannot be partitioned effectively and don't scale well with more developers. In fact, attempting to do it makes matters worse because there is now communication overhead, potential blocking and merging conflicts, etc. 
 
 Like communication between components, the number of pathways scales with O(n^2). It also takes quite a bit of time for developers to become productive on a specific project if they aren't familiar with it, and they will need support, which takes away productive time from the experienced devs.
 
 ### Exactly Predicting The Behavior Of Nonlinear Systems Is Hard
 
-Let's consider a double [pendulum system](https://en.wikipedia.org/wiki/Double_pendulum). Even if this is a system that's very simple and its behavior is fully deterministic (we can write down the equations of motion), its time evolution is chaotic.
+Let's consider a very simple physical system, the double [pendulum](https://en.wikipedia.org/wiki/Double_pendulum). Even if this is a system that's very simple and its behavior is fully deterministic (we can write down the equations of motion), its time evolution is chaotic.
 
 <img src="chaos.jpeg" class="img" />
 
@@ -69,7 +72,7 @@ Normally teams use estimation poker, but there will usually be different develop
 
 Sometimes developers might pretend to think that something is easy knowing it reflects well on them and it isn't them who will build that piece of functionality (which is a form of office politics).
 
-### Finessing UX Is Time Consuming
+### Finessing UX Is One Of The Most Time Consuming Aspects Of Development
 
 Design tools don't work like CSS / HTML. The layout in CSS was designed to flow and wrap, whereas design tools tend to use absolute positioning. What usually ends up happening is the output is subtly different from what the designer expects, which means they will come back with changes. 
 
@@ -94,9 +97,10 @@ On top of that:
 
 It takes an average of about 25 minutes (23 minutes and 15 seconds, to be exact) to return to the original task after an interruption, according to Gloria Mark, who studies digital distraction at the University of California, Irvine. Multiple studies confirm this, so it's safe to say that the actual effective time spent coding is significantly less than six hours. 
 
+<img src="fibo.svg" style="width: 400px; float: right;" />
+
 When we do estimations, we need to consider relative ones. So a story point should not be defined in time but rather in relation to another user story. This way we can escape the pitfall of unreliable time-based estimations.
 
-<img src="fibo.svg" class="img" />
 
 ### In Closing
 

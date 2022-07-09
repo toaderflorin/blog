@@ -27,7 +27,7 @@ Before CQRS we had CQS (Command Query Segregation) which is a pattern that can b
 
 CQRS stands for Command Query Responsibility Segregation. It means that the read and write parts of the application are separated. Here are high-level schematics of the topologies of the two architectures, presented side by side.
 
-<img src=".png" class="img" />
+<img src="x.png" class="img" />
 
 At first look, CQRS looks significantly more complicated than the standard approach because not only are there two pipelines now, it also involves using two data stores. We’ll clarify the purpose behind this in a moment.
 
