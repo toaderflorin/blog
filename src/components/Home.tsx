@@ -8,12 +8,12 @@ export default function Home() {
         <div style={{ color: '#555' }}>
           <div>
             <b style={{ fontSize: '70px' }}>
-              <span>florin</span><span style={{ color: 'red' }}>toader</span>
+              <span>florin</span><span style={{ color: '#fa0265' }}>toader</span>
             </b>
           </div>
           <div id="lower">
             <div />
-            <div style={{ color: 'black', borderLeft: '3px solid red', padding: '0 20px' }}>
+            <div style={{ color: 'black', borderLeft: '3px solid #fa0265', padding: '0 20px' }}>
               Welcome to my professional abode on the internet.            
             </div>
           </div>

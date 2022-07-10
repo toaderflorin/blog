@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { graphql, navigate } from 'gatsby'
 import Home from '../components/Home'
+import Header from '../components/Header'
 
 export default function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
@@ -38,11 +39,12 @@ export default function BlogIndex({ data, location }) {
 
   return (
     <div>
+      <Header />
       <div ref={headerRef}>
         <Home />
       </div>
       <div>
-        <div style={{ margin: '130px auto 0 auto', width: '700px' }}>
+        <div style={{ margin: '130px auto 0 auto', width: '830px' }}>
           <h1 style={{ marginLeft: '25px' }}>Blog</h1>
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug

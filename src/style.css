@@ -229,7 +229,7 @@ table thead tr th {
 a {
   /* color: var(--color-primary);
   co */
-  color: #990;
+  color: #cc2288;
   text-decoration: none;
 }
 
@@ -264,7 +264,7 @@ a:focus {
 }
 
 .post-list-item:hover {
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
   transition: 0.4s;
 }
 
@@ -358,7 +358,7 @@ a:focus {
 }
 
 #inner {
-  width: 680px;
+  width: 800px;
   margin: 0 auto;
   padding: 15px;
 }
