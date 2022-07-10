@@ -45,7 +45,7 @@ export default function BlogIndex({ data, location }) {
       </div>
       <div>
         <div style={{ margin: '130px auto 0 auto', width: '830px' }}>
-          <h1 style={{ marginLeft: '25px' }}>Blog</h1>
+          <h1 style={{ marginLeft: '25px', marginBottom: '20px' }}>Blog</h1>
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug
 

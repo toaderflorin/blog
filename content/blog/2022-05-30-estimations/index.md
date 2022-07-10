@@ -97,9 +97,11 @@ On top of that:
 
 It takes an average of about 25 minutes (23 minutes and 15 seconds, to be exact) to return to the original task after an interruption, according to Gloria Mark, who studies digital distraction at the University of California, Irvine. Multiple studies confirm this, so it's safe to say that the actual effective time spent coding is significantly less than six hours. 
 
-<img src="fibo.svg" style="width: 400px; float: right;" />
+<img src="fibo.svg" style="width: 500px; float: right;" />
 
 When we do estimations, we need to consider relative ones. So a story point should not be defined in time but rather in relation to another user story. This way we can escape the pitfall of unreliable time-based estimations.
+
+Also, if you are doing [planning poker](https://en.wikipedia.org/wiki/Planning_poker), you might have noticed that the numbers on the cards (roughly) follow the Fibonacci sequence. As user stories get bigger, the uncertainty factor also gets larger, and things can spiral out of control. It is recommended to use a threshold for splitting stories into smaller ones -- it doesn't matter what the value is, it might be 5, it might be 20. It indicates that a story might be too big to estimate properly and should be an epic instead, or just several smaller user stories.
 
 ### In Closing
 
