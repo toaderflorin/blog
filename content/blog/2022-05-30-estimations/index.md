@@ -104,7 +104,6 @@ When we do estimations, we need to consider relative ones. So a story point shou
 Also, if you are doing [planning poker](https://en.wikipedia.org/wiki/Planning_poker), you might have noticed that the numbers on the cards (roughly) follow the Fibonacci sequence. As user stories get bigger, the uncertainty factor also gets larger, and things can spiral out of control. It is recommended to use a threshold for splitting stories into smaller ones -- it doesn't matter what the value is, it might be 5, it might be 20. It indicates that a story might be too big to estimate properly and should be an epic instead, or just several smaller user stories.
 
 ### In Closing
-
 There are several things teams can do in order to improve estimates:
 
 * Use a strict domain language -- this way important details aren't lost in translation between product owners and developers. Don't user interchangable terms such as "account" or "user", as they might refer to different things.
