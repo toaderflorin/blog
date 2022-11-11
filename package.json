@@ -8,8 +8,8 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "@fontsource/poppins": "^4.5.8",
     "gatsby": "^4.13.1",
+    "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-cname": "^1.0.0",
     "gatsby-plugin-feed": "^4.5.0",
     "gatsby-plugin-gatsby-cloud": "^4.5.2",

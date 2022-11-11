@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Why Indexes Are So Costly"
+title:  "Dissecting Indexes Are Costly"
 date:   2022-08-10 09:39:37 +0300
 description: "When Google announced that it would be rebooting AngularJS and that Angular 2.0 would be effectively a new framework, a lot of companies with products built on the old version were put in a difficult situation of having to either restart building their product from scratch or continue with a deprecated technology or you some kind of hybrid solution. Continuing to build on a deprecated technology is obviously risky. As time passes, there are no more updates to the library, and finding developers willing to work on it becomes harder and harder, so this isn't really an option.
 "

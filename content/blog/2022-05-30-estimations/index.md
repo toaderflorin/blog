@@ -2,22 +2,20 @@
 layout: post
 title:  "Why It's So Hard To Get Estimations Right?"
 date:   2022-05-30 09:39:37 +0300
-description: "Estimations and estimation related pressure are probably some of the most contentious aspects of software development. It is usual for project managers to try to push down estimations made by developers because they know that projects tend to take up the allotted time in its entirety, but it's also important not to come up with unrealistic estimations. A whopping 70% of projects are considered failures based on initial targets. Even if the teams use agile methodologies, a large number of the sprints will fail to meet their story point target.
+description: "The estimation proces and estimation related time pressure are probably some of the most contentious aspects of software development - it is usual for project managers to try to push down initial estimations made by developers, either because of pressure placed on themselves by varios stakeholders or because they know that tasks tend to take up the whole allotted time (because of developer procrastination), or both. To make matters worse, a whopping 70% of projects are considered failures based on initial targets. Even if the teams use agile methodologies, a large number of the sprints will fail to meet their story point target.
 "
 icon: "opera-icon.png"
 categories: 
 
 ---
-Estimations and estimation related pressure are probably some of the most contentious aspects of software development. It is usual for project managers to try to push down estimations made by developers because they know that projects tend to take up the allotted time in its entirety, but it's also important not to come up with unrealistic estimations. A whopping 70% of projects are considered "failures" based on initial targets. Even if the teams use agile methodologies, a large number of the sprints will fail to meet their story point target.
-
-An argument being made is that software development is different than painting the walls in a house (or any kind of construction work for that matter), and that it doesn't scale linearly. That's correct -- in fact scaling linearly doesn't even apply to construction.
+The estimation proces and estimation related time pressure are probably some of the most contentious aspects of software development, and it is usual for project managers to try to push down initial estimations made by developers, either because of pressure placed on themselves by varios stakeholders or because they know that tasks tend to take up the whole allotted time (because of developer procrastination), or both. To make matters worse, a whopping 70% of projects are considered "failures" based on initial targets. Even if the teams use agile methodologies, a large number of the sprints will fail to meet their story point target.
 
 ### An All Too Familiar Story
 The Sydney Opera house is such an iconic building that for many people it's the first thing that comes to mind when they think of Australia's famous city, yet not many are aware of its troubled history and how it came to be built. In 1995, the then prime minister Joseph Cahill launched an international design contest and after reviewing 233 entries from architects in thirtytwo countries, Danish architect Jørn Utzon was declared the winner, despite the fact that he simply entered a collection of pencil sketches outlining only the shape of the building.
 
 <img src="sketch.jpeg" class="img" />
 
-There were no interior plans, or plans for the support structure. Nevertheless, based on Utzon's bold vision, the Australian government gave the construction works the green light, even before the schematics could be finalized, in order to capitalize on the existing enthusiasm and political support for the project. Little would they know that the project would exceed the budget by a factor of ten, and the whole process would take ten years, more than the three initially devised. 
+There were no interior plans, or plans for the support structure. Nevertheless, based on Utzon's vision, the Australian government gave the construction works the green light, even before the schematics could be finalized, in order to capitalize on the existing enthusiasm and political support for the project. Little would they know that the project would exceed the budget by a factor of ten, and the whole process would take ten years, more than the three initially devised. 
 
 To maximize time, the support columns were built before the design of the roof was finalized. And once the design was completed, the columns proved too weak to support it, so all of them had to be removed and replaced. So why did the roof design take so long? Since such a structure had never been built before, the engineers didn't know how to go about it, and no less than 14 designs had to be proposed before settling on the final one, a design that would be feasible.
 

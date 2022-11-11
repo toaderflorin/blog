@@ -7,18 +7,18 @@ export default function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
   const headerRef = useRef(null)
 
-  useEffect(() => {
-    window.addEventListener('scroll', (e) => {
-      if (headerRef.current) {
-        if (window.scrollY > 0) {
-          headerRef.current.className = 'trans'
-        } 
-        // else if (window.scrollY === 0) {
-        //   headerRef.current.className = 'rex'
-        // }
-      }
-    })
-  }, [])
+  // useEffect(() => {
+  //   window.addEventListener('scroll', (e) => {
+  //     if (headerRef.current) {
+  //       if (window.scrollY > 0) {
+  //         headerRef.current.className = 'trans'
+  //       } 
+  //       // else if (window.scrollY === 0) {
+  //       //   headerRef.current.className = 'rex'
+  //       // }
+  //     }
+  //   })
+  // }, [])
 
   if (posts.length === 0) {
     return (
@@ -41,7 +41,7 @@ export default function BlogIndex({ data, location }) {
     <div>
       <Header />
       <div ref={headerRef}>
-        <Home />
+        {/* <Home /> */}
       </div>
       <div>
         <div style={{ margin: '130px auto 0 auto', width: '830px' }}>

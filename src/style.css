@@ -72,14 +72,14 @@
 
 html {
   line-height: 1.8;
-  font-size: var(--fontSize-root);
+  /* font-size: 13px; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-family: "Manrope", serif;
+  font-size: 14.5px;
   color: #252525;
 }
 
