@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Dissecting Indexes Are Costly"
+title:  "Dissecting Why Indexes Are Costly"
 date:   2022-08-10 09:39:37 +0300
-description: "When Google announced that it would be rebooting AngularJS and that Angular 2.0 would be effectively a new framework, a lot of companies with products built on the old version were put in a difficult situation of having to either restart building their product from scratch or continue with a deprecated technology or you some kind of hybrid solution. Continuing to build on a deprecated technology is obviously risky. As time passes, there are no more updates to the library, and finding developers willing to work on it becomes harder and harder, so this isn't really an option.
+description: "A typical mistake among junior developers is adding too many indexes to tables in SQL databases, way more than it would be necessary. On first impression, it wouldn't look like they would be a big deal, but that's not the case. 
 "
 icon: "exponential.png"
 categories: 

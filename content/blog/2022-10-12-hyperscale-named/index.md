@@ -2,21 +2,19 @@
 layout: post
 title:  "Hyperscale Is Truly Game Changing"
 date:   2022-10-15 09:39:37 +0300
-description: "When Google announced that it would be rebooting AngularJS and that Angular 2.0 would be effectively a new framework, a lot of companies with products built on the old version were put in a difficult situation of having to either restart building their product from scratch or continue with a deprecated technology or you some kind of hybrid solution. Continuing to build on a deprecated technology is obviously risky. As time passes, there are no more updates to the library, and finding developers willing to work on it becomes harder and harder, so this isn't really an option.
+description: "A common theme on this blog is performance optimizations and practical, real-world-oriented development. We talked about sharding, but probably most companies would want to do something other than roll out their custom sharding solution. A very simple way to improve performance is to implement a caching solution on your endpoints. But that still requires going to every endpoint and adding caching logic, thinking about cache eviction, etc.
+
+
 "
-icon: "exponential.png"
+icon: "hyperscale.png"
 categories: 
 
 ---
-A common theme on this blog is performance optimizations and practical, real-world-oriented development. We talked about sharding, but probably most companies would want to do something other than roll out their custom sharding solution. 
-
-A very simple way to improve performance is to implement a caching solution on your endpoints. But that still requires going to every endpoint and adding caching logic, thinking about cache eviction, etc.
+A common theme on this blog is performance optimizations and practical, real-world-oriented development. We talked about sharding, but probably most companies would want to do something other than roll out their custom sharding solution. A very simple way to improve performance is to implement a caching solution on your endpoints. But that still requires going to every endpoint and adding caching logic, thinking about cache eviction, etc.
 
 Since most applications are significantly more read-heavy than write-heavy, we can use database replication and have multiple read-only replicas. The problem here is we run into CAP theorem limitations. Let's assume that:
 
 We are using sync replication: the more replica
-
-
 
 What if we get rid of replication altogether?
 
