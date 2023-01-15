@@ -4,7 +4,7 @@ title:  "Dissecting Why Indexes Are Costly"
 date:   2022-08-10 09:39:37 +0300
 description: "A typical mistake among junior developers is adding too many indexes to tables in SQL databases, way more than it would be necessary. On first impression, it wouldn't look like they would be a big deal, but that's not the case. 
 "
-icon: "exponential.png"
+icon: "binary-tree.png"
 categories: 
 
 ---
