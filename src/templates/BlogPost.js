@@ -1,8 +1,9 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import TagMain from '../components/TagMain'
-import Header from '../components/Header'
+import TagMain from "../components/TagMain"
+import Header from "../components/Header"
+import "./BlogPost.css"
 
 export default function BlogPostTemplate(props) {
   const { data, location } = props
@@ -11,18 +12,25 @@ export default function BlogPostTemplate(props) {
   // const { previous, next } = data
 
   return (
-    <Layout location={location} title={siteTitle} >    
+    <Layout location={location} title={siteTitle}>
       <Header />
-      <article className="blog-post" itemScope itemType="http://schema.org/Article" style={{ marginTop: '150px'}}>
-        <header>          
-          <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>{post.frontmatter.date}</p>
-        </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
-      </article>
+      <div className="content">
+        <article
+          className="blog-post"
+          itemScope
+          itemType="http://schema.org/Article"
+          style={{ marginTop: "150px" }}
+        >
+          <header>
+            <h1 itemProp="headline">{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+          </header>
+          <section
+            dangerouslySetInnerHTML={{ __html: post.html }}
+            itemProp="articleBody"
+          />
+        </article>
+      </div>
     </Layout>
   )
 }

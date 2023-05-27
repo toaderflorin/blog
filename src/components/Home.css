@@ -7,13 +7,13 @@
   background-color: #111;
   color: white;
   position: fixed;
-  background-image: url('/img/background.jpg');
+  background-image: url('/img/coffee.jpg');
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
-  z-index: 2;
+  z-index: -2;
 }
 
 #header {

@@ -1,24 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { graphql, navigate } from 'gatsby'
-import Home from '../components/Home'
-import Header from '../components/Header'
+import React, { useState, useEffect, useRef } from "react"
+import { graphql, navigate } from "gatsby"
+import Home from "../components/Home"
+import Header from "../components/Header"
 
 export default function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
   const headerRef = useRef(null)
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', (e) => {
-  //     if (headerRef.current) {
-  //       if (window.scrollY > 0) {
-  //         headerRef.current.className = 'trans'
-  //       } 
-  //       // else if (window.scrollY === 0) {
-  //       //   headerRef.current.className = 'rex'
-  //       // }
-  //     }
-  //   })
-  // }, [])
 
   if (posts.length === 0) {
     return (
@@ -39,13 +26,25 @@ export default function BlogIndex({ data, location }) {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div ref={headerRef}>
-        {/* <Home /> */}
+        <Home />
       </div>
-      <div>
-        <div style={{ margin: '130px auto 0 auto', width: '830px' }}>
-          <h1 style={{ marginLeft: '25px', marginBottom: '20px' }}>Blog</h1>
+      <div
+        style={{
+          backgroundColor: "white",
+          boxShadow: "0 0 15px 0 rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <div
+          style={{
+            margin: "130px auto 0 auto",
+            width: "830px",
+            marginTop: "66vh",
+            backgroundColor: "white",
+          }}
+        >
+          <br />
           {posts.map(post => {
             const title = post.frontmatter.title || post.fields.slug
 
@@ -55,22 +54,36 @@ export default function BlogIndex({ data, location }) {
                 className="post-list-item"
                 itemScope
                 itemType="http://schema.org/Article"
-                onClick={() => navigateToPost(post.fields.slug)}>
+                onClick={() => navigateToPost(post.fields.slug)}
+              >
                 <header>
                   <h2>
                     <span itemProp="headline">{title}</span>
                   </h2>
-                  <small>{post.frontmatter.date}</small>
+                  <div style={{ fontSize: "13.5px" }}>
+                    {post.frontmatter.date}
+                  </div>
                 </header>
                 <section style={{ padding: 0 }}>
-                  <img src={`${post.fields.slug}/${post.frontmatter.icon}`} className="article-icon" />
+                  <img
+                    src={`${post.fields.slug}/${post.frontmatter.icon}`}
+                    className="article-icon"
+                  />
                   <span
                     dangerouslySetInnerHTML={{
                       __html: post.frontmatter.description || post.excerpt,
                     }}
                     itemProp="description"
                   />
-                  <p style={{ fontWeight: 'bold', fontSize: '14px', color: 'black' }}>Read more..</p>
+                  <p
+                    style={{
+                      fontWeight: "500",
+                      fontSize: "14px",
+                      color: "black",
+                    }}
+                  >
+                    Read more..
+                  </p>
                 </section>
               </article>
             )

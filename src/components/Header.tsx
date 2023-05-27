@@ -6,7 +6,7 @@ export default function Home() {
     <div id="first">
       <div id="inner">
         <div>
-          Florin Toader
+          florin<b>toader</b>        
         </div>
       </div>
     </div>
