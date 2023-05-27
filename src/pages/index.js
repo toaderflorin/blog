@@ -1,6 +1,6 @@
 import React, { useRef } from "react"
 import { graphql, navigate } from "gatsby"
-import Home from "../components/Home"
+import Home from "../components/HeroSection"
 
 export default function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
@@ -9,12 +9,9 @@ export default function BlogIndex({ data, location }) {
   if (posts.length === 0) {
     return (
       <div>
-        {/* <Seo title="All posts" /> */}
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
+        No blog posts found. Add markdown posts to "content/blog" (or the
+        directory you specified for the "gatsby-source-filesystem" plugin in
+        gatsby-config.js).
       </div>
     )
   }
@@ -58,11 +55,17 @@ export default function BlogIndex({ data, location }) {
                   <h2>
                     <span itemProp="headline">{title}</span>
                   </h2>
-                  <div style={{ fontSize: "13.5px", color: '#555', marginTop: '5px' }}>
+                  <div
+                    style={{
+                      fontSize: "13.5px",
+                      color: "#555",
+                      marginTop: "5px",
+                    }}
+                  >
                     {post.frontmatter.date}
                   </div>
                 </header>
-                <section style={{ padding: 0, marginTop: '10px' }}>
+                <section style={{ padding: 0, marginTop: "10px" }}>
                   <img
                     src={`${post.fields.slug}/${post.frontmatter.icon}`}
                     className="article-icon"
