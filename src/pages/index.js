@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useRef } from "react"
 import { graphql, navigate } from "gatsby"
 import Home from "../components/Home"
-import Header from "../components/Header"
 
 export default function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
@@ -26,14 +25,13 @@ export default function BlogIndex({ data, location }) {
 
   return (
     <div>
-      {/* <Header /> */}
       <div ref={headerRef}>
         <Home />
       </div>
       <div
         style={{
           backgroundColor: "white",
-          boxShadow: "0 0 15px 0 rgba(0, 0, 0, 0.1)",
+          boxShadow: "0 0 10px 0 rgba(0, 0, 0, 1)",
         }}
       >
         <div
@@ -60,11 +58,11 @@ export default function BlogIndex({ data, location }) {
                   <h2>
                     <span itemProp="headline">{title}</span>
                   </h2>
-                  <div style={{ fontSize: "13.5px" }}>
+                  <div style={{ fontSize: "13.5px", color: '#555', marginTop: '5px' }}>
                     {post.frontmatter.date}
                   </div>
                 </header>
-                <section style={{ padding: 0 }}>
+                <section style={{ padding: 0, marginTop: '10px' }}>
                   <img
                     src={`${post.fields.slug}/${post.frontmatter.icon}`}
                     className="article-icon"

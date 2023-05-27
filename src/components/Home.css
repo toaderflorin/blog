@@ -4,13 +4,9 @@
   bottom: 0;
   top: 0;
   grid-template-columns: 1fr 1fr;
-  background-color: #111;
   color: white;
   position: fixed;
-  background-image: url('/img/coffee.jpg');
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-image: url('/img/xyz.jpg');  
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -21,10 +17,6 @@
   width: 600px;
   padding: 12px;
   border-radius: 5px;
-}
-
-#header h1 {
-  color: white;
 }
 
 #lower {

@@ -2,7 +2,7 @@
 import * as React from 'react'
 
 export default function Layout(props) {
-  const { location, title, children } = props
+  const { location, children } = props
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header
