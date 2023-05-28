@@ -1,14 +1,14 @@
 #header-container {
   right: 0;
   left: 0;
-  bottom: 0;
+  height: 67vh;  
   top: 0;
   grid-template-columns: 1fr 1fr;
   color: white;
   position: fixed;
-  background-image: url('/img/xyz.jpg');  
+  background-image: url('/img/back.jpg');  
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   z-index: -2;
 }
 

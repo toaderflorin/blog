@@ -28,7 +28,7 @@ export default function BlogIndex({ data, location }) {
       <div
         style={{
           backgroundColor: "white",
-          boxShadow: "0 0 10px 0 rgba(0, 0, 0, 1)",
+          boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.3)",
         }}
       >
         <div
