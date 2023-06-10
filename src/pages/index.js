@@ -51,10 +51,6 @@ export default function BlogIndex({ data, location }) {
               notice. We've all seen it. Don't be dogmatic, be practical
               instead.
             </p>
-            <p>Don't be dogmatic, be practical instead.</p>
-
-            <div>
-            </div>
 
             {/* <h1>READING LIST</h1> */}
           </article>

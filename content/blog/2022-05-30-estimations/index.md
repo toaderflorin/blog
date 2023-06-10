@@ -33,7 +33,6 @@ Throwing more people at a problem is one of the most common productivity traps t
 Like communication between components, the number of pathways scales with O(n^2). It also takes quite a bit of time for developers to become productive on a specific project if they aren't familiar with it, and they will need support, which takes away productive time from the experienced devs.
 
 ### Exactly Predicting The Behavior Of Nonlinear Systems Is Hard
-
 Let's consider a very simple physical system, the double [pendulum](https://en.wikipedia.org/wiki/Double_pendulum). Even if this is a system that's very simple and its behavior is fully deterministic (we can write down the equations of motion), its time evolution is chaotic.
 
 <img src="chaos.jpeg" class="img" />
@@ -43,12 +42,11 @@ Teams of developers are complex systems. Communication between team members, dep
 This is not to say we can't say anything about the system, but there will be a considerable degree of uncertainty.
 
 ### The Dunning Kruger Effect And Optimism Bias
-
 According to Wikipedia:
 
 <i>The Dunning–Kruger effect is a cognitive bias whereby people with low ability, expertise, or experience regarding a certain type of a task or area of knowledge tend to overestimate their ability or knowledge. Some researchers also include in their definition the opposite effect for high performers: their tendency to underestimate their skills. The Dunning–Kruger effect is usually measured by comparing self-assessment with objective performance.</i>
 
-<img src="dunning.png" class="img" />
+<img src="dunning.svg" class="img" />
 
 We tend to be overly optimistic when we don't know enough about a certain subject. Also when doing estimations, even if devs estimate in story points, they think in time and revert back to storypoints -- and they usually assume the best outcome. However, in real life unexpected things happen: 
 
@@ -71,15 +69,11 @@ If developers don't know enough about how to tackle a piece of functionality, th
 Estimation is usually done as a team during the planning phase of the sprint, but there will be developers that specialize in different areas of the application, yet everybody will be required to provide an estimation (usually in the form of story points). Somebody that's very familiar with the code in one area might come up with a higher estimation (because they understand the risks or potential complications inolved), head but succumb to team/peer pressure from the team to revise their estimation lower, because they are in the minority. Sometimes developers might pretend to believe that something is easy knowing it reflects well on them and it isn't them who will build that piece of functionality (which is a form of office politics).
 
 ### Finessing UX Is One Of The Most Time Consuming Aspects Of Development
-
 The output of a designer (using tools like Adobe XD or Figma) will usually not translate directly 1:1 to CSS / HTML because design tools tend to use absolute positioning, whereas HTML uses a flowing layout. What usually ends up happening is the output is subtly different from what the designer expects, which means they will come back with changes. 
-
-<img src="dash.webp" class="img" />
 
 In some cases, it is possible to do them; in other cases, a compromise will have to be reached, which takes time, and several iterative steps might be needed.  Another issue is developers tend to think in components, and when using a framework such as React, they will have a set of building reusable blocks already prebuilt. Designers focus more on UX and that might not translate well into reusable components. Communication and collaboration is key to ensure that designers don't come up with a design that isn't pheasible.
 
 ### Time Based Estimations Are Flawed
-
 First of all, developers don't work full eight hours per day. This is quite self-explanatory, and most teams consider effective work to be six hours per day, but even this is inaccurate. In his book The Shallows: What The Internet Is Doing To Our Brins, Nichlas Karr explains how the advent of the internet, multi-tasking, and social media has changed how our brain works. 
 
 Since a lot of the applications we use are designed to be addictive.
@@ -94,8 +88,6 @@ On top of that:
 * Working from home poses new challenges -- like being interrupted by family members.
 
 It takes an average of about 25 minutes (23 minutes and 15 seconds, to be exact) to return to the original task after an interruption, according to Gloria Mark, who studies digital distraction at the University of California, Irvine. Multiple studies confirm this, so it's safe to say that the actual effective time spent coding is significantly less than six hours. 
-
-<img src="fibo.svg" style="width: 500px; float: right;" />
 
 When we do estimations, we need to consider relative ones. So a story point should not be defined in time but rather in relation to another user story. This way we can escape the pitfall of unreliable time-based estimations.
 

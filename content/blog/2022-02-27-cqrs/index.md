@@ -22,7 +22,6 @@ The adoption curve for microservices was similar: they were initially everywhere
 Dismissing CQRS out of hand would be a mistake however, as it does serve a purpose, albeit a very specific one. The purpose of this article is to give a birds-eye view of the pattern, encourage its use where it's suitable, and potentially dissuade developer teams from adopting it where it isn't. 
 
 ### Architecture
-
 Before CQRS we had CQS (Command Query Segregation) which is a pattern that can be attributed to Bertrand Mayer. You are probably using this pattern without even know you are -- in a nutshell it posits that asking a *question shouldn't change the answer*. This means you don't want a method to mutate your state and return a value at the same time.
 
 CQRS stands for Command Query Responsibility Segregation. It means that the read and write parts of the application are separated. Here are high-level schematics of the topologies of the two architectures, presented side by side.
@@ -73,7 +72,6 @@ Auditing is important when it comes to a wide variety of applications. You might
 If your application is using "event sourcing", then it's also customary to use CQRS.
 
 ### Materialized Views
-
 This isn't a new concept. It has been around in relational database systems for quite some time now. The idea behind it was always to precompute the result of queries in order to improve response time. Sure, adding indexes can go a long way in improving read performance (at the expense of write performance), but if you're reading the same data set again and agin, it makes sense to store it. In fact, adding views to your application might be one of the most efficient ways to improve performance.
 
 When we're dealing with cloud native applications / distributed transactions etc., things are a bit more complicated. There is still value in the concept, but we can't rely on our RDBMS system to do it for us -- we'll need to do it ourselves. A RDMS wil rely on its internal system of triggers -- we'll need a messaging system.

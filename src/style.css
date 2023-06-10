@@ -61,8 +61,13 @@
   box-sizing: border-box;
 }
 
+h1, h2, h3 {
+  line-height: 1.7;
+  margin: 0;
+}
+
 html {
-  line-height: 1.5;
+  line-height: 1.7;
   /* font-size: 13px; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -87,7 +92,7 @@ hr {
 
 /* Heading */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -107,13 +112,13 @@ h5,
 h6 {
   font-weight: var(--fontWeight-bold);
   color: var(--color-heading);
-}
+} */
 
-h1 {
+/* h1 {
   font-weight: var(--fontWeight-black);
   font-size: var(--fontSize-6);
   color: var(--color-heading-black);
-}
+} */
 
 h1 > a {
   color: inherit;
@@ -132,9 +137,9 @@ h6 > a {
 /* Prose */
 
 p {
-  line-height: 1.8;
-  --baseline-multiplier: 0.179;
-  --x-height-multiplier: 0.35;
+  margin: 0 0 0.5rem 0;
+  /* --baselinemultiplier: 0.179;
+  --x-height-multiplier: 0.35; */
   /* padding: var(--spacing-0); */
 }
 
@@ -234,7 +239,6 @@ a:focus {
   cursor: pointer;
   padding: 25px;
   margin-left: -25px;
-  line-height: 1.7;
   margin-right: -25px;
   box-sizing: content-box;
 }
