@@ -8,20 +8,17 @@ export default function Home() {
         <div
           style={{
             width: "830px",
-            backdropFilter: "blur(3px)",
-            backgroundColor: "rgba(255, 255, 255, 0.05)",
             padding: "35px",
-            borderRadius: "5px",
-            boxShadow:'0 0 35px 0 rgba(0, 0, 0, 0.1)'
+            borderRadius: "5px"          
           }}
         >
           <div style={{ color: "#555" }}>
-            <div>
+         
               <b style={{ fontSize: "70px" }}>
                 <span>florin</span>
                 <b style={{ color: "#fa0265" }}>toader</b>
               </b>
-            </div>
+
             <div id="lower">
               <div />
               <div

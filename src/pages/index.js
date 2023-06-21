@@ -35,12 +35,11 @@ export default function BlogIndex({ data, location }) {
           style={{
             margin: "130px auto 0 auto",
             width: "830px",
-            marginTop: "66vh",
+            marginTop: "50vh",
             backgroundColor: "white",
           }}
         >
           <br />
-          <article>
             <p>
               There is As great as the development experience for something like
               Svelte is, when you start out, nothing beats the frustration of a
@@ -52,8 +51,10 @@ export default function BlogIndex({ data, location }) {
               instead.
             </p>
 
-            {/* <h1>READING LIST</h1> */}
-          </article>
+          {/* <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '25px'}}>
+            <div style={{ background: 'red', width: '50px', height: '3px' }}></div>
+          </div> */}
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
             {posts.map(post => {
               const title = post.frontmatter.title || post.fields.slug

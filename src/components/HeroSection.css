@@ -1,12 +1,12 @@
 #header-container {
   right: 0;
   left: 0;
-  height: 67vh;  
+  height: 50vh;  
   top: 0;
   grid-template-columns: 1fr 1fr;
   color: white;
   position: fixed;
-  background-image: url('/img/back.jpg');  
+  background-image: url('/img/an_bk.jpg');  
   background-size: cover;
   background-position: bottom;
   z-index: -2;
@@ -22,7 +22,7 @@
   left: 0;
   right: 0;
   top: 0;
-  height: 66vh;
+  height: 50vh;
 }
 
 #lower {
@@ -36,14 +36,14 @@
   animation-fill-mode: forwards;
 }
 
-.trans {
+/* .trans {
   pointer-events: none;
   animation-duration: 2s;
   animation-name: fadeout;
   animation-fill-mode: forwards;
-}
+} */
 
-@keyframes fadeout {
+/* @keyframes fadeout {
   from {
     opacity: 1;
   }
@@ -61,7 +61,7 @@
   to {
     opacity: 1;
   }
-}
+} */
 
 .centered {
   display: flex;
