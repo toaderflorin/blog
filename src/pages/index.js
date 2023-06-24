@@ -1,11 +1,10 @@
-import React, { useRef } from 'react'
-import { graphql, navigate } from 'gatsby'
-import Home from '../components/HeroSection'
-import ArticleCard from '../components/ArticleCard'
+import React from 'react'
+import { graphql } from 'gatsby'
+import HeroSection from '../components/HeroSection'
+import Main from '../components/Main'
 
-export default function BlogIndex({ data, location }) {
+export default function Index({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
-  const headerRef = useRef(null)
 
   if (posts.length === 0) {
     return (
@@ -16,37 +15,10 @@ export default function BlogIndex({ data, location }) {
     )
   }
 
-  function navigateToPost(url) {
-    navigate(url)
-  }
-
   return (
     <div>
-      <div ref={headerRef}>
-        <Home />
-      </div>
-      <div
-        style={{
-          backgroundColor: 'white',
-          boxShadow: '0 0 20px 0 rgba(0, 0, 0, 0.3)'
-        }}>
-        <div
-          style={{
-            margin: '130px auto 0 auto',
-            width: '650px',
-            marginTop: '50vh',
-            backgroundColor: 'white'
-          }}>
-          <br />
-          <p style={{ fontSize: '11pt' }}></p>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '-10px' }}>
-            {posts.map((post) => {
-              return <ArticleCard post={post} />
-            })}
-          </div>
-        </div>
-      </div>
+      <HeroSection />
+      <Main posts={posts} />
     </div>
   )
 }

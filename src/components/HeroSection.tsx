@@ -28,7 +28,7 @@ export default function Home() {
                 Welcome to my professional abode on the internet.
               </div>
 
-              <div>
+              <div style={{ color: 'white' }}>
                 There is As great as the development experience for something like Svelte is, when you start out,
                 nothing beats the frustration of a missing library. You might love functional languages and think that
                 using Elixir for your next game changing product is awesome, until you find how hard it is to find

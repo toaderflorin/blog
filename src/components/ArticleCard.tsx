@@ -1,22 +1,21 @@
 import React from 'react'
 import './ArticleCard.css'
+import { navigate } from 'gatsby'
 
 type Props = {
   post: any
-  navigateToPost: any
 }
 
 export default function ArticleCard(props: Props) {
-  const { post, navigateToPost } = props
+  const { post } = props
   const title = post.frontmatter.title || post.fields.slug
 
+  function navigateToPost(url) {
+    navigate(url)
+  }
+
   return (
-    <article
-      key={post.fields.slug}
-      className="post-list-item"
-      itemScope
-      itemType="http://schema.org/Article"
-      onClick={() => navigateToPost(post.fields.slug)}>
+    <article key={post.fields.slug} className="post-list-item" onClick={() => navigateToPost(post.fields.slug)}>
       <header>
         <h2>
           <span itemProp="headline">{title}</span>
@@ -38,15 +37,7 @@ export default function ArticleCard(props: Props) {
           }}
           itemProp="description"
         />
-        <p
-          style={{
-            fontWeight: '600',
-            fontSize: '14.5px',
-            color: 'black',
-            marginTop: '5px'
-          }}>
-          Read more..
-        </p>
+        <p className="post-read-more">Read more...</p>
       </section>
     </article>
   )

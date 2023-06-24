@@ -20,3 +20,10 @@
 .post-list-item header {
   font-size: 16px;
 }
+
+.post-read-more {
+  font-weight: 600;
+  font-size: 14.5px;
+  color: black;
+  margin-top: 5px;
+}
