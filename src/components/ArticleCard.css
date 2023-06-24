@@ -1,0 +1,22 @@
+.post-list-item {  
+  cursor: pointer;
+  padding: 25px;
+  margin-left: -25px;
+  margin-right: -25px;
+  box-sizing: content-box;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.post-list-item:hover {
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
+  transition: 0.25s;
+}
+
+.post-list-item p {
+  margin-bottom: var(--spacing-0);
+}
+
+.post-list-item header {
+  font-size: 16px;
+}

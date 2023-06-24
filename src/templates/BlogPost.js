@@ -1,7 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import TagMain from "../components/TagMain"
+import Layout from "../components/layout"
 import Header from "../components/Header"
 import "./BlogPost.css"
 
@@ -9,7 +8,6 @@ export default function BlogPostTemplate(props) {
   const { data, location } = props
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  // const { previous, next } = data
 
   return (
     <Layout location={location} title={siteTitle}>

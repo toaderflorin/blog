@@ -1,6 +1,7 @@
-import React, { useRef } from "react"
-import { graphql, navigate } from "gatsby"
-import Home from "../components/HeroSection"
+import React, { useRef } from 'react'
+import { graphql, navigate } from 'gatsby'
+import Home from '../components/HeroSection'
+import ArticleCard from '../components/ArticleCard'
 
 export default function BlogIndex({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
@@ -9,9 +10,8 @@ export default function BlogIndex({ data, location }) {
   if (posts.length === 0) {
     return (
       <div>
-        No blog posts found. Add markdown posts to "content/blog" (or the
-        directory you specified for the "gatsby-source-filesystem" plugin in
-        gatsby-config.js).
+        No blog posts found. Add markdown posts to "content/blog" (or the directory you specified for the
+        "gatsby-source-filesystem" plugin in gatsby-config.js).
       </div>
     )
   }
@@ -27,83 +27,22 @@ export default function BlogIndex({ data, location }) {
       </div>
       <div
         style={{
-          backgroundColor: "white",
-          boxShadow: "0 0 20px 0 rgba(0, 0, 0, 0.3)",
-        }}
-      >
+          backgroundColor: 'white',
+          boxShadow: '0 0 20px 0 rgba(0, 0, 0, 0.3)'
+        }}>
         <div
           style={{
-            margin: "130px auto 0 auto",
-            width: "830px",
-            marginTop: "50vh",
-            backgroundColor: "white",
-          }}
-        >
+            margin: '130px auto 0 auto',
+            width: '650px',
+            marginTop: '50vh',
+            backgroundColor: 'white'
+          }}>
           <br />
-            <p>
-              There is As great as the development experience for something like
-              Svelte is, when you start out, nothing beats the frustration of a
-              missing library. You might love functional languages and think
-              that using Elixir for your next game changing product is awesome,
-              until you find how hard it is to find experienced front-end
-              developers for it, that can jump right into the code at a moment's
-              notice. We've all seen it. Don't be dogmatic, be practical
-              instead.
-            </p>
+          <p style={{ fontSize: '11pt' }}></p>
 
-          {/* <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '25px'}}>
-            <div style={{ background: 'red', width: '50px', height: '3px' }}></div>
-          </div> */}
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {posts.map(post => {
-              const title = post.frontmatter.title || post.fields.slug
-
-              return (
-                <article
-                  key={post.fields.slug}
-                  className="post-list-item"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                  onClick={() => navigateToPost(post.fields.slug)}
-                >
-                  <header>
-                    <h2>
-                      <span itemProp="headline">{title}</span>
-                    </h2>
-                    <div
-                      style={{
-                        fontSize: "13.5px",
-                        color: "#555",
-                        marginTop: "5px",
-                      }}
-                    >
-                      {post.frontmatter.date}
-                    </div>
-                  </header>
-                  <section style={{ padding: 0, marginTop: "10px" }}>
-                    <img
-                      src={`${post.fields.slug}/${post.frontmatter.icon}`}
-                      className="article-icon"
-                    />
-                    <span
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                    />
-                    <p
-                      style={{
-                        fontWeight: "500",
-                        fontSize: "14px",
-                        color: "black",
-                      }}
-                    >
-                      Read more..
-                    </p>
-                  </section>
-                </article>
-              )
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '-10px' }}>
+            {posts.map((post) => {
+              return <ArticleCard post={post} />
             })}
           </div>
         </div>

@@ -46,7 +46,7 @@ According to Wikipedia:
 
 <i>The Dunning–Kruger effect is a cognitive bias whereby people with low ability, expertise, or experience regarding a certain type of a task or area of knowledge tend to overestimate their ability or knowledge. Some researchers also include in their definition the opposite effect for high performers: their tendency to underestimate their skills. The Dunning–Kruger effect is usually measured by comparing self-assessment with objective performance.</i>
 
-<img src="dunning.svg" class="img" />
+<!-- <img src="dunning.svg" class="img" /> -->
 
 We tend to be overly optimistic when we don't know enough about a certain subject. Also when doing estimations, even if devs estimate in story points, they think in time and revert back to storypoints -- and they usually assume the best outcome. However, in real life unexpected things happen: 
 

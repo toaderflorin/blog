@@ -30,11 +30,11 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.rex {
+/* .rex {
   animation-duration: 0.8s;
   animation-name: fadein;
   animation-fill-mode: forwards;
-}
+} */
 
 /* .trans {
   pointer-events: none;
