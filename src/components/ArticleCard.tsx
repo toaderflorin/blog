@@ -17,18 +17,17 @@ export default function ArticleCard(props: Props) {
   return (
     <article key={post.fields.slug} className="post-list-item" onClick={() => navigateToPost(post.fields.slug)}>
       <header>
-        <h2>
-          <span itemProp="headline">{title}</span>
-        </h2>
-        <div
+        <span>{title}</span>
+        {/* <div
           style={{
-            fontSize: '13.5px',
-            color: '#555',
+            fontSize: '13px',
+            color: '#595959',
             marginTop: '5px'
           }}>
           {post.frontmatter.date}
-        </div>
+        </div> */}
       </header>
+
       <section style={{ padding: 0, marginTop: '10px' }}>
         <img src={`${post.fields.slug}/${post.frontmatter.icon}`} className="article-icon" />
         <span

@@ -21,10 +21,11 @@ export default function Main(props: Props) {
           marginTop: '50vh',
           backgroundColor: 'white'
         }}>
+
         <br />
         <p style={{ fontSize: '11pt' }}></p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '-10px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
           {posts.map((post) => {
             return <ArticleCard post={post} />
           })}

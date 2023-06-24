@@ -4,8 +4,8 @@
   margin-left: -25px;
   margin-right: -25px;
   box-sizing: content-box;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 13.75px;
+  line-height: 1.65;
 }
 
 .post-list-item:hover {
@@ -13,17 +13,9 @@
   transition: 0.25s;
 }
 
-.post-list-item p {
-  margin-bottom: var(--spacing-0);
-}
-
-.post-list-item header {
-  font-size: 16px;
-}
-
 .post-read-more {
   font-weight: 600;
-  font-size: 14.5px;
+  font-size: 13px;
   color: black;
   margin-top: 5px;
 }
