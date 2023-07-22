@@ -13,6 +13,9 @@ export default function Layout(props) {
       <main>
         {children}
       </main>
+      <footer style={{ backgroundColor: '#eee'}}>
+        Blaakjskas
+      </footer>
     </div>
   )
 }

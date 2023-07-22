@@ -31,6 +31,18 @@
   src: url(/fonts/SuisseIntl-Regular.ttf);
 }
 
+:root {
+  --size-none: 0;
+  --size-100: 1px;
+  --size-200: 2px;
+  --size-300: 3px;
+  --size-400: 5px;
+  --size-500: 8px;
+  --size-600: 12px;
+  --size-700: 17px;
+  --size-800: 23px;
+}
+
 *,
 :after,
 :before {
@@ -48,14 +60,16 @@ h3 {
 }
 
 html {
-  line-height: 1.7;  
+  line-height: 1.8;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-  font-family: instrument, sans-serif, serif;
-  font-size: 12pt;
+  font-family: suisse, sans-serif, serif;
+  font-size: 11pt;
   color: #333;
 }
 
