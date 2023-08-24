@@ -5,35 +5,8 @@
 }
 
 @font-face {
-  font-family: poppins;
-  src: url(/fonts/Poppins-Light.ttf);
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: abc-diatype;
-  src: url(/fonts/abc-diatype-regular.otf);
-  font-weight: normal;
-}
-
-@font-face {
   font-family: instrument;
   src: url(/fonts/Instrument.ttf);
-}
-
-@font-face {
-  font-family: tt;
-  src: url(/fonts/TTHoves-Regular.ttf);
-}
-
-@font-face {
-  font-family: questrial;
-  src: url(/fonts/Questrial-Regular.ttf);
-}
-
-@font-face {
-  font-family: suisse;
-  src: url(/fonts/SuisseIntl-Regular.ttf);
 }
 
 :root {
@@ -48,8 +21,6 @@
   --size-800: 23px;
   --color-primary: #ff164c;
 }
-
-
 
 *,
 :after,
