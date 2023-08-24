@@ -22,6 +22,11 @@
 }
 
 @font-face {
+  font-family: tt;
+  src: url(/fonts/TTHoves-Regular.ttf);
+}
+
+@font-face {
   font-family: questrial;
   src: url(/fonts/Questrial-Regular.ttf);
 }
@@ -41,12 +46,16 @@
   --size-600: 12px;
   --size-700: 17px;
   --size-800: 23px;
+  --color-primary: #ff164c;
 }
+
+
 
 *,
 :after,
 :before {
   box-sizing: border-box;
+  margin: 0;
 }
 
 h1,
@@ -60,7 +69,7 @@ h3 {
 }
 
 html {
-  line-height: 1.8;  
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
@@ -68,9 +77,10 @@ html {
 }
 
 body {
-  font-family: suisse, sans-serif, serif;
+  font-family: instrument, sans-serif, serif;
   font-size: 11pt;
-  color: #333;
+  color: #222;
+  line-height: 1.65;  
 }
 
 h1>a,
@@ -89,6 +99,7 @@ p {
 
 a {
   text-decoration: none;
+  color: var(--color-primary);
 }
 
 .img {
@@ -107,3 +118,4 @@ a {
   margin-right: 8px;
   margin-top: 6px;
 }
+ 

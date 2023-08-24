@@ -3,8 +3,9 @@ import './HeroSection.css'
 
 export default function Home() {
   return (
-    <div id="header-container">
-      <div id="header">
+    <>
+      <div id="header-container">
+        {/* <div id="header">
         <div
           style={{
             width: '830px',
@@ -14,19 +15,19 @@ export default function Home() {
           <div style={{ color: '#555' }}>
             <b style={{ fontSize: '70px' }}>
               <span>florin</span>
-              <b style={{ color: '#ff3355' }}>toader</b>
+              <b style={{ color: '#ff164c' }}>toader</b>
             </b>
 
             <div id="lower">
-              <div />
               <div
                 style={{
-                  borderLeft: '3px solid #ff2244',
+                  borderLeft: '3px solid #ff164c',
                   padding: '0 20px',
-                  color: 'black'
+                  color: 'white'
                 }}>
                 Welcome to my professional abode on the internet.
               </div>
+              <div />
 
               <div style={{ color: 'white' }}>
                 There is As great as the development experience for something like Svelte is, when you start out,
@@ -38,7 +39,25 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div> */}
       </div>
-    </div>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '1000px', height: '700px', background: 'linear-gradient(180deg, #D9D9D9 0%, rgba(217, 217, 217, 0.00) 100%)' }}>
+          <div>
+          </div>
+        </div>
+      </div>
+{/* background: linear-gradient(180deg, #D9D9D9 0%, rgba(217, 217, 217, 0.00) 100%);
+Colors
+Hex
+Linear gradient
+Export
+Copy
+⌘C
+Screenreader support for the board is currently disabled. To enable it via Accessibility settings, press ⌘/, type Accessibility Settings, and press Enter. To see available keyboard shortcuts, enter ⌃⇧Question mark . */}
+
+    </>
+    // <div style={{ width: '1000px', backgroundColor: 'white', height: '500px' }}>
+    // </div>
   )
 }
