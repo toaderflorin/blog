@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Header from '../components/Header'
+import Header from '../components/header/Header'
 import './BlogPost.css'
 
 export default function BlogPostTemplate(props) {

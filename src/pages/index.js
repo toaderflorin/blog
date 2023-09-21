@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import HeroSection from '../components/HeroSection'
+import HeroSection from '../components/header/HeroSection'
 import Main from '../components/Main'
 
 export default function Index({ data, location }) {
