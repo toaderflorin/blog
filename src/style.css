@@ -9,6 +9,12 @@
   src: url(/fonts/Instrument.ttf);
 }
 
+@font-face {
+  font-family: matter;
+  src: url(/fonts/Matter-Light.ttf);
+}
+
+
 :root {
   --size-none: 0;
   --size-100: 1px;
@@ -19,7 +25,7 @@
   --size-600: 12px;
   --size-700: 17px;
   --size-800: 23px;
-  --color-primary: #ff164c;
+  --color-primary:#ff164c;
 }
 
 *,
@@ -40,9 +46,6 @@ h3 {
 }
 
 html {
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin: 0;
 }
@@ -51,7 +54,7 @@ body {
   font-family: instrument, sans-serif, serif;
   font-size: 11pt;
   color: #222;
-  line-height: 1.65;  
+  line-height: 1.7;  
 }
 
 h1>a,

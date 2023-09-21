@@ -17,15 +17,15 @@ export default function ArticleCard(props: Props) {
   return (
     <article key={post.fields.slug} className="post-list-item" onClick={() => navigateToPost(post.fields.slug)}>
       <header>
-        <span style={{ fontSize: '15px', fontWeight: 'bold' }}>{title}</span>
-        {/* <div
+        <span style={{ fontSize: '17px', fontWeight: 'bold' }}>{title}</span>
+        <div
           style={{
             fontSize: '13px',
-            color: '#595959',
+            color: '#777',
             marginTop: '5px'
           }}>
           {post.frontmatter.date}
-        </div> */}
+        </div>
       </header>
 
       <section style={{ padding: 0, marginTop: '10px' }}>

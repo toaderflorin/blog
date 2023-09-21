@@ -1,28 +1,33 @@
 #header-container {
   right: 0;
   left: 0;
-  height: 50vh;
+  height: 100vh;
   top: 0;
   grid-template-columns: 1fr 1fr;
   color: white;
   position: fixed;
-  background-image: url('/img/bw.jpg');
+  background-image: url('/img/background.jpg');
   background-size: cover;
   background-position: bottom;
   z-index: -2;
 }
 
-#header {
+#header-container-card {
+  position: relative;
   color: white;
   padding: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
   border-radius: 5px;
-  left: 0;
-  right: 0;
-  top: 0;
+  margin: auto; 
+  margin-top: 10px;
+  background-color: #333;
   height: 50vh;
+  box-shadow: 10px 5px 5px red;
+  width: 640px;
+  z-index: 5;
 }
 
 #lower {
@@ -31,6 +36,7 @@
 }
 
 .test {
+   
   margin-top: 30px;
   width: 1200px;
   height: 550px;
