@@ -1,5 +1,5 @@
 import React from 'react'
-import ArticleCard from '../components/ArticleCard'
+import ArticleCard from './ArticleCard'
 import './Main.css'
 
 type Props = {

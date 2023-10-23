@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import HeroSection from '../components/header/HeroSection'
-import Main from '../components/Main'
+import Main from '../components/main/Main'
 
 export default function Index({ data, location }) {
   const posts = data.allMarkdownRemark.nodes

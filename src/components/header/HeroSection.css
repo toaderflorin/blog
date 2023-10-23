@@ -6,95 +6,16 @@
   grid-template-columns: 1fr 1fr;
   color: white;
   position: fixed;
-  background-image: url('/img/background.jpg');
+  background-image: url('/img/back.jpg');
   background-size: cover;
   background-position: bottom;
   z-index: -2;
-}
-
-#header-container-card {
-  position: relative;
-  color: white;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
-  border-radius: 5px;
-  margin: auto; 
-  margin-top: 10px;
-  background-color: #333;
-  height: 50vh;
-  box-shadow: 0 0 10px 10px red;
-  width: 640px;
-  z-index: 5;
 }
 
 #lower {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-
-.test {
-   
-  margin-top: 30px;
-  width: 1200px;
-  height: 550px;
-  background: radial-gradient(227.51% 141.42% at 0% -0.00%, #676767 0%, #191B21 100%);
-  opacity: 0.97;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* {
-            marginTop: '30px',
-            width: '1200px',
-            height: '550px',
-            background: 'radial-gradient(227.51% 141.42% at 0% -0.00%, #676767 0%, #191B21 100%)',
-            opacity: 0.95,
-            borderRadius: '3px',
-            // backdropFilter: 'blur(4px)',
-            backdropFilter: 'blur(14px)',
-            boxShadow: '0px 4px 20px 0px rgba(0, 0, 0, 0.5)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          } */
-/* .rex {
-  animation-duration: 0.8s;
-  animation-name: fadein;
-  animation-fill-mode: forwards;
-} */
-
-/* .trans {
-  pointer-events: none;
-  animation-duration: 2s;
-  animation-name: fadeout;
-  animation-fill-mode: forwards;
-} */
-
-/* @keyframes fadeout {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-} */
 
 .centered {
   display: flex;

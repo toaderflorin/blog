@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
+import Layout from '../components/main/Layout'
 
 export default function NotFoundPage({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
