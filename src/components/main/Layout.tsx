@@ -10,9 +10,9 @@ export default function Layout(props) {
       <main>
         {children}
       </main>
-      <footer style={{ backgroundColor: '#eee'}}>
+      {/* <footer style={{ backgroundColor: '#eee'}}>
         Blaakjskas
-      </footer>
+      </footer> */}
     </div>
   )
 }

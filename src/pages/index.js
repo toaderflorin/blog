@@ -7,7 +7,7 @@ export default function Index({ data, location }) {
   const posts = data.allMarkdownRemark.nodes
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <HeroSection />
       <Main posts={posts} />
     </div>
