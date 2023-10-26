@@ -1,15 +1,30 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import HeroSection from '../components/header/HeroSection'
 import Main from '../components/main/Main'
+import HeaderNew from '../components/HeaderNew'
 
-export default function Index({ data, location }) {
+export default function Index({ data }) {
   const posts = data.allMarkdownRemark.nodes
-
+  
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <HeroSection />
-      <Main posts={posts} />
+    <div style={{ display: 'flex', flexDirection: 'column', background: 'url(/img/an_bk.jpg)', backgroundAttachment: 'fixed' }}>
+      <div
+        style={{
+          height: '650px',
+          width: '1200px',
+          marginTop: '40px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          boxShadow: '0 0 35px 0 rgba(0,0, 0, 0.6)',
+          backdropFilter: 'blur(5px)',
+          zIndex: 100,
+          borderRadius: '5px'
+        }}>
+        <HeaderNew />
+      </div>
+      <div style={{ marginTop: '-50px' }}>
+        <Main posts={posts} />
+      </div>
     </div>
   )
 }

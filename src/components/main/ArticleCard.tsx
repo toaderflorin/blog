@@ -17,7 +17,7 @@ export default function ArticleCard(props: Props) {
   return (
     <article key={post.fields.slug} className="post-list-item" onClick={() => navigateToPost(post.fields.slug)}>
       <header>
-        <span style={{ fontSize: '17px', fontWeight: 'bold' }}>{title}</span>
+        <span style={{ fontSize: '18px', fontWeight: 'bold' }}>{title}</span>
         <div
           style={{
             fontSize: '13px',
