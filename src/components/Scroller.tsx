@@ -1,8 +1,9 @@
 import React from 'react'
+import './Scroller'
 
 export default function Scroller() {
   return (
-    <div>
+    <div id="scroller">
     </div>
   )
 }

@@ -7,11 +7,10 @@ export default function HeaderNew() {
         height: '100%',
         width: '100%',
         display: 'flex',
-        background: 'linear-gradient(-45deg, #000, #666)',
+        background: 'linear-gradient(-45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.93))',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        opacity: 0.93,
         borderRadius: '5px'
       }}>
       <div

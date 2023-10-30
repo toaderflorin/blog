@@ -39,6 +39,11 @@
   src: url(/fonts/HelveticaNowDisplay-Regular.otf);
 }
 
+@font-face {
+  font-family: balto;
+  src: url(/fonts/Balto-Book.ttf);
+}
+
 
 :root {
   --size-none: 0;
@@ -72,14 +77,16 @@ html {
 }
 
 body {
-  font-family: helv, serif;
-  font-size: 11pt;
-  color: #444;
-  line-height: 1.7;  
+  font-family: balto, serif;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.55;  
 }
+
 h1 {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
+
 h3 {
   font-size: 1.3rem;
   margin-bottom: -1rem;  
