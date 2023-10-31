@@ -7,7 +7,7 @@ export default function HeaderNew() {
         height: '100%',
         width: '100%',
         display: 'flex',
-        background: 'linear-gradient(-45deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.93))',
+        background: 'linear-gradient(-45deg,  #111, #555)',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
@@ -21,6 +21,8 @@ export default function HeaderNew() {
           flexDirection: 'column',
           alignItems: 'center'
         }}>
+
+        <div style={{ background: 'url(/img/fib.png)', width: '72px', height: '72px', backgroundSize: 'contain', borderRadius: '10px'  }}></div>
         <div style={{ fontSize: '40px', color: '#ff164c' }}>Florin Toader</div>
         <div>Welcome to my professional abode on the internet.</div>
       </div>

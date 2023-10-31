@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Main from '../components/main/Main'
+import Main from '../components/Main'
 import HeaderNew from '../components/HeaderNew'
 
 export default function Index({ data }) {
@@ -17,8 +17,8 @@ export default function Index({ data }) {
         }}>
         <div
           style={{
-            height: '650px',
-            width: '1200px',
+            height: '600px',
+            width: '1000px',
             marginTop: '40px',
             marginLeft: 'auto',
             marginRight: 'auto',
@@ -33,8 +33,8 @@ export default function Index({ data }) {
           <Main posts={posts} />
         </div>
       </div>
-    <div style={{ position: 'fixed', height: '3px', left: 0, right: 0, top: 0, zIndex: 10000, background: 'red' }}>
-    </div>      
+      <div
+        style={{ position: 'fixed', height: '3px', left: 0, right: 0, top: 0, zIndex: 10000, background: 'red' }}></div>
     </div>
   )
 }

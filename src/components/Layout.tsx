@@ -9,10 +9,7 @@ export default function Layout(props) {
       <header className="global-header">{header}</header>
       <main>
         {children}
-      </main>
-      {/* <footer style={{ backgroundColor: '#eee'}}>
-        Blaakjskas
-      </footer> */}
+      </main>      
     </div>
   )
 }
