@@ -1,19 +1,21 @@
-import React from 'react'
-import ArticleCard from './ArticleCard'
+import React, { useEffect } from 'react'
+import ArticleCard, { Post } from './ArticleCard'
 
 type Props = {
-  posts: any
+  posts: Post[]
 }
 
 export default function Main(props: Props) {
   const { posts } = props
+  
+  useEffect(() => {}, [])
 
   return (
-    <div className="relative bg-white">    
-      <div id="main-inner" className="w-[650px] mx-auto">
+    <div className="relative bg-white pt-12">
+      <div className="w-[650px] mx-auto">
         <br />
 
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div>
           {posts.map((post) => {
             return <ArticleCard post={post} />
           })}
