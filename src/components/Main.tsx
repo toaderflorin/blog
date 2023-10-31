@@ -1,6 +1,5 @@
 import React from 'react'
 import ArticleCard from './ArticleCard'
-import './Main.css'
 
 type Props = {
   posts: any
@@ -10,8 +9,8 @@ export default function Main(props: Props) {
   const { posts } = props
 
   return (
-    <div id="main">    
-      <div id="main-inner">
+    <div className="relative bg-white">    
+      <div id="main-inner" className="w-[650px] mx-auto">
         <br />
 
         <div style={{ display: 'flex', flexDirection: 'column' }}>

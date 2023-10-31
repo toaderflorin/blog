@@ -1,5 +1,5 @@
 import React from 'react'
-import './ArticleCard.css'
+// import './ArticleCard.css'
 import { navigate } from 'gatsby'
 
 type Props = {
@@ -15,15 +15,10 @@ export default function ArticleCard(props: Props) {
   }
 
   return (
-    <article key={post.fields.slug} className="post-list-item" onClick={() => navigateToPost(post.fields.slug)}>
+    <article key={post.fields.slug} className="cursor-pointer p-5 hover:drop-shadow-2xl" onClick={() => navigateToPost(post.fields.slug)}>
       <header>
-        <span style={{ fontSize: '20px', fontWeight: 'bold' }}>{title}</span>
-        <div
-          style={{
-            fontSize: '13px',
-            color: '#777',
-            marginTop: '5px'
-          }}>
+        <span className="text-xl">{title}</span>
+        <div>
           {post.frontmatter.date}
         </div>
       </header>
