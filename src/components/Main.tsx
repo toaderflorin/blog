@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import ArticleCard, { Post } from './ArticleCard'
 
 type Props = {
@@ -8,14 +8,10 @@ type Props = {
 export default function Main(props: Props) {
   const { posts } = props
   
-  useEffect(() => {}, [])
-
   return (
     <div className="relative bg-white pt-12">
       <div className="w-[650px] mx-auto">
-        <br />
-
-        <div>
+        <div className="pt-12">
           {posts.map((post) => {
             return <ArticleCard post={post} />
           })}
