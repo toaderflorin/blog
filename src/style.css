@@ -89,6 +89,10 @@ pre.shiki {
   margin-right: -17px;
 }
 
+code {
+ font-size:13px;
+}
+
 body {
   font-family: balto, serif;
   font-size: 15px;

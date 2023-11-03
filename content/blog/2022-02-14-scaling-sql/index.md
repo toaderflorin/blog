@@ -20,18 +20,18 @@ There are several ways to set up database scale-out.
 
 Since fairly straight forward to implement vertical scale-out, this approach will very likely the first attempt at improving performance to be implemented, but more often than not it's just a temporary solution because just like with scaling up there quickly comes a point of diminishing returns. It can however provide some temporary relief while implementing a sharding approach.
 
-## Sharding Strategies
+### Sharding Strategies
 Probably the most ubiquitous sharding strategy is to use a tenant key and one of the simplest sharding strategies is to have one database per user. That's however not tenable if you have hundreds of thousands of users because it would mean one VM per user. 
 
 * **Range.** Sharding by range is probably the most simple way to implement horizontal partitioning and it means that each node in our cluster holds data associated with a certain range, for example data related to users. One drawback of that approach is that it doesn't split data evenly.
- 
+
 * **Consistent hashing.** An approach that was developed to solve the problems associated with sharding by range is to use some form of hash as the key and there are several approaches to ensuring this repartition is uniform, hence the name *consistent*. The problem with consistent caching is that while it does ensure you don't have hotspots -- the data might be spread evenly but *utilization* (or reads) of that data isn't. Consistent hashing also makes the rebalancing of shards quite difficult.
 
 * **Using a keymap.** As the name suggests, this approach involves maintaining a list of keys-to-nodes mappings and it usually requires a different machine/database. Before querying data on a specific machine in the cluster, we first need to query the map, so this can add additional overhead.
 
 We'll mostly be looking at this approach from now on.
 
-## A Real World Example
+### A Real World Example
 Let's imagine we're building a social media application where users can create posts on their profile and comment on other users' posts. The most natural strategy for splitting our data would be to do it by how that particular data is related to a user. The database would look similar to this.
 
 <img src="diag1.png" class="img" />
@@ -46,7 +46,7 @@ Almost always sharding means we need to denormalize our data structure, so we'll
 
 A typical case of duplication is catalog data (reference tables) which needs to be replicated across nodes. As an example, when users create their account, they can select a residence country and we would like to enforce referential integrity in the database via an FK constraint to a table containing a list of countries and if we want to avoid multi shard queries, this catalog must be on every node. Which means extra complexity.
 
-## Multi Shard Queries
+### Multi Shard Queries
 Regardless of how you're structuring your data, there's probably no escaping multi shard queries. To explain why here's what a typical feed from [500px]() looks like:
 
 <img src="500px.png" class="img" />
@@ -61,7 +61,7 @@ While we can show a user's timeline by querying just one shard, we can't do that
 
 What happens if the data for one user is too big for one node? In that case, our sharding key would be a combination of the *user-id* and the *post-id*.
 
-## Using A Mixed Approach
+### Using A Mixed Approach
 So far, projecting our data across the user dimension worked just fine, but what if we have a more complex system where this isn't as straightforward? Let's say we introduce one additional complication, that of social *groups* where users can post.
 
 <img src="diag3.png" class="img" />
