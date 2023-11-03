@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
+import Scroller from '../components/Scroller'
 
 export default function BlogPostTemplate(props) {
   const { data, location } = props
@@ -18,6 +19,7 @@ export default function BlogPostTemplate(props) {
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
       </article>
+      <Scroller />
     </Layout>
   )
 }

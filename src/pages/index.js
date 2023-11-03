@@ -9,7 +9,7 @@ export default function Index({ data }) {
 
   return (
     <div>
-      <div className="flex flex-col bg-[url(/img/an_bk.jpg)] bg-fixed bg-cover">
+      <div className="flex flex-col bg-[url(/img/an_bk.jpg)] bg-fixed bg-cover" style={{ backgroundPosition: 'bottom'}}>
         <div className="w-[1000px] h-[600px] mt-[40px] mx-auto rounded-sm z-50 shadow-2xl blur-md">
           <div className="h-[100%]">
             <Hero />

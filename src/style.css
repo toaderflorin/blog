@@ -45,8 +45,14 @@
 }
 
 @font-face {
+  font-family: balto;
+  font-weight: bold;
+  src: url(/fonts/Balto-Bold.woff2);
+}
+
+@font-face {
   font-family: neue;
-  src: url(/fonts/NeueHaasDisplayRoman.ttf);
+  src: url(/fonts/Balto-Bold.woff2);
 }
 :root {
   --size-none: 0;
