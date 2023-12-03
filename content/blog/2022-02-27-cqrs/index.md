@@ -15,7 +15,7 @@ CQRS has been popular for quite a few years (more than a decade old at this poin
 
 The adoption curve for microservices was similar: they were initially everywhere, then there was a backlash against the approach, and eventually teams began using them more judiciously. This pattern is typical for many new frameworks as well:
 
-* **Phase 1:** Hey, look, a new shinny toy is out -- I want to play with it.
+* **Phase 1:** Hey, look, a new shinny toy is out--I want to play with it.
 * **Phase 2:** OK, this isn't really what I expected, it's really bad.
 * **Phase 3:** Maybe we shouldn't have used it for everything, but it does have a place for certain usecases.
 

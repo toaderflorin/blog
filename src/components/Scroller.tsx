@@ -26,4 +26,3 @@ export default function Scroller() {
     <div id="scroller" className="fixed h-[3px] left-0 top-0 bg-[color:var(--color-primary)]"></div>
   )
 }
-

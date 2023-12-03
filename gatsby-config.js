@@ -41,7 +41,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-shiki`,
             options: {
-              theme: 'github-light'
+              theme: 'material-palenight'
             }
           },
           `gatsby-plugin-postcss`,
