@@ -2,9 +2,9 @@
 layout: post
 title:  "Modular Monoliths"
 date:   2024-01-06 09:39:37 +0300
-description: "Gamification is the process of applying game-like elements and mechanics to non-game contexts to enhance user engagement, motivation, and overall experience. It involves incorporating game design elements such as points, badges, leaderboards, challenges, and rewards into non-game activities, such as marketing campaigns, educational programs, workplace training, and even daily tasks. The goal of gamification is to tap into the natural human desire for challenge, competition, and social interaction that we experience when playing games. 
+description: "First, when creating a new application, should you start off with a microservice architecture? Well, the prevailing wisdom is no, because there is significant cost associated with maintaining, deploying, hosting., multiple microservices.
 "
-icon: "opera-icon.png"
+icon: "modular.jpg"
 categories: 
 
 ---
@@ -46,25 +46,32 @@ Let's say we have an online store that sells mugs. We need to support recommenda
 ## A Case Study
 
 Let's define a bunch of products:
-* Product
-* ProductCategory
-* User
-* ProductReview
-* UserAddress
+* *Product*
+* *ProductCategory*
+* *User*
+* *ProductReview*
+* *UserAddress*
 
 So far, so good. It goes as follows: 
 
-We need to identify some modules:
+We're keeping it simple. We need to look at where the boundaries intersect. Admins can add items of the catalog. 
+
+The module search will intersect with login, because we are using the user id. The 
+
+<img src="schema.png" class="img" />
+
+## Breaking The Monolith
+
+Let's do a mental exercise. Let's think what would be needed in order to break this monolith. We would need to identify a set of domain boundaries and 
 
 * Logging in.
 * Search and product details.
 * Payment.
 * Catalog.
 
-We're keeping it simple. We need to look at where the boundaries intersect.
+In order to separate them into separate modules, we would need to remove the FK constraints.
 
-Admins can add items of the catalog. 
+<img src="schema.png" class="img" />
 
-The module search will intersect with login, because we are using the user id. The 
-
+One idea to achieve coupling is to break the monolith.
 

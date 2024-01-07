@@ -4,7 +4,7 @@ title:  "Gamification Leads To People Gaming The System"
 date:   2024-01-01 09:39:37 +0300
 description: "Gamification is the process of applying game-like elements and mechanics to non-game contexts to enhance user engagement, motivation, and overall experience. It involves incorporating game design elements such as points, badges, leaderboards, challenges, and rewards into non-game activities, such as marketing campaigns, educational programs, workplace training, and even daily tasks. The goal of gamification is to tap into the natural human desire for challenge, competition, and social interaction that we experience when playing games. 
 "
-icon: "opera-icon.png"
+icon: "controller.png"
 categories: 
 
 ---
@@ -21,13 +21,7 @@ It can lead to people trying to game the system, which in turn can lead to resen
 
 ## Chasing (Story) Points
 
-Imagine an NBA team. Not all players have the same role. Now imagine that all players are evaluated based on the number of points they score. What will happen is instead of the players working as a team, they will compete for the ball between themselves, as well as against the other team.
-
-Here's another example: in an MMA fight, fighters are scored on a round by round basis on a 10 must point ranking system. 
-
-<img src="interview.jpg" class="img" />
-
-In hid infamous title defense against Demian Maia, the Anderson Silva used a simple strategy. Knowing that Maya is a Brazilian Jiu Jitsu phenom, he tried to avoid getting into close contact at all costs, simply resorting to a strategy where he would pepper him with shots from 
+Imagine an NBA team. Not all players have the same role. Now imagine that all players are evaluated based on the number of points they score. What will happen is instead of the players working as a team, they will compete for the ball between themselves, as well as against the other team. In hid infamous title defense against Demian Maia, the Anderson Silva used a simple strategy. Knowing that Maya is a Brazilian Jiu Jitsu phenom, he tried to avoid getting into close contact at all costs, simply resorting to a strategy where he would pepper him with shots from 
 
 *In fact, he did the bare minimum to win the fight and retain his title.*
 

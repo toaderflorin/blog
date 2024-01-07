@@ -6,7 +6,7 @@ description: "One of the tasks of a senior developer is to introduce architectur
 And if there are multiple microservices involved, which all use different approaches, it can be confusing.
 Some older microservices might use MVC, in a Web API context. The newer ones might use minimal APIs. A select few might do CQRS. 
 "
-icon: "opera-icon.png"
+icon: "ar.png"
 categories: 
 
 ---
@@ -63,8 +63,6 @@ Notice that the lower level layer are agnostic to how they are being used.
 This is why building things using components is so important. 
 
 ## Classic 3-tier
-
-
 
 And there you have it.
 

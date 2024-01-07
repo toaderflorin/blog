@@ -3,7 +3,7 @@ layout: post
 title:  "Code Entropy"
 date:   2023-05-30 09:39:37 +0300
 description: "Your apartment gets messier, not cleaner, without you putting in the effort. Your hard drive gets cluttered and defragmented. Objects like your phone get dings on them, they don’t get shiner and smoother. Flowers whither away and die. Yes, it happens to code."
-icon: "opera-icon.png"
+icon: "ab.jpg"
 categories: 
 
 ---
@@ -35,7 +35,6 @@ In fact we expect that it will eventually disappear even if you don't touch the 
 The second law of thermodynamics states that the total entropy of an isolated system always increases over time, where entropy is a measure of disorder or randomness in a system. The second law of thermodynamics isn't really a law, like the 2nd law of thermodynamics. It's probabilistic in nature. 
 
 Yes, it happens to code.
-
 
 ### The Red Queen
 
