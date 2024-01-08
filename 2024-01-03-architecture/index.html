@@ -10,22 +10,20 @@ Some older microservices might use MVC, in a Web API context. The newer ones mig
 <li>A graphics card.</li>
 <li>Memory chips.</li>
 </ul>
-<img src="moth.jpg" class="img" />
-<p>Right off the bat, we notice that everything is modular, and everything consists of components communicating through standardized interfaces.</p>
-<h2>Decoupling</h2>
-<p>Let’s assume we have created a very powerful PC for development. But after a while, we might want to turn it also use it as a gaming PC. All we need to do is</p>
-<p>We can swap out our old graphics card with a newer one, and very easily, and it doesn’t really impact the system in any way, because it doesn’t affect the rest of the system, and because it communicates with the rest through a PCI interface on the motherboard.
-This is an example of decoupling.</p>
+<img src="moth.png" class="img" />
+<p>Right off the bat, we notice that everything is modular, and everything consists of components communicating through standardized interfaces. The CPU doesn’t communicate directly to RAM, it goes through the motherboard. Same with the graphics card, etc.</p>
+<h2>Coupling</h2>
+<p>Let’s assume we have created a very powerful PC for development. But after a while, we might want to turn it also use it as a gaming PC. We can swap out our old graphics card with a newer one, and very easily, and it doesn’t really impact the system in any way, because it doesn’t affect the rest of the system, and because it communicates with the rest through a PCI interface on the motherboard. This is an example of decoupling.</p>
 <p>A simple analogy with for better understanding coupling is a Rubik’s cube.</p>
 <img src="rubik.jpeg" class="img" />
 <p>Have you ever tried to solve one of these? If you don’t know the trick, what you will try to do is to solve one face first, and then try to focus on the others.
 Of course, this doesn’t work because the colors are coupled and trying to change the unsolved faces breaks the existing ones.</p>
 <h2>Encapsulation</h2>
-<p>Here’s a picture of a Samsung SSD drive.</p>
+<p>An interesting fact about HDD drives is they have their own cache where data that’s accessed frequently is retrieved from it. But this is transparent to applications using the HDD.</p>
 <img src="hdd.png" class="img" />
-<p>To the outside system, it is a black box. And that’s the way it should be. If there is an issue with it, it can be serviced or replaced without affecting the whole system. The same drive can also be used in other computers.</p>
-<br />
-<h2>Agnostics</h2>
+<p>The HDD itself has a printed circuit board and a controller and it communicates via the SATA interface.<br>
+<br /></p>
+<h2>Dependencies And Agnosticism</h2>
 <p>With PCs, you are dealing with stable interfaces like SATA etc., but when writing your own code you will need to come up with your own patterns for communicating between components.
 Here’s a rule of thumb: if two components depend on each other in both directions, you essentially have just one monolith. Now let’s take it up a notch.
 This is why a layered approach is so important.</p>
@@ -41,7 +39,7 @@ This is why a layered approach is so important.</p>
 <span class="line"><span style="color: #A6ACCD">    </span><span style="color: #FFCB6B">T</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">GetById</span><span style="color: #89DDFF">(int</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">id</span><span style="color: #89DDFF">);</span></span>
 <span class="line"><span style="color: #A6ACCD">    </span><span style="color: #FFCB6B">IEnumerable</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">T</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">GetAll</span><span style="color: #89DDFF">();</span></span>
 <span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">void</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">Add</span><span style="color: #89DDFF">(</span><span style="color: #FFCB6B">T</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">entity</span><span style="color: #89DDFF">);</span></span>
-<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">void</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">Update</span><span style="color: #89DDFF">(</span><span style="color: #FFCB6B">T</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">entity</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">void</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">Update</span><span style="color: #89DDFF">(</span><span style="color: #FFCB6B">T</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">entity</span><span style="color: #89DDFF">);</span><span style="color: #A6ACCD">C</span></span>
 <span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">void</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">Delete</span><span style="color: #89DDFF">(</span><span style="color: #FFCB6B">T</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">entity</span><span style="color: #89DDFF">);</span></span>
 <span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
 <p>Now we are using it.</p>
@@ -69,4 +67,30 @@ This is why a layered approach is so important.</p>
 <span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #89DDFF">    </span><span style="color: #676E95; font-style: italic">// ...</span></span>
-<span class="line"><span style="color: #89DDFF">}</span></span></code></pre></section></article><div id="scroller" class="fixed h-[3px] left-0 top-0 bg-[color:var(--color-primary)]"></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024-01-03-architecture/";window.___webpackCompilationHash="4a8097fdf9141dcb0757";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-30f2bf2a1846f97f91ab.js"],"app":["/app-801afa670975c097e2ae.js"],"component---src-pages-404-js":["/component---src-pages-404-js-94ce966344d1e2d2e5ba.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2546621dba4e7d51b6cf.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-7f2410a55377b3a008b8.js"]};/*]]>*/</script><script src="/polyfill-30f2bf2a1846f97f91ab.js" nomodule=""></script><script src="/app-801afa670975c097e2ae.js" async=""></script><script src="/framework-d9aa49d9654a57a5d41b.js" async=""></script><script src="/webpack-runtime-6943d45d5f85b9590abc.js" async=""></script></body></html>
+<span class="line"><span style="color: #89DDFF">}</span></span></code></pre>
+<p>And here’s how you use it:</p>
+<pre class="shiki" style="background-color: #292D3E"><code><span class="line"><span style="color: #C792EA">public</span><span style="color: #A6ACCD"> </span><span style="color: #F78C6C">interface</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">IRepository</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">T</span><span style="color: #89DDFF">&gt;</span></span>
+<span class="line"><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">   public class EntityFrameworkRepository&lt;T&gt; : IRepository&lt;T&gt; where T : class</span></span>
+<span class="line"><span style="color: #A6ACCD">{</span></span>
+<span class="line"><span style="color: #A6ACCD">    private readonly DbContext _context</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">    private readonly DbSet&lt;T&gt; _dbSet</span><span style="color: #89DDFF">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #FFCB6B">public</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">EntityFrameworkRepository</span><span style="color: #89DDFF">(</span><span style="color: #FFCB6B">DbContext</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">context</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">        _context </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> context</span><span style="color: #89DDFF">;</span></span>
+<span class="line"><span style="color: #A6ACCD">        _dbSet </span><span style="color: #89DDFF">=</span><span style="color: #A6ACCD"> _context</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">Set</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">T</span><span style="color: #89DDFF">&gt;();</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">    public </span><span style="color: #FFCB6B">T</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">GetById</span><span style="color: #89DDFF">(int</span><span style="color: #A6ACCD"> </span><span style="color: #FFCB6B">id</span><span style="color: #89DDFF">)</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">        </span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #A6ACCD"> _dbSet</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">Find</span><span style="color: #89DDFF">(</span><span style="color: #A6ACCD">id</span><span style="color: #89DDFF">);</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #A6ACCD">    public </span><span style="color: #FFCB6B">IEnumerable</span><span style="color: #89DDFF">&lt;</span><span style="color: #FFCB6B">T</span><span style="color: #89DDFF">&gt;</span><span style="color: #A6ACCD"> </span><span style="color: #82AAFF">GetAll</span><span style="color: #89DDFF">()</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">{</span></span>
+<span class="line"><span style="color: #A6ACCD">        </span><span style="color: #89DDFF; font-style: italic">return</span><span style="color: #A6ACCD"> _dbSet</span><span style="color: #89DDFF">.</span><span style="color: #82AAFF">ToList</span><span style="color: #89DDFF">();</span></span>
+<span class="line"><span style="color: #A6ACCD">    </span><span style="color: #89DDFF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #89DDFF">    </span><span style="color: #676E95; font-style: italic">// ...</span></span>
+<span class="line"><span style="color: #89DDFF">}</span></span></code></pre></section></article><div id="scroller" class="fixed h-[3px] left-0 top-0 bg-[color:var(--color-primary)]"></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024-01-03-architecture/";window.___webpackCompilationHash="d9e35c8af0d3e8321fea";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-30f2bf2a1846f97f91ab.js"],"app":["/app-801afa670975c097e2ae.js"],"component---src-pages-404-js":["/component---src-pages-404-js-94ce966344d1e2d2e5ba.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2546621dba4e7d51b6cf.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-7f2410a55377b3a008b8.js"]};/*]]>*/</script><script src="/polyfill-30f2bf2a1846f97f91ab.js" nomodule=""></script><script src="/app-801afa670975c097e2ae.js" async=""></script><script src="/framework-d9aa49d9654a57a5d41b.js" async=""></script><script src="/webpack-runtime-6943d45d5f85b9590abc.js" async=""></script></body></html>
