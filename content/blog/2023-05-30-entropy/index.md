@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Code Entropy"
+title:  "A Surprising Fact About Code Entropy In Large Projects"
 date:   2023-05-30 09:39:37 +0300
 description: "Your apartment gets messier, not cleaner, without you putting in the effort. Your hard drive gets cluttered and defragmented. Objects like your phone get dings on them, they don’t get shiner and smoother. Flowers whither away and die. Yes, it happens to code."
 icon: "ab.jpg"
@@ -8,16 +8,16 @@ categories:
 
 ---
 
-As most readers would probably guess, this is about technical debt. But the primary motivation isn't to mention that software projects have technical debt, but rather to explain why it pops up in more ways than one would normally would expect.
+As most readers would probably guess, this is about messy code and technical debt. But the primary motivation isn't to mention that software projects have technical debt, but rather to explain why it pops up in more ways than one would normally would expect.
 
 I'm sure these things have came up for yout team:
 
-* *Why do we need to touch microservice X? That's been around for years and nothing chaned in that area.*
-* *Why do you guys need to refactor component Y again? Why wasn't written properly from the beginning?*
+* *Why do we need to touch functionality in the Catalog microservice? That's been around for years and nothing chaned in that area.*
+* *Why do you guys need to refactor Checkout component? Why wasn't written properly from the beginning?*
 
 Intuition would say that if you haven't touched a portion of the project code, that part would not incur technical debt, just as for example if you don't go in a room in your apartment, that room would not get messy. If you don't do anything on drive D, it doesn't get defragmented, and so on.
 
-But this isn't true about code.
+*But this isn't true about code.*
 
 ### A Not So Technical In Entropy
 
@@ -34,7 +34,7 @@ In fact we expect that it will eventually disappear even if you don't touch the 
 
 The second law of thermodynamics states that the total entropy of an isolated system always increases over time, where entropy is a measure of disorder or randomness in a system. The second law of thermodynamics isn't really a law, like the 2nd law of thermodynamics. It's probabilistic in nature. 
 
-Yes, it happens to code.
+Yes, it happens to code, as we'll see.*
 
 ### The Red Queen
 
