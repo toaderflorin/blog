@@ -12,7 +12,7 @@ While the rumors about Redux's demise are most likely mostly exaggerated, there 
 
 Let's first take a look at the Redux data flow.
 
-<img src="arch.png" class="img" />
+<img src="redux2.jpg" class="img" />
 
 First of all, it's worth pointing out that the data flow is unidirectional. The user can trigger actions from the UI, which act on the application state via a *reducer*, which in turn triggers rerendering of the UI. The is aim to replicate this flow using the built in React functionality.
 
@@ -200,7 +200,7 @@ export default function AppContextProvider(props: ChildrenProps) {
   const [state, dispatch] = useReducer(combinedReducer, initialAppState)
 
   async function execute(action: (state: AppState, dispatch: Dispatch<Action>) 
-    =>; Promise<void> | void) {
+    => Promise<void> | void) {
     try {
       await action(state, dispatch)
     } catch (error) {

@@ -24,16 +24,13 @@ The PC architecture is one of the simplest analogy you can use to explain these 
 * A graphics card.
 * Memory chips.
 
-<img src="moth.jpg" class="img" />
+<img src="moth.png" class="img" />
 
-Right off the bat, we notice that everything is modular, and everything consists of components communicating through standardized interfaces.
+Right off the bat, we notice that everything is modular, and everything consists of components communicating through standardized interfaces. The CPU doesn't communicate directly to RAM, it goes through the motherboard. Same with the graphics card, etc.
 
-## Decoupling
+## Coupling
 
-Let's assume we have created a very powerful PC for development. But after a while, we might want to turn it also use it as a gaming PC. All we need to do is 
-
-We can swap out our old graphics card with a newer one, and very easily, and it doesn't really impact the system in any way, because it doesn't affect the rest of the system, and because it communicates with the rest through a PCI interface on the motherboard. 
-This is an example of decoupling.
+Let's assume we have created a very powerful PC for development. But after a while, we might want to turn it also use it as a gaming PC. We can swap out our old graphics card with a newer one, and very easily, and it doesn't really impact the system in any way, because it doesn't affect the rest of the system, and because it communicates with the rest through a PCI interface on the motherboard. This is an example of decoupling.
 
 A simple analogy with for better understanding coupling is a Rubik's cube.
 
@@ -44,34 +41,25 @@ Of course, this doesn't work because the colors are coupled and trying to change
 
 ## Encapsulation
 
-Here's a picture of a Samsung SSD drive.
+An interesting fact about HDD drives is they have their own cache where data that's accessed frequently is retrieved from it. But this is transparent to applications using the HDD.
 
 <img src="hdd.png" class="img" />
 
-To the outside system, it is a black box. And that's the way it should be. If there is an issue with it, it can be serviced or replaced without affecting the whole system. The same drive can also be used in other computers.
-
+The HDD itself has a printed circuit board and a controller and it communicates via the SATA interface.  
 <br />
 
-## Agnostics
-
-With PCs, you are dealing with stable interfaces like SATA etc., but when writing your own code you will need to come up with your own patterns for communicating between components.
-Here's a rule of thumb: if two components depend on each other in both directions, you essentially have just one monolith. Now let's take it up a notch.
-This is why a layered approach is so important.
-
-Notice that the lower level layer are agnostic to how they are being used.
-
-This is why building things using components is so important. 
-
 ## Classic 3-tier
+The classic 3-tier is architecture is probably the most used web-architectural approach, and it would look something like this.
 
-And there you have it.
+<img src="3-tier.jpg" class="img" />
 
-An example of the 3-tier is this:
+Your application layer will usually consist of your API, which in turn has multiple layers:
 
-<img src="tiered.png" class="img" />
+1. The routes.
+2. The business logic.
+3. Some kind of database access.
 
-
-Some final notes.
+For database access, we'll use the repository pattern, which implies defining an *IRepository* interface.
 
 ```csharp
 public interface IRepository<T>
@@ -79,17 +67,15 @@ public interface IRepository<T>
     T GetById(int id);
     IEnumerable<T> GetAll();
     void Add(T entity);
-    void Update(T entity);
+    void Update(T entity);C
     void Delete(T entity);
 }
 ```
 
-Now we are using it.
+Which we can implement with a specific *EntityFramework* implementation.
 
 ```csharp
-public interface IRepository<T>
-{
-   public class EntityFrameworkRepository<T> : IRepository<T> where T : class
+public class EntityFrameworkRepository<T> : IRepository<T> where T : class
 {
     private readonly DbContext _context;
     private readonly DbSet<T> _dbSet;
@@ -112,4 +98,16 @@ public interface IRepository<T>
 
     // ...
 }
+```
+
+The interesting part about this approach is that you can always specify a different ORM, so you are decoupled from a specific storage mechanism.
+
+In order to actually use this, we create a *service* object, and via dependency injection, we inject an instance of a *Repository* of type *Post*.
+
+```csharp
+public class BlogPostService(EntityFrameworkRepository<Post> post) 
+{
+    var ()
+}
+
 ```
