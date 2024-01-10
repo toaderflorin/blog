@@ -7,7 +7,6 @@ In the Pacific Bell v. Superior Court of Alameda County case, the court held tha
 "
 icon: "modular.jpg"
 image: "cucumber.jpg"
-categories: 
 
 ---
 Any lawyer will tell you that legal contracts must follow very specific rules, otherwise they can be deemed invalid. You simply cannot type whatever you want in a contract, it must follow a specific structure, use specific legal terms and so forth. Even software contracts can be thrown out of court because, if the specifications aren't clear enough.

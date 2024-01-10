@@ -5,7 +5,7 @@ date:   2023-05-30 09:39:37 +0300
 description: "Your apartment gets messier, not cleaner, without you putting in the effort. Your hard drive gets cluttered and defragmented. Objects like your phone get dings on them, they don’t get shiner and smoother. Flowers whither away and die. Yes, it happens to code."
 icon: "ab.jpg"
 categories: 
-
+image: "clean.jpg"
 ---
 
 As most readers would probably guess, this is about messy code and technical debt. But the primary motivation isn't to mention that software projects have technical debt, but rather to explain why it pops up in more ways than one would normally would expect.

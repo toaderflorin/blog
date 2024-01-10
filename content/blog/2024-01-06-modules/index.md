@@ -5,7 +5,7 @@ date:   2024-01-06 09:39:37 +0300
 description: "First, when creating a new application, should you start off with a microservice architecture? Well, the prevailing wisdom is no, because there is significant cost associated with maintaining, deploying, hosting., multiple microservices.
 "
 icon: "modular.jpg"
-categories: 
+image: "screen.png"
 
 ---
 First, when creating a new application, should you start off with a microservice architecture? Well, the prevailing wisdom is no, because there is significant cost associated with maintaining, deploying, hosting., multiple microservices.
