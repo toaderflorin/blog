@@ -10,9 +10,7 @@ icon: "ar.png"
 categories: 
 
 ---
-One of the tasks of a senior developer is to introduce architectural concepts to new junior developers joining the company.
-And if there are multiple microservices involved, which all use different approaches, it can be confusing.
-Some older microservices might use MVC, in a Web API context. The newer ones might use minimal APIs. A select few might do CQRS.
+One of the tasks of a senior developer is to introduce architectural concepts to new junior developers joining the company. And if there are multiple microservices involved, which all use different approaches, it can be confusing. Some older microservices might use MVC, in a Web API context. The newer ones might use minimal APIs. A select few might do CQRS.
 
 Ultimately, it all boils down to things like cohesion, coupling, and encapsulation.
 
@@ -46,68 +44,3 @@ An interesting fact about HDD drives is they have their own cache where data tha
 <img src="hdd.png" class="img" />
 
 The HDD itself has a printed circuit board and a controller and it communicates via the SATA interface.  
-<br />
-
-## Classic 3-tier
-The classic 3-tier is architecture is probably the most used web-architectural approach, and it would look something like this.
-
-<img src="3-tier.jpg" class="img" />
-
-Your application layer will usually consist of your API, which in turn has multiple layers:
-
-1. The routes.
-2. The business logic.
-3. Some kind of database access.
-
-For database access, we'll use the repository pattern, which implies defining an *IRepository* interface.
-
-```csharp
-public interface IRepository<T>
-{
-    T GetById(int id);
-    IEnumerable<T> GetAll();
-    void Add(T entity);
-    void Update(T entity);C
-    void Delete(T entity);
-}
-```
-
-Which we can implement with a specific *EntityFramework* implementation.
-
-```csharp
-public class EntityFrameworkRepository<T> : IRepository<T> where T : class
-{
-    private readonly DbContext _context;
-    private readonly DbSet<T> _dbSet;
-
-    public EntityFrameworkRepository(DbContext context)
-    {
-        _context = context;
-        _dbSet = _context.Set<T>();
-    }
-
-    public T GetById(int id)
-    {
-        return _dbSet.Find(id);
-    }
-
-    public IEnumerable<T> GetAll()
-    {
-        return _dbSet.ToList();
-    }
-
-    // ...
-}
-```
-
-The interesting part about this approach is that you can always specify a different ORM, so you are decoupled from a specific storage mechanism.
-
-In order to actually use this, we create a *service* object, and via dependency injection, we inject an instance of a *Repository* of type *Post*.
-
-```csharp
-public class BlogPostService(EntityFrameworkRepository<Post> post) 
-{
-    var ()
-}
-
-```

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Scroller from '../components/Scroller'
+import { Head } from '../components/Head'
 
 export default function BlogPostTemplate(props) {
   const { data, location } = props
@@ -12,10 +13,13 @@ export default function BlogPostTemplate(props) {
   return (
     <Layout location={location} title={siteTitle}>
       <Header />
+      <Head />
       <article className="w-[700px] mx-auto pt-[150px]" itemScope style={{ marginTop: '100px', marginBottom: '20px' }}>
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p><i>{post.frontmatter.date}</i></p>
+          <p>
+            <i>{post.frontmatter.date}</i>
+          </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
       </article>
