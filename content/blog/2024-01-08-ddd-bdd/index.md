@@ -6,6 +6,7 @@ description: "Any lawyer will tell you that contracts need to be specific, other
 In the Pacific Bell v. Superior Court of Alameda County case, the court held that a contract between a telephone company and its customers was invalid because it was ambiguous and did not clearly define the scope of the company’s services.
 "
 icon: "modular.jpg"
+image: "cucumber.jpg"
 categories: 
 
 ---

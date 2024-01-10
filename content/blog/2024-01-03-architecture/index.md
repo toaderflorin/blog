@@ -8,7 +8,7 @@ Some older microservices might use MVC, in a Web API context. The newer ones mig
 "
 icon: "ar.png"
 categories: 
-
+image: "rubik.jpg"
 ---
 One of the tasks of a senior developer is to introduce architectural concepts to new junior developers joining the company. And if there are multiple microservices involved, which all use different approaches, it can be confusing. Some older microservices might use MVC, in a Web API context. The newer ones might use minimal APIs. A select few might do CQRS.
 
@@ -32,7 +32,7 @@ Let's assume we have created a very powerful PC for development. But after a whi
 
 A simple analogy with for better understanding coupling is a Rubik's cube.
 
-<img src="rubik.jpeg" class="img" />
+<img src="rubik.jpg" class="img" />
 
 Have you ever tried to solve one of these? If you don't know the trick, what you will try to do is to solve one face first, and then try to focus on the others. 
 Of course, this doesn't work because the colors are coupled and trying to change the unsolved faces breaks the existing ones.

@@ -3,17 +3,18 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Scroller from '../components/Scroller'
-import { Head } from '../components/Head'
+import Head from '../components/Head'
 
 export default function BlogPostTemplate(props) {
   const { data, location } = props
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  console.log('site', data, location)
 
   return (
     <Layout location={location} title={siteTitle}>
       <Header />
-      <Head />
+      <Head post={post} location={location} />
       <article className="w-[700px] mx-auto pt-[150px]" itemScope style={{ marginTop: '100px', marginBottom: '20px' }}>
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
