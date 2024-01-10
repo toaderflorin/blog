@@ -7,15 +7,19 @@ export const Head = ({ location, params, data, pageContext }) => (
     <meta name="twitter:url" content={`https://www.foobar.tld/${location.pathname}`} /> */}
     <meta
       name="image"
-      content="https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1679921049/Image_URL_header/Image_URL_header-png?_i=AA"
+      content="https://florintoader.me/2024-01-06-modules/screen.png"
+    />
+    <meta
+      name="og:url"
+      content="https://florintoader.me/2024-01-06-modules"
     />
     <meta
       name="og:image"
-      content="https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1679921049/Image_URL_header/Image_URL_header-png?_i=AA"
-    />
+      content="https://florintoader.me/2024-01-06-modules/screen.png"
+    />    
     <meta
-      name="twitter:image"
-      content="https://cloudinary-marketing-res.cloudinary.com/images/w_1000,c_scale/v1679921049/Image_URL_header/Image_URL_header-png?_i=AA"
+      name="og:description"
+      content="Some description goes here."
     />
   </>
 )
