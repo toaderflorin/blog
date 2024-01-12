@@ -12,10 +12,9 @@
 <li>We lose some data normalization (for example, catalog data will probably have to be replicated).</li>
 </ol>
 <p>What is the alternative? Well, writing a monolith. Monoliths in themselves aren’t bad—actually, the term monolith refers to a unit of deployment. In fact, most APIs are monoliths. Moreover, you can even have a distributed monolith because if the dependencies between microservices are as such that you need to deploy multiple of them at the same time. The only potential problem arises if, at some later point, we want to move to a microservice architecture, those FK constraints will pose a problem. What would be a possible approach? Create a monolith with predefined modules and enforce strict domain boundaries.</p>
-<h2>DDD</h2>
 <p>Which is where Domain Driven Design comes to play.</p>
-<p>DDD is a software development approach that focuses on modeling software to align closely with the business domain it represents. It emphasizes a deep understanding of the domain, collaboration between domain experts and developers, and the creation of a shared language to bridge the gap between them. DDD has a few core concepts, but I find two of them to be of crucial importance: <strong>ubiquitous language</strong> (using shared understanding of the domain’s terminology and concepts among developers and domain experts) and <strong>bounded contexts</strong> (dividing the domain into smaller, manageable subdomains with well-defined boundaries).</p>
 <p>So what is the goal?</p>
+<img src="mod.png" class="img" />
 <p>Well, maybe we can do a modular monolith application in which the modules are already predecoupled, so if we ever want to pull some of them out as separate units of deployment, we can do so easily.</p>
 <h2>A Case Study</h2>
 <p>Let’s define a set of spec for an application.</p>
@@ -32,22 +31,22 @@
 </ul>
 <p>Let’s try to sketch a database schema.</p>
 <img src="first.png" class="img" />
-<p>OK, that was the first draft. Now, let’s do a mental exercise. Let’s think what would be needed in order to break this monolith. We would need to identify a set of domain boundaries, which would correspond to the individual microservices. We won’t actually create microservices, but we will look at what we need to do for our code to be <em>splittable</em>.</p>
-<img src="screen.png" class="img" />
-<p>As we see, we have created groups of related objects. The would correspond to individual modules / microservices.</p>
+<p>OK, that was the first draft. Now, let’s do a mental exercise. Let’s think what would be needed in order to break this monolith. We would need to identify a set of domain boundaries, which would correspond to the individual microservices. We won’t actually create microservices, but we will look at what we need to do for our code to be <em>splittable</em>, so let’s move things around.</p>
+<img src="middle.png" class="img" />
+<p>OK, this looks cleaner. As we see, we have created groups of related objects, grouped around users, products, and vendors. They would need to correspond to individual modules / microservices. We can now define a few microservices:</p>
 <ul>
-<li>Logging in.</li>
+<li><em>Authentication</em>, related to users.</li>
 <li>Search and product details.</li>
 <li>Payment.</li>
-<li>Catalog.</li>
+<li>Catalog and search, related to products.</li>
 </ul>
 <p>In order to separate them into separate modules, we would need to remove the FK constraints. Of course, the question becomes then, how would they communicate. My approach is to use unique domain properties such as the user id, or some company tax code. This is what we will do here.</p>
-<img src="screen.png" class="img" />
-<p>One idea to achieve coupling is to break the monolith.</p>
+<img src="final.png" class="img" />
+<p>That is exactly what we’ve done. And we’ve also removed the permission tables, and we’ll use string keys instead, for example, <code>ADMIN</code>, <code>VENDOR</code>, <code>CUSTOMER</code>. The permission level would come from the user session (as claims).</p>
 <h3>Some Thoughts On Module Communication</h3>
 <p>Decoupling your data model won’t achive anything if individual services in your app are coupled (call one another directly). We know that in the microservice world, direct calls are a no-no. So in order for our microservices to be decoupled, we would need to also decouple our service layer, not just data layer.</p>
 <p>One approach to communication would be to use a message bus. Since your client application will probably make use of push notifications, you’ll use messeging anyway, in conjuction with module communication. This is called <em>coreography</em>. The other approach is to use <em>orhestration</em>, which is usually done on the client, because as I’ve mentioned, we want to avoid direct synchronous calls between microservices.</p>
-<p>Let’s assume we have a Payment service, and it needs to synchronize with the Catalog service. Let’s use some code:</p>
+<p>Let’s assume we have a Payment service, and it needs to synchronize with the Catalog service. Let’s describe the flow:</p>
 <ol>
 <li>When the user initiates a payment, the product needs to be reserved in the Catalog service.</li>
 <li>This will in turn send a message acknowledging that the product is indeed reserved, so that if another customer tries to place an order, it will manage the stock levels appropriately.</li>
@@ -55,4 +54,12 @@
 <li>If payment succeeds, another message will be sent to the Catalog service, and stocks will be decreased by one.</li>
 <li>Otherwise, the reserved status will be removed.</li>
 </ol>
-<p>The client can also do orchestration and call these steps in order, but this isn’t recommended for business logic flows, especially not for business flows.</p></section></article><div id="scroller" class="fixed h-[3px] left-0 top-0 bg-[color:var(--color-primary)]"></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024-01-06-modules/";window.___webpackCompilationHash="637a321acdd1b5389d5a";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-30f2bf2a1846f97f91ab.js"],"app":["/app-60369e9f499d095cafe9.js"],"component---src-pages-404-js":["/component---src-pages-404-js-94ce966344d1e2d2e5ba.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2546621dba4e7d51b6cf.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-01a6191af659c02b47fb.js"]};/*]]>*/</script><script src="/polyfill-30f2bf2a1846f97f91ab.js" nomodule=""></script><script src="/app-60369e9f499d095cafe9.js" async=""></script><script src="/framework-d9aa49d9654a57a5d41b.js" async=""></script><script src="/webpack-runtime-8a07b135dd361bf6baec.js" async=""></script></body></html>
+<p>The client can also do orchestration and call these steps in order, but this isn’t recommended for business logic flows, especially not for business flows. We’ve just described a distributed transaction.</p>
+<p>There are several ways to do distributed transactions.</p>
+<ol>
+<li>Three phase commits.</li>
+<li>Two phase commits.</li>
+<li>Sagas.</li>
+<li>Compensating transactions.</li>
+</ol>
+<p>But there will be a special article for that.</p></section></article><div id="scroller" class="fixed h-[3px] left-0 top-0 bg-[color:var(--color-primary)]"></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/2024-01-06-modules/";window.___webpackCompilationHash="637a321acdd1b5389d5a";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-30f2bf2a1846f97f91ab.js"],"app":["/app-60369e9f499d095cafe9.js"],"component---src-pages-404-js":["/component---src-pages-404-js-94ce966344d1e2d2e5ba.js"],"component---src-pages-index-js":["/component---src-pages-index-js-2546621dba4e7d51b6cf.js"],"component---src-templates-blog-post-js":["/component---src-templates-blog-post-js-01a6191af659c02b47fb.js"]};/*]]>*/</script><script src="/polyfill-30f2bf2a1846f97f91ab.js" nomodule=""></script><script src="/app-60369e9f499d095cafe9.js" async=""></script><script src="/framework-d9aa49d9654a57a5d41b.js" async=""></script><script src="/webpack-runtime-8a07b135dd361bf6baec.js" async=""></script></body></html>
