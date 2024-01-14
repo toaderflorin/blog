@@ -51,7 +51,20 @@ It's worth mentioning that this is the actual domain model, the actual database 
 ## Behavior Driven Development
 Most developers are familiar with TDD, and if your team has the budget for it (it can be expensive, and some teams tend to go with the 20/80 rule, where they only cover the 20% of the code that's responsible with the majority of the bugs). 
 
-<img src="cucumber.jpg" class="img" />
+```typescript
+Feature: Account Holder withdraws cash
+ 
+Scenario: Account has sufficient funds
+    Given The account balance is $100
+      And the card is valid
+      And the machine contains enough money
+     When the Account Holder requests $20
+     Then the ATM should dispense $20
+      And the account balance should be $80
+      And the card should be returned
+```
+
+*"The account balance is $100"*, *"the card is valid"* are called bindings. They actually translate to code.
 
 Consider that each of these lines: a lot of these lines translate to code. Cucumber creates a set of constraints for the product owner, similarly to how a control library with a theme would constrain the designer. 
 ```csharp

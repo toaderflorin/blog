@@ -176,7 +176,7 @@ a {
   float: left;
 }
 
-ul {
+ol, ul {
   margin: 0.7rem 0 0.7rem 0;
 }
 
