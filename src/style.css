@@ -29,6 +29,12 @@
   src: url(/fonts/AvenirLTStd-Roman.otf);
 }
 
+
+@font-face {
+  font-family: walsheim;
+  src: url(/fonts/GT-Walsheim.otf);
+}
+
  
 @font-face {
   font-family: cisco;

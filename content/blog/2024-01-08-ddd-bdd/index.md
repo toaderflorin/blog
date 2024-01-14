@@ -5,7 +5,7 @@ date:   2024-01-06 09:39:37 +0300
 description: "Any lawyer will tell you that contracts need to be specific, otherwise they can be thrown out of court quite easily. Prenuptial agreements are famous for being thrown out of court.
 In the Pacific Bell v. Superior Court of Alameda County case, the court held that a contract between a telephone company and its customers was invalid because it was ambiguous and did not clearly define the scope of the company’s services.
 "
-icon: "modular.jpg"
+icon: "small.jpg"
 image: "cucumber.jpg"
 
 ---
@@ -37,9 +37,18 @@ Here are some key principles of DDD:
 
 We'll break that down in a bit. Ubiquitous language means we always refer to an entity by the same term. Let's say we have a blogging engine. So we'll have users, blogs, blog posts, etc.
 
-The database schema would look something like this:
 
-## What is BDD
+## Tooling
+
+We need a tool to sketch this down. And there's nothing better than a database tool, because we can capture the properties of the objects, the relationships between them etc.
+
+<img src="domain.png" class="img" />
+
+It's worth mentioning that this is the actual domain model, the actual database schema might actually contain more (internal) columns.
+
+
+
+## Behavior Driven Development
 Most developers are familiar with TDD, and if your team has the budget for it (it can be expensive, and some teams tend to go with the 20/80 rule, where they only cover the 20% of the code that's responsible with the majority of the bugs). 
 
 <img src="cucumber.jpg" class="img" />

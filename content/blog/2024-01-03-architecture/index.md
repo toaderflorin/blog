@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Explaining Architectural Concepts"
+title:  "The PC Architecture Is The Best Way To Explain Software Architecture In General"
 date:   2024-01-01 09:39:37 +0300
 description: "One of the tasks of a senior developer is to introduce architectural concepts to new junior developers joining the company.
 And if there are multiple microservices involved, which all use different approaches, it can be confusing.
