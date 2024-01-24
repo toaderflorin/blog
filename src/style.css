@@ -35,7 +35,7 @@
   src: url(/fonts/GT-Walsheim.otf);
 }
 
- 
+
 @font-face {
   font-family: cisco;
   src: url(/fonts/CiscoSans.ttf);
@@ -122,7 +122,7 @@
 }
 
 :root {
-  --color-primary:#ff164c;
+  --color-primary: #ff164c;
 }
 
 *,
@@ -151,7 +151,7 @@ pre.shiki {
 }
 
 code {
- font-size:13px;
+  font-size: 13px;
 }
 
 body {
@@ -159,7 +159,7 @@ body {
   font-size: 15px;
   color: #111;
   /* font-weight: 350; */
-  line-height: 1.45;  
+  line-height: 1.45;
 }
 
 h1 {
@@ -168,7 +168,7 @@ h1 {
 
 h3 {
   font-size: 1.2rem;
-  margin-bottom: -1rem;  
+  margin-bottom: -1rem;
   line-height: 2;
 }
 
@@ -200,7 +200,8 @@ a {
   float: left;
 }
 
-ol, ul {
+ol,
+ul {
   margin: 0.7rem 0 0.7rem 0;
 }
 
@@ -210,4 +211,41 @@ ol, ul {
   float: left;
   margin-right: 8px;
   margin-top: 6px;
+}
+
+.scroll-watcher {
+  position: fixed;
+  background: url(/static/img/coffee.jpg);
+  inset: 0;
+  animation: blur linear;
+  animation-range: entry;
+  animation-timeline: scroll();
+  transform-origin: bottom center;
+}
+
+/* .scr-2 {
+  animation: opacity linear;
+
+  animation-range: exit;
+  animation-timeline: scroll();
+} */
+
+
+@keyframes zoom {
+  to {
+    scale: 2 2;
+  }
+}
+
+@keyframes opacity {
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes blur {
+  to {
+    /* filter: blur(20px); Reset the blur */
+    scale: 1.5 1.5;
+  }
 }

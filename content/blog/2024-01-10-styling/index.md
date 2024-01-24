@@ -6,7 +6,7 @@ description: "MUI is one of the most powerful and popular of the React libraries
 "
 icon: "icon.jpg"
 image: "cucumber.jpg"
-
+cells: 2
 ---
 MUI is one of the most powerful and popular of the React libraries out there, because it comes prepacked with a lot, and I mean a lot, of controls (and let's face it, nobody wants to build a calendar), and it's a React implementation of Google's Material Design (it's really opinionated in that regard). Which might be its Achile's heel: a lot of designers don't want their application to look like Gmail or Android, they will want a specific look and feel. 
 

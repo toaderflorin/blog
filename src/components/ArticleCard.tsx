@@ -7,7 +7,7 @@ export type Post = {
     description: string
     date: string
     icon: string
-  },
+  }
   fields: {
     slug: string
   }
@@ -16,36 +16,42 @@ export type Post = {
 
 type Props = {
   post: Post
+  position: number
 }
 
 export default function ArticleCard(props: Props) {
-  const { post } = props
+  const { post, position } = props
   const title = post.frontmatter.title || post.fields.slug
 
   function navigateToPost(url: string) {
     navigate(url)
   }
 
+  console.log('asdas', post)
+  const offset = [0, 3, 5]
+  const randomIndex = Math.floor(Math.random() * offset.length)
+  const off = offset[randomIndex]
+
+  const sequence = [2, 1, 1, 1, 1, 1, 2]
+  const span = sequence[position % 7]
+
   return (
     <article
       key={post.fields.slug}
-      className="cursor-pointer p-6 hover:shadow-[0_0_40px_-15px_rgba(0,0,0,0.2)] hover:text-black duration-500"
+      className="cursor-pointer p-6 shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_5px_30px_-15px_rgba(0,0,0,0.7)] hover:text-black duration-300 rounded"
+      style={{ gridColumn: `auto / span ${span}` }}
       onClick={() => navigateToPost(post.fields.slug)}>
-      <header>
-        <span className="text-xl">{title}</span>
-        <div>{post.frontmatter.date}</div>
-      </header>
-
-      <section className="mt-3">
-        <img src={`${post.fields.slug}/${post.frontmatter.icon}`} className="article-icon" />
-        <span
-          dangerouslySetInnerHTML={{
-            __html: post.frontmatter.description || post.excerpt
-          }}
-          itemProp="description"
-        />
-        <p className="text-[color:var(--color-primary)] text-sm">Read more...</p>
+      <section className="mt-3" style={{ overflow: 'hidden', height: '260px'}}>
+        <header>
+          <span className="text-xl">{title}</span>
+          <div>{post.frontmatter.date}</div>
+        </header>
+        <div style={{ overflow: 'hidden', width: '100%', marginTop: '10px', fontSize: '15px' }}>
+          <img src={`${post.fields.slug}/${post.frontmatter.icon}`} className="article-icon" />
+          {post.frontmatter.description}
+        </div>
       </section>
+      <p className="text-[color:var(--color-primary)] text-sm">Read more...</p>
     </article>
   )
 }

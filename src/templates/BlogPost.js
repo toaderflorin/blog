@@ -45,6 +45,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         image
+        cells
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {

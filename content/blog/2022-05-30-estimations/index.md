@@ -6,7 +6,7 @@ description: "The estimation proces and estimation related time pressure are pro
 "
 icon: "opera-icon.png"
 categories: 
-
+cells: 2
 ---
 The estimation proces and estimation related time pressure are probably some of the most contentious aspects of software development, and it is usual for project managers to try to push down initial estimations made by developers, either because of pressure placed on themselves by varios stakeholders or because they know that tasks tend to take up the whole allotted time (because of developer procrastination), or both. To make matters worse, a whopping 70% of projects are considered "failures" based on initial targets. Even if the teams use agile methodologies, a large number of the sprints will fail to meet their story point target.
 

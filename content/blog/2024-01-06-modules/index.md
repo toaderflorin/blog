@@ -6,7 +6,7 @@ description: "First, when creating a new application, should you start off with 
 "
 icon: "modular.jpg"
 image: "screen.png"
-
+cells: 2
 ---
 First, when creating a new application, should you start off with a microservice architecture? Well, the prevailing wisdom is no, because there is significant cost associated with maintaining, deploying and hosting multiple microservices.
 

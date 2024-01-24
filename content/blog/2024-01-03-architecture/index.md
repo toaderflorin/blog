@@ -9,6 +9,7 @@ Some older microservices might use MVC, in a Web API context. The newer ones mig
 icon: "ar.png"
 categories: 
 image: "rubik.jpg"
+cells: 2
 ---
 One of the tasks of a senior developer is to introduce architectural concepts to new junior developers joining the company. And if there are multiple microservices involved, which all use different approaches, it can be confusing. Some older microservices might use MVC, in a Web API context. The newer ones might use minimal APIs. A select few might do CQRS.
 

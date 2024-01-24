@@ -2,28 +2,19 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Main from '../components/Main'
 import Scroller from '../components/Scroller'
-import Header from '../components/Header'
+import Hero from '../components/Hero'
 
 export default function Index({ data }) {
   const posts = data.allMarkdownRemark.nodes
 
   return (
     <div>
-
-      <div className="flex flex-col bg-[url(/img/an_bk.jpg)] bg-fixed bg-cover" style={{ backgroundPosition: 'bottom', marginTop: '50px' }}>
-      
-        {/* <div className="w-[1000px] h-[600px] mt-[40px] mx-auto rounded-sm z-50 shadow-2xl blur-md">
-          <div className="h-[100%]">
-            <Hero />
-          </div>
-        </div> */}
-        <div style={{ marginTop: '-50px' }}>
-          <Main posts={posts} />
-        </div>
-      </div>
-<Header />      
-<Scroller />
-      
+      <div className="bg-[url(/img/bb.jpg)]  bg-cover scroll-watcher z-0"></div>
+      <Main posts={posts} />
+      <div style={{ height: '400px', left: 0, right: 0, top: 0, position: 'absolute', zIndex: 1000 }}>
+        <Hero />
+      </div>   
+      <Scroller />
     </div>
   )
 }

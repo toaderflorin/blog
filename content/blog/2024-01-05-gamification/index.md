@@ -6,6 +6,7 @@ description: "Gamification is the process of applying game-like elements and mec
 "
 icon: "controller.png"
 image: "stack.jpg"
+cells: 2
 ---
 Something I've seen more and more in SCRUM teams is the concept of gamification. Gamification is the process of applying game-like elements and mechanics to non-game contexts to enhance user engagement, motivation, and overall experience. It involves incorporating game design elements such as points, badges, leaderboards, challenges, and rewards into non-game activities, such as marketing campaigns, educational programs, workplace training, and even daily tasks. The goal of gamification is to tap into the natural human desire for challenge, competition, and social interaction that we experience when playing games. 
 

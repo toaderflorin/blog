@@ -6,7 +6,7 @@ description: "Architects are the creatives who conceptualize and design the over
 "
 icon: "small.jpg"
 image: "cucumber.jpg"
-
+cells: 2
 ---
 During my development work, I have repeatedly come across the following pattern.
 
