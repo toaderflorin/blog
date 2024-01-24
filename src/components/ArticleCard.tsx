@@ -29,7 +29,7 @@ export default function ArticleCard(props: Props) {
   return (
     <article
       key={post.fields.slug}
-      className="cursor-pointer p-6 hover:shadow-[0_0_40px_-15px_rgba(0,0,0,0.2)]"
+      className="cursor-pointer p-6 hover:shadow-[0_0_40px_-15px_rgba(0,0,0,0.2)] hover:text-black duration-500"
       onClick={() => navigateToPost(post.fields.slug)}>
       <header>
         <span className="text-xl">{title}</span>

@@ -8,7 +8,7 @@ icon: "modular.jpg"
 image: "screen.png"
 
 ---
-First, when creating a new application, should you start off with a microservice architecture? Well, the prevailing wisdom is no, because there is significant cost associated with maintaining, deploying, hosting., multiple microservices.
+First, when creating a new application, should you start off with a microservice architecture? Well, the prevailing wisdom is no, because there is significant cost associated with maintaining, deploying and hosting multiple microservices.
 
 Let's also look at some microservice tenets:
 
@@ -22,20 +22,16 @@ So what does this mean?
 3. Distributed transactions can also be tricky.
 4. We lose some data normalization (for example, catalog data will probably have to be replicated).
 
-What is the alternative? Well, writing a monolith. Monoliths in themselves aren't bad—actually, the term monolith refers to a unit of deployment. In fact, most APIs are monoliths. Moreover, you can even have a distributed monolith because if the dependencies between microservices are as such that you need to deploy multiple of them at the same time. The only potential problem arises if, at some later point, we want to move to a microservice architecture, those FK constraints will pose a problem. What would be a possible approach? Create a monolith with predefined modules and enforce strict domain boundaries.
-
-Which is where Domain Driven Design comes to play.
-
-So what is the goal? 
+What is the alternative? Well, writing a monolith. Monoliths in themselves aren't bad—actually, the term monolith refers to a unit of deployment, and in fact most projects use a monolithic architecture. You can even have a distributed monolith because if the dependencies between microservices are as such that you need to deploy multiple of them at the same time. The only potential problem arises if, at some later point, we want to move to a microservice architecture, those FK constraints will pose a problem. What would be a possible approach? Create a monolith with predefined modules and enforce strict domain boundaries.
 
 <img src="modules2.jpg" class="img" />
 
-Well, maybe we can do a modular monolith application in which the modules are already predecoupled, so if we ever want to pull some of them out as separate units of deployment, we can do so easily.
+We would aim for something like this.
 
 ## A Case Study
 Let's define a set of spec for an application.
 
-`We want to build an online shopping platform where multiple vendors can sell products. Multiple venders can sell the same product (defined by SKU).`
+`We want to build an online shopping platform where multiple vendors can sell products. Multiple venders can sell the same product (defined by SKU). We would have system admins, vender admins and regular users.`
 
 Well start by defining a set of entities:
 * *Product*

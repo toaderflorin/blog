@@ -1,10 +1,14 @@
 import React from 'react'
 
 export default function Header() {
+  function onClick() {}
+
   return (
-    <div className="fixed top-0 left-0 right-0 text-white bg-slate-800 h-[64px] shadow-lg">
-      <div className="w-[700px] mx-auto flex items-center h-[64px]">
-        florin<b>toader</b>
+    <div className="fixed top-0 left-0 right-0 text-white bg-slate-800 h-[82px] shadow-lg">
+      <div className="w-[700px] mx-auto flex items-center h-[82px]">
+        <a href="/" style={{ color: 'white' }}>
+          <b>Florin Toader</b>&nbsp;| Welcome to my professional abode on the internet.
+        </a>
       </div>
     </div>
   )

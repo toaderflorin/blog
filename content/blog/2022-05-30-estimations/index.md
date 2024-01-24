@@ -46,7 +46,7 @@ According to Wikipedia:
 
 <i>The Dunning–Kruger effect is a cognitive bias whereby people with low ability, expertise, or experience regarding a certain type of a task or area of knowledge tend to overestimate their ability or knowledge. Some researchers also include in their definition the opposite effect for high performers: their tendency to underestimate their skills. The Dunning–Kruger effect is usually measured by comparing self-assessment with objective performance.</i>
 
-<!-- <img src="dunning.svg" class="img" /> -->h
+<!-- <img src="dunning.svg" class="img" /> -->
 
 We tend to be overly optimistic when we don't know enough about a certain subject. Also when doing estimations, even if devs estimate in story points, they think in time and revert back to storypoints -- and they usually assume the best outcome. However, in real life unexpected things happen: 
 
@@ -60,9 +60,9 @@ We tend to be overly optimistic when we don't know enough about a certain subjec
 
 When estimating, there's a natural tendency amongst most developers to think they can go from start to finish in a straight line, but that's rarely the case. You might get to where you think you're 90% done, only for you to discover there's another 90% to go (to paraphrase John Carmack).
 
-To use the construction analogy, a metaphor for the path a developer would take is a windy mountain road. When attempting to build such a road, it would be unrealistic to assume you are going to go in a straight line and some prospecting would be needed.
+Expectation versus reality: 
 
-<img src="winding.jpeg" class="img" />
+<img src="progress.jpg" class="img" />
 
 If developers don't know enough about how to tackle a piece of functionality, they will not be able to properly estimate it, is which case a technical user story (or spike) needs to be scheduled before the actual implementation. Spikes come from Extreme Programming (XP), are a special type of user story that is used to gain the knowledge necessary to reduce the risk of a technical approach, better understand a requirement, or increase the reliability of a story estimate. A spike has a maximum time-box size as the sprint it is contained in it. At the end of a sprint, the spike will be determined that is done or not-done just like any other ordinary user story.
 
