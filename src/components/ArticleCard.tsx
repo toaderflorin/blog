@@ -27,10 +27,9 @@ export default function ArticleCard(props: Props) {
     navigate(url)
   }
 
-  console.log('asdas', post)
   const offset = [0, 3, 5]
   const randomIndex = Math.floor(Math.random() * offset.length)
-  const off = offset[randomIndex]
+  // const off = offset[randomIndex]
 
   const sequence = [2, 1, 1, 1, 1, 1, 2]
   const span = sequence[position % 7]
@@ -38,8 +37,7 @@ export default function ArticleCard(props: Props) {
   return (
     <article
       key={post.fields.slug}
-      className="cursor-pointer p-6 shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_5px_30px_-15px_rgba(0,0,0,0.7)] hover:text-black duration-300 rounded"
-      style={{ gridColumn: `auto / span ${span}` }}
+      className={`cursor-pointer p-6 shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_5px_30px_-15px_rgba(0,0,0,0.7)] hover:text-black duration-300 rounded span-${span}`    }
       onClick={() => navigateToPost(post.fields.slug)}>
       <section className="mt-3" style={{ overflow: 'hidden', height: '260px'}}>
         <header>

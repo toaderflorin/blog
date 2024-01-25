@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export default function Layout(props) {
-  const { location, children } = props
+  const { children } = props
   let header
   
   return (
