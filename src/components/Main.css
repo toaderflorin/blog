@@ -1,0 +1,21 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.container {
+  width: 1000px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards {
+    padding: 10px;
+    width: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: auto;
+  }
+}
