@@ -1,5 +1,6 @@
 import React from 'react'
 import { navigate } from 'gatsby'
+import './ArticleCard.css'
 
 export type Post = {
   frontmatter: {

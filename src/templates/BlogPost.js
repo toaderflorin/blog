@@ -4,18 +4,19 @@ import Layout from '../components/Layout'
 import Header from '../components/Header'
 import Scroller from '../components/Scroller'
 import Head from '../components/Head'
+import './BlogPost.css'
 
 export default function BlogPostTemplate(props) {
   const { data, location } = props
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  console.log('site', data, location)
 
   return (
     <Layout location={location} title={siteTitle}>
       <Header />
       <Head post={post} location={location} />
-      <article className="w-[700px] mx-auto pt-[150px]" itemScope style={{ marginTop: '100px', marginBottom: '20px' }}>
+
+      <article className="w-[700px] mx-auto pt-[150px] mb-[20px] mt-[150px] post-container" itemScope>
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>
