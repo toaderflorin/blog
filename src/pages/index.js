@@ -9,7 +9,7 @@ export default function Index({ data }) {
 
   return (
     <div>
-      <div className="bg-[url(/img/bb.jpg)]  bg-cover scroll-watcher z-0"></div>
+      <div className="bg-[url(/img/backdrop2.jpg)]  bg-cover scroll-watcher z-0"></div>
       <Main posts={posts} />
       <div style={{ height: '400px', left: 0, right: 0, top: 0, position: 'absolute', zIndex: 1000 }}>
         <Hero />

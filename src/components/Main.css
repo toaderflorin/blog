@@ -8,6 +8,10 @@
   width: 1000px;
 }
 
+.margin {
+  margin-top: 550px;
+}
+
 @media only screen and (max-width: 600px) {
   .cards {
     padding: 10px;
@@ -17,5 +21,9 @@
 
   .container {
     width: auto;
+  }
+
+  .margin {
+    margin-top: 300px;
   }
 }
