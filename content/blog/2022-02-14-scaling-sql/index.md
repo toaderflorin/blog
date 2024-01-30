@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Scaling Out Relational Databases"
+title:  "A Begginer's Guide Scaling Out Relational Databases"
 date:   2022-02-15 09:39:37 +0300
 description: "
 Since a single database server can support a considerable load, it's worth starting off by saying that needing to scale out your database server means your business is doing several things right, so this is a good problem to have. While getting a machine with more processor cores, memory and disk space can alleviate your problems in the short term, at some point needing to distribute your database across multiple machines becomes unavoidable.

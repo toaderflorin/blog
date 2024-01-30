@@ -15,8 +15,8 @@ export default function BlogPostTemplate(props) {
     <Layout location={location} title={siteTitle}>
       <Header />
       <Head post={post} location={location} />
-
-      <article className="w-[700px] mx-auto pt-[150px] mb-[20px] mt-[150px] post-container" itemScope>
+      <div className="h-[50px] bg-red-400"></div>
+      <article className="w-[700px] mx-auto pt-[10px] mb-[20px] mt-[150px] post-container" itemScope>
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>

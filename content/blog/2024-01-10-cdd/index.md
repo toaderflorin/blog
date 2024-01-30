@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Developers And Designers Think Differently"
+title:  "Explaining The Dev Designer Impedance Mismatch Problem"
 date:   2024-01-10 09:39:37 +0300
 description: "Architects are the creatives who conceptualize and design the overall form, function, and aesthetics of buildings. They consider factors like aesthetics, functionality, sustainability, and user experience to create spaces that are both aesthetically pleasing and functionally effective. Architects possess a deep understanding of architectural history, design principles, and building codes. They translate client requirements into detailed drawings and specifications that guide the construction process. 
 "
