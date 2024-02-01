@@ -56,9 +56,6 @@ Again, very few developers are actually writing their own hashtables. But we nee
 Similarly, an SQL query spanning three tables, in the absence of indexes and optimizations will be of O(n^3) complexity.
 
 ### Improving Query Performance
-
-
-
 Join algorithms are a set of data processing techniques used to combine rows from two or more tables based on a specific join condition. These algorithms are crucial for database operations, enabling the retrieval of relevant data from multiple tables. Common join algorithms include:
 
 Join algorithms are a set of data processing techniques used to combine rows from two or more tables based on a specific join condition. These algorithms are crucial for database operations, enabling the retrieval of relevant data from multiple tables. Common join algorithms include:
