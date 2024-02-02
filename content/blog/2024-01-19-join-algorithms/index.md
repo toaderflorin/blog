@@ -4,7 +4,7 @@ title:  "Big O Notation And RDBMS Join Algorithms"
 date:   2024-01-19 09:39:37 +0300
 description: "MUI is one of the most powerful and popular of the React libraries out there, because it comes prepacked with a lot of controls (let’s face it, nobody wants to build a calendar). The idea behind it is it’s an implementation of Google’s Material Design, and it’s really opinionated in that regard, and herein lies one of its problems: a lot of designers don’t want their application to look like Gmail or Android, they will want a specific look and feel.
 "
-icon: "icon.jpg"
+icon: "on.jpg"
 image: "cucumber.jpg"
 cells: 2
 ---
