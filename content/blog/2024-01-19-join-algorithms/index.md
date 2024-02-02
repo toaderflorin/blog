@@ -79,4 +79,3 @@ If you've tried optimizing your query and it's still slow, consider something th
 
 * Star schemas are much better for complex reports, don't hit your production database.
 * You might want to use paging or lazy loading in your frontend, and do multiple requests / load child data on demand.
-* Use 

@@ -6,6 +6,7 @@ export default function Head(props: any) {
   console.log('frontmatter', post.frontmatter)
   //  + post.frontmatter.image
 // content={location.href + post.frontmatter.image} />
+
   return (
     <>
       <title>{post.frontmatter.title}</title>   

@@ -36,8 +36,14 @@ export default function ArticleCard(props: Props) {
   return (
     <>
       {position == 5 && (
-        <div className="span-3 my-5">
-          Like what you are reading? Reach <a>out</a>.
+        <div className="span-3 my-5 flex gap-3">
+          <div className="w-[5px] bg-slate-100"></div>
+          <div>
+            <h3>Like what you are reading?</h3>{' '}
+            <p>
+              Reach <a>out</a>.
+            </p>
+          </div>
         </div>
       )}
       <article
@@ -58,7 +64,7 @@ export default function ArticleCard(props: Props) {
                 left: 0,
                 right: 0,
                 bottom: 0,
-                height: 70,
+                height: 80,
                 background: 'linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 150))'
               }}
             />
