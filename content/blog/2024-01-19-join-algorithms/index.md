@@ -18,7 +18,7 @@ Your queries will work fine on small databases. It's only until
 
 This is something that sometimes comes up in interviews. To be honest, initially I didn't find much use for knowing about it, because let's be honest, most developers don't write their own sorting algorithms.
 
-<img src="complexity.png" class="img" />
+<img src="complexity.jpg" class="img" />
 
 But the more I spent time coding, I realized that you need to understand how the code that you are using works - meaning the underlying algorithms. This is especially true when it comes to database performance.
 
