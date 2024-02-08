@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://florintoader.me</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 08 Feb 2024 06:32:14 GMT</lastBuildDate><item><title><![CDATA[The Danger Of Ramping Up A project Too Soon]]></title><description><![CDATA[Here’s the most common issue caused by ramping up too soon: the lack of parallelization. If a woman gives birth to one child in 9 months, it…]]></description><link>https://florintoader.me/2024-01-19-ramping-up/</link><guid isPermaLink="false">https://florintoader.me/2024-01-19-ramping-up/</guid><pubDate>Thu, 01 Feb 2024 06:39:37 GMT</pubDate><content:encoded>&lt;p&gt;Here’s the most common issue caused by ramping up too soon: the lack of parallelization.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://florintoader.me</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 08 Feb 2024 12:23:29 GMT</lastBuildDate><item><title><![CDATA[The Danger Of Ramping Up A project Too Soon]]></title><description><![CDATA[Here’s the most common issue caused by ramping up too soon: the lack of parallelization. If a woman gives birth to one child in 9 months, it…]]></description><link>https://florintoader.me/2024-01-19-ramping-up/</link><guid isPermaLink="false">https://florintoader.me/2024-01-19-ramping-up/</guid><pubDate>Thu, 01 Feb 2024 06:39:37 GMT</pubDate><content:encoded>&lt;p&gt;Here’s the most common issue caused by ramping up too soon: the lack of parallelization.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;If a woman gives birth to one child in 9 months, it doesn’t mean 3 women can’t birth the same child in 3 months.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Which I’ve discussed at length in my estimation article here.&lt;/p&gt;
 &lt;h3&gt;Construction As An Analogy&lt;/h3&gt;
@@ -88,8 +88,7 @@
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color: #F07178&quot;&gt;      &lt;/span&gt;&lt;span style=&quot;color: #89DDFF&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color: #F07178&quot;&gt;    &lt;/span&gt;&lt;span style=&quot;color: #89DDFF&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
 &lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color: #F07178&quot;&gt;  &lt;/span&gt;&lt;span style=&quot;color: #89DDFF&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color: #89DDFF&quot;&gt;}&lt;/span&gt;&lt;/span&gt;
-&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color: #89DDFF&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;This Typescript function has O(n^3) complexity, for example, so the execution time will increase much faster than linear.&lt;/p&gt;
 &lt;h3&gt;Understanding Hashtables&lt;/h3&gt;
 &lt;p&gt;Before we look at various algorithms, we must understand how hashtables work.&lt;/p&gt;
@@ -100,6 +99,19 @@
 &lt;img src=&quot;hash.png&quot; class=&quot;img&quot; loading=&quot;lazy&quot; /&gt;
 &lt;p&gt;Again, very few developers are actually writing their own hashtables. But we need to be aware of how they work under the hood.&lt;/p&gt;
 &lt;p&gt;Similarly, an SQL query spanning three tables, in the absence of indexes and optimizations will be of O(n^3) complexity.&lt;/p&gt;
+&lt;pre class=&quot;shiki-unknown&quot;&gt;&lt;code&gt;public static int HashString(string key)
+{
+    int hash = 0;
+    for (int i = 0; i &lt; key.Length; i++)
+    {
+        // Fold the value to reduce bit-length growth
+        hash = (hash &lt;&lt; 5) + hash ^ (int)key[i];
+        // Mix odd and even bits for better distribution
+        hash = ((hash &amp; 0xffff) &lt;&lt; 16) | (hash &gt;&gt; 16);
+    }
+    // Final mixing and return
+    return hash ^ (hash &gt;&gt; 13) ^ (hash &gt;&gt; 27);
+}&lt;/code&gt;&lt;/pre&gt;
 &lt;h3&gt;Improving Query Performance&lt;/h3&gt;
 &lt;p&gt;Join algorithms are a set of data processing techniques used to combine rows from two or more tables based on a specific join condition. These algorithms are crucial for database operations, enabling the retrieval of relevant data from multiple tables. Common join algorithms include:&lt;/p&gt;
 &lt;p&gt;Join algorithms are a set of data processing techniques used to combine rows from two or more tables based on a specific join condition. These algorithms are crucial for database operations, enabling the retrieval of relevant data from multiple tables. Common join algorithms include:
