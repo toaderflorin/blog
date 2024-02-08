@@ -18,7 +18,7 @@ Your queries will work fine on small databases. It's only until
 
 This is something that sometimes comes up in interviews. To be honest, initially I didn't find much use for knowing about it, because let's be honest, most developers don't write their own sorting algorithms.
 
-<img src="complexity.jpg" class="img" />
+<img src="complexity.jpg" class="img" loading="lazy" />
 
 But the more I spent time coding, I realized that you need to understand how the code that you are using works - meaning the underlying algorithms. This is especially true when it comes to database performance.
 
@@ -49,7 +49,7 @@ Here's where the concept of a has table (or dictionary comes into play). We woul
 
 We do know that arrays have a O(1) complexity, meaning that if we know the index of a certain item, we can go directly to that item in the array.
 
-<img src="hash.png" class="img" />
+<img src="hash.png" class="img" loading="lazy" />
 
 Again, very few developers are actually writing their own hashtables. But we need to be aware of how they work under the hood.
 

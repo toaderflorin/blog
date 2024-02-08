@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Main from '../components/Main'
 import Scroller from '../components/Scroller'
@@ -7,13 +7,37 @@ import Hero from '../components/Hero'
 export default function Index({ data }) {
   const posts = data.allMarkdownRemark.nodes
 
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+    // return onCleanup
+  }, [])
+
+  function onScroll() {
+    const scrollPosition = window.scrollY
+
+    const actual = (scrollPosition < 500 ? scrollPosition : 500) / 500
+    const scale = 1 + actual * 0.3
+
+    const el = document.getElementById('back12')
+    console.log('opacity', 1 - actual)
+
+    if (el && el.style) {
+      el.style.transform = `scale(${scale})`
+      el.style.opacity = 1 - actual
+    }
+  }
+
   return (
     <div>
-      <div className="bg-[url(/img/backdrop3.jpg)] bg-cover  z-0 h-[550px] scroll-watcher"></div>
+      <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
+        <img src="/img/backdrop3.jpg" loading="lazy" />
+      </div>
+      {/* </div> */}
+
       <Main posts={posts} />
-      <div style={{ height: '400px', left: 0, right: 0, top: 0, position: 'absolute', zIndex: 1000 }}>
+      <div style={{ left: 0, right: 0, top: 0, position: 'absolute', zIndex: 1000 }}>
         <Hero />
-      </div>   
+      </div>
       <Scroller />
     </div>
   )
