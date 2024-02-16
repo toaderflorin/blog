@@ -35,7 +35,7 @@ export default function ArticleCard(props: Props) {
 
   return (
     <>
-      {position == 5 && (
+      {/* {position == 5 && (
         <div className="span-3 my-5 flex gap-3">
           <div className="w-[5px] bg-slate-100"></div>
           <div>
@@ -45,7 +45,7 @@ export default function ArticleCard(props: Props) {
             </p>
           </div>
         </div>
-      )}
+      )} */}
       <article
         key={post.fields.slug}
         className={`cursor-pointer p-5 shadow-[0_5px_30px_-15px_rgba(0,0,0,0.3)] hover:shadow-[0_5px_30px_-15px_rgba(0,0,0,0.7)] hover:text-black duration-300 rounded span-${span}`}

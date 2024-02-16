@@ -32,7 +32,6 @@ async function f(n: number) {
     }
   }
 }
-
 ```
 
 This Typescript function has O(n^3) complexity, for example, so the execution time will increase much faster than linear.
@@ -54,6 +53,22 @@ We do know that arrays have a O(1) complexity, meaning that if we know the index
 Again, very few developers are actually writing their own hashtables. But we need to be aware of how they work under the hood.
 
 Similarly, an SQL query spanning three tables, in the absence of indexes and optimizations will be of O(n^3) complexity.
+
+```csharp
+public static int HashString(string key)
+{
+    int hash = 0;
+    for (int i = 0; i < key.Length; i++)
+    {
+        // Fold the value to reduce bit-length growth
+        hash = (hash << 5) + hash ^ (int)key[i];
+        // Mix odd and even bits for better distribution
+        hash = ((hash & 0xffff) << 16) | (hash >> 16);
+    }
+    // Final mixing and return
+    return hash ^ (hash >> 13) ^ (hash >> 27);
+}
+```
 
 ### Improving Query Performance
 Join algorithms are a set of data processing techniques used to combine rows from two or more tables based on a specific join condition. These algorithms are crucial for database operations, enabling the retrieval of relevant data from multiple tables. Common join algorithms include:

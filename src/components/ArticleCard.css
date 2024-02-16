@@ -19,4 +19,8 @@
   .span-2 {
     grid-column: auto / span 1;
   }
+
+ .span-3 {
+    grid-column: auto / span 1;
+  }
 }

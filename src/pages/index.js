@@ -9,7 +9,6 @@ export default function Index({ data }) {
 
   useEffect(() => {
     window.addEventListener('scroll', onScroll)
-    // return onCleanup
   }, [])
 
   function onScroll() {
@@ -30,7 +29,7 @@ export default function Index({ data }) {
   return (
     <div>
       <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
-        <img src="/img/backdrop3.jpg" loading="lazy" />
+        <img src="/img/back.jpg" loading="lazy" />
       </div>
       {/* </div> */}
 

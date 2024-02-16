@@ -59,6 +59,35 @@ In the context of databases, index cardinality refers to the number of distinct 
 
 ### Understanding Index Cardinality
 
+
+In the world of database indexes, cardinality refers to the uniqueness of values stored in a specific column within the index. It essentially tells you how many distinct values that column contains. High cardinality means lots of unique values, while low cardinality indicates many duplicates.
+
+Here's a breakdown:
+
+Key points:
+
+* Cardinality is an estimate, not an exact count. Databases use statistical methods to approximate it.
+* It plays a crucial role in query optimization. The database uses cardinality to decide whether to use an index for a specific query and how efficient it will be.
+* Generally, higher cardinality is better for indexes. More unique values allow the index to effectively narrow down results, leading to faster queries.
+
+Types of cardinality:
+
+* High cardinality: Many unique values (e.g., usernames, IDs, timestamps). These indexes efficiently filter data.
+* Medium cardinality: Some unique values, some duplicates (e.g., city names, zip codes). Still helpful for filtering, but less selective.
+* Low cardinality: Few unique values or even all duplicates (e.g., gender flags, boolean values). Indexing such columns might not be beneficial.
+
+Impact on index selection:
+
+* The query optimizer compares the cardinality of an index's column with the expected number of rows returned by the query.
+* If the cardinality is much smaller than the total rows, the index can efficiently narrow down the search.
+* If the cardinality is close to the total rows, using the index might not be much faster than scanning the entire table.
+
+Additional notes:
+
+* Cardinality can change over time as data gets added or modified. Keeping statistics updated is crucial for optimal performance.
+* Some indexes, like covering indexes, can still be beneficial even with low cardinality due to additional information they store.
+
+
 Low Cardinality:
 
 Index cardinality is considered low when there are relatively few distinct values in a column. For instance, an index on a column storing gender (male or female) would have low cardinality. Low-cardinality indexes are generally less effective than high-cardinality indexes because they don't narrow down the search space significantly. However, they can still be helpful in some cases, such as when searching for specific values that occur infrequently.
@@ -77,3 +106,4 @@ Think of indexes as a
 Indexes use B-tree structures, which generalize binary trees and allow for logarithmic time searches. These B-trees also need to be rebalanced.
 
 Before we get into B-trees, we need to discuss balancing binary trees and why that is important.
+
