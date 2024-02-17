@@ -13,7 +13,7 @@ export default function HeaderNew() {
 
       <div className="flex flex-col items-center">
         <div style={{ fontSize: '34px' }}>Florin Toader</div>
-        <div className="text-slate-400">Don't be dogmatic.</div>
+        <div className="text-slate-400 text-center">Don't look at technology options until you understand the problem. <br/> Be practical, don't be dogmatic.</div>
       </div>
     </div>
   )

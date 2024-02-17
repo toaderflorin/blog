@@ -16,9 +16,7 @@ export default function Index({ data }) {
 
     const actual = (scrollPosition < 500 ? scrollPosition : 500) / 500
     const scale = 1 + actual * 0.3
-
     const el = document.getElementById('back12')
-    console.log('opacity', 1 - actual)
 
     if (el && el.style) {
       el.style.transform = `scale(${scale})`
@@ -31,7 +29,6 @@ export default function Index({ data }) {
       <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
         <img src="/img/back.jpg" loading="lazy" />
       </div>
-      {/* </div> */}
 
       <Main posts={posts} />
       <div style={{ left: 0, right: 0, top: 0, position: 'absolute', zIndex: 1000 }}>
