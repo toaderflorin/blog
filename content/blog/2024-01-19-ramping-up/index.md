@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Primary Danger Of Ramping Up A project Too Soon"
+title:  "The Primary Danger Of Ramping Up A Project Too Soon"
 date:   2024-02-01 09:39:37 +0300
 description: "Here’s the most common issue caused by ramping up too soon: the lack of parallelization. If a woman gives birth to one child in 9 months, it doesn’t mean 3 women can’t birth the same child in 3 months. Which I’ve discussed at length in my estimation article here. Let's use another analogy: construction work. If you are a construction company that builds houses, you can absolutely scale up and have multiple teams work on different residential units.
 "
@@ -8,9 +8,9 @@ icon: "scr.jpg"
 image: "cucumber.jpg"
 cells: 2
 ---
-Let's use another analogy: construction work. If you are a construction company that builds houses, you can absolutely scale up and have multiple teams work on different residential units. But this is not the case, when it comes to building something like a skyscraper.
+Time pressure is quite common software projects, and a common solution to it is hiring more developers. And we know that doesn't always translate into success, because of issues with being able to parallelize work.
 
-The skyscraper that famously achieved the feat of building one story per day is the Empire State Building. Its construction, completed in 1931, was a marvel of engineering and organization, employing innovative techniques and a dedicated workforce.
+Let's use an analogy: construction work. If you are a construction company that builds houses, you can absolutely scale up and have multiple teams work on different residential units. But this is not the case, when it comes to building something like a skyscraper. A skyscraper construction project that famously achieved the feat of building one story per day is the Empire State Building. Its construction, completed in 1931, was a marvel of engineering and organization, employing innovative techniques and a dedicated workforce.
 
 <img src="skyscraper.jpg" data-src="skyscraper.jpg" class="img" loading="lazy" />
 
