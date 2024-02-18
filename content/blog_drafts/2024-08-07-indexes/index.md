@@ -12,7 +12,6 @@ categories:
 A typical approach that a lot of developers take to improve query performance would be to add a lot of indexes to your database, but I'd like to mention why this is a mistake.
 
 ### A Simple Paralel
-
 Think of indexes as a 
 
 *Indexes use B-tree structures, which generalize binary trees and allow for logarithmic time searches. These B-trees also need to be rebalanced.*
