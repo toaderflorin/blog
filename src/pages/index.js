@@ -24,10 +24,15 @@ export default function Index({ data }) {
     }
   }
 
+  function onImageLoad() {
+    const headx = document.getElementById('headx')
+    headx.classList.add('headx')
+  }
+
   return (
     <div>
       <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
-        <img src="/img/back.jpg" loading="lazy" />
+        <img id="headx" src="/img/back.jpg" loading="lazy" onLoad={onImageLoad} />
       </div>
 
       <Main posts={posts} />

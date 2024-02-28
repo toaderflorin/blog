@@ -121,6 +121,11 @@
   src: url(/fonts/DMSans.ttf);
 }
 
+@font-face {
+  font-family: montreal;
+  src: url(/fonts/ppneuemontreal-book.otf);
+}
+
 :root {
   --color-primary: #ff164c;
 }
@@ -139,9 +144,10 @@ h3 {
   font-weight: 400;
 }
 
-html {
+html, body {
   padding: 0;
   margin: 0;
+  overscroll-behavior-y: none;
 }
 
 pre.shiki {
@@ -157,7 +163,7 @@ code {
 body {
   font-family: now, serif;
   font-size: 15px;
-  color: #111;
+  color: black;
   /* font-weight: 350; */
   line-height: 1.45;
 }
@@ -224,8 +230,28 @@ ul {
   animation-fill-mode: forwards;
 } */
 
+.headx {
+  animation: abc linear;
+  animation-duration: 1s;
+}
+
 .shiki {
   overflow: clip;
+}
+
+ /* 0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  } */
+
+@keyframes abc {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes zoom {
@@ -234,6 +260,15 @@ ul {
     opacity: 0%;
   }
 }
+
+
+@keyframes opIn {
+  to {
+    /* scale: 2 2; */
+    opacity: 100%;
+  }
+}
+
 
 @keyframes opacity {
   to {

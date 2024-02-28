@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Use SQL Indexes With Caution"
-date:   2024-01-29 09:39:37 +0300
+date:   2024-02-10 09:39:37 +0300
 description: "A typical mistake among junior developers is adding too many indexes to tables in SQL databases, way more than it would be necessary. On first impression, it wouldn't look like they would be a big deal, but that's not the case. A Simple Paralel:
 Think of indexes as a Indexes use B-tree structures, which generalize binary trees and allow for logarithmic time searches. These B-trees also need to be rebalanced. Before we get into B-trees, we need to discuss balancing binary trees and why that is important.
 "

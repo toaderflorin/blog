@@ -57,16 +57,15 @@ The primary reason why modifying code is harder, is you need to keep track not o
 
 <img src="ball.svg" class="img" loading="lazy" />
 
-Think about it this way: if you have N components and each comunicationes with each (which is a a lot), you will have N^2 dependencies. This is not necessarily realistic, but you get the picture.
+Think about it this way: if you have N components and each comunicationes with each (which is a a lot), you will have N^2 dependencies. This is not necessarily realistic, but you get the picture. Existing code will already be connected to existing parts and changing it will require changing other parts. 
 
 ## Architecture Is A Lot About Patterns
 There’s a lot of debating around the merits of various architectures, like MVC versus minimal APIs, Clean Architecture versus regular n-tier, etc., but I think one aspect that gets brought up less is the fact that they are about enforcing consistent patterns in the application. As a developer, it is important to be able to understand and find code easily. Ideally, you want to be able to be able to understand the code by reading it, without having to debug. True, the fact that these patterns enforce high cohesion and low coupling also helps.
 
-Ultimately, it’s about mental models and compartimentalization.
+To me, architecture is also about mental models and compartimentalization. Let's use the analogy of a messy closet.
 
 <img src="messy.jpeg" class="img" loading="lazy" />
 
-*As a developer, I want to be able to understand the code by reading it, not by having to debug it.*
 
 If you have a messy closet, you there's a tendency for it to become even more messy, because you will just through things on top of the existing pile. Code is the same, messy code begets more messy code. So regardless what architectural approach, clean and mantainable code is about *cohesion and coupling*. The main problem with not starting out with a clear structure is that structure because even more messy over time. An initial messy structure creates a snowball effect.
 
