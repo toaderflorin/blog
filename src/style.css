@@ -230,10 +230,10 @@ ul {
   animation-fill-mode: forwards;
 } */
 
-.headx {
+/* .headx {
   animation: abc linear;
   animation-duration: 1s;
-}
+} */
 
 .shiki {
   overflow: clip;

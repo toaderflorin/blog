@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Main from '../components/Main'
 import Scroller from '../components/Scroller'
 import Hero from '../components/Hero'
+// import Img from "gatsby-image"
 
 export default function Index({ data }) {
   const posts = data.allMarkdownRemark.nodes
@@ -32,7 +33,8 @@ export default function Index({ data }) {
   return (
     <div>
       <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
-        <img id="headx" src="/img/p2.webp" loading="lazy" onLoad={onImageLoad} />
+        <img id="headx" src="/img/p1.webp" onLoad={onImageLoad} style={{ animation: 'abc 1s linear' }}/>
+        {/* <Img src="/img/p2.webp" /> */}
       </div>
 
       <Main posts={posts} />
