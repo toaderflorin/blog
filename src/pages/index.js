@@ -1,36 +1,69 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/Layout"
-import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import React, { useEffect } from 'react'
+import { graphql } from 'gatsby'
+import Main from '../components/Main'
+import Scroller from '../components/Scroller'
+import Hero from '../components/Hero'
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+export default function Index({ data }) {
+  const posts = data.allMarkdownRemark.nodes
 
-const IndexPage = () => (
-  <Layout>
-    <div className={styles.textCenter}>
-      <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
-      <h1>
-        Welcome to <b>Gatsby!</b>
-      </h1>    
-    </div>  
-  </Layout>
-)
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+  }, [])
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
-export const Head = () => <Seo title="Home" />
+  function onScroll() {
+    const scrollPosition = window.scrollY
 
-export default IndexPage
+    const actual = (scrollPosition < 500 ? scrollPosition : 500) / 500
+    const scale = 1 + actual * 0.3
+    const el = document.getElementById('back12')
+
+    if (el && el.style) {
+      el.style.transform = `scale(${scale})`
+      el.style.opacity = 1 - actual
+    }
+  }
+
+  function onImageLoad() {
+    const headx = document.getElementById('headx')
+    headx.classList.add('headx')
+  }
+
+  return (
+    <div>
+      <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
+        <img id="headx" src="/img/p2.webp" loading="lazy" onLoad={onImageLoad} />
+      </div>
+
+      <Main posts={posts} />
+      <div style={{ left: 0, right: 0, top: 0, position: 'absolute', zIndex: 1000 }}>
+        <Hero />
+      </div>
+      <Scroller />
+    </div>
+  )
+}
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          icon
+          description
+        }
+      }
+    }
+  }
+`

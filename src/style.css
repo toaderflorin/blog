@@ -1,0 +1,285 @@
+@font-face {
+  font-family: gilroy;
+  src: url(/fonts/Gilroy-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: instrument;
+  src: url(/fonts/Instrument.ttf);
+}
+
+@font-face {
+  font-family: matter;
+  src: url(/fonts/Matter-Regular.ttf);
+}
+
+@font-face {
+  font-family: neuehaas;
+  src: url(/fonts/NeueHaasDisplayRoman.ttf);
+}
+
+@font-face {
+  font-family: lato;
+  src: url(/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: avenir;
+  src: url(/fonts/AvenirLTStd-Roman.otf);
+}
+
+
+@font-face {
+  font-family: walsheim;
+  src: url(/fonts/GT-Walsheim.otf);
+}
+
+
+@font-face {
+  font-family: cisco;
+  src: url(/fonts/CiscoSans.ttf);
+}
+
+@font-face {
+  font-family: nexa;
+  src: url(/fonts/Nexa-Book.ttf);
+}
+
+@font-face {
+  font-family: tt;
+  src: url(/fonts/TTHoves-Regular.ttf);
+}
+
+@font-face {
+  font-family: poly;
+  src: url(/fonts/poly.otf);
+}
+
+
+@font-face {
+  font-family: suisse;
+  src: url(/fonts/SuisseIntl-Regular.ttf);
+}
+
+@font-face {
+  font-family: aktiv;
+  src: url(/fonts/AktivGrotesk-Light.ttf);
+}
+
+@font-face {
+  font-family: Matter;
+  src: url(/fonts/Matter-Light.ttf);
+}
+
+@font-face {
+  font-family: balto;
+  src: url(/fonts/Balto-Book.ttf);
+}
+
+@font-face {
+  font-family: mona;
+  src: url(/fonts/MonaSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: roobert;
+  src: url(/fonts/Roobert-Regular.ttf);
+}
+
+@font-face {
+  font-family: balto;
+  font-weight: bold;
+  src: url(/fonts/Balto-Bold.woff2);
+}
+
+@font-face {
+  font-family: now;
+  src: url(/fonts/HelveticaNow.otf);
+}
+
+@font-face {
+  font-family: now;
+  src: url(/fonts/helvetica-bold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: satoshi;
+  src: url(/fonts/Satoshi-Regular.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: passenger;
+  src: url(/fonts/Passenger.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: dmsans;
+  src: url(/fonts/DMSans.ttf);
+}
+
+@font-face {
+  font-family: montreal;
+  src: url(/fonts/ppneuemontreal-book.otf);
+}
+
+:root {
+  --color-primary: #ff164c;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  overscroll-behavior-y: none;
+}
+
+pre.shiki {
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 13px;
+}
+
+code {
+  font-size: 13px;
+}
+
+body {
+  font-family: now, serif;
+  font-size: 15px;
+  color: black;
+  /* font-weight: 350; */
+  line-height: 1.45;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: -1rem;
+  line-height: 2;
+}
+
+h1>a,
+h2>a,
+h3>a,
+h4>a,
+h5>a,
+h6>a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0.7rem 0 0.7rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.img {
+  width: 100%;  
+}
+
+.img-side {
+  width: 300px;
+  float: left;
+}
+
+ol,
+ul {
+  margin: 0.7rem 0 0.7rem 0;
+}
+
+.article-icon {
+  height: 64px;
+  width: 64px;
+  float: left;
+  margin-right: 8px;
+  margin-top: 6px;
+}
+
+/* .scroll-watcher {
+  position: fixed;
+  background: url(/static/img/coffee.jpg);
+  inset: 0;
+  animation: blur linear;
+  animation-range: exit;
+  animation-timeline: view();
+  transform-origin: bottom center;
+  animation-fill-mode: forwards;
+} */
+
+.headx {
+  animation: abc linear;
+  animation-duration: 1s;
+}
+
+.shiki {
+  overflow: clip;
+}
+
+ /* 0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  } */
+
+@keyframes abc {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes zoom {
+  to {
+    /* scale: 2 2; */
+    opacity: 0%;
+  }
+}
+
+
+@keyframes opIn {
+  to {
+    /* scale: 2 2; */
+    opacity: 100%;
+  }
+}
+
+
+@keyframes opacity {
+  to {
+    opacity: 0.5;
+  }
+}
+
+@keyframes blur {
+  to {
+    /* filter: blur(20px); Reset the blur */
+    scale: 1.3 1.3;
+    /* opacity: 0%; */
+  }
+}
