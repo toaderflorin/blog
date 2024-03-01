@@ -25,20 +25,19 @@ export default function Index({ data }) {
     }
   }
 
-  function onImageLoad() {
-    const headx = document.getElementById('headx')
-    headx.classList.add('headx')
-  }
+  // function onImageLoad() {
+  //   const headx = document.getElementById('headx')
+  //   headx.classList.add('headx')
+  // }
 
   return (
     <div>
       <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
-        <img id="headx" src="/img/p1.webp" onLoad={onImageLoad} style={{ animation: 'abc 1s linear' }}/>
-        {/* <Img src="/img/p2.webp" /> */}
+        <img src="/img/p1.webp" />        
       </div>
 
       <Main posts={posts} />
-      <div style={{ left: 0, right: 0, top: 0, position: 'absolute', zIndex: 1000 }}>
+      <div style={{ left: 0, right: 0, top: 0, position: 'absolute', zCIndex: 1000 }}>
         <Hero />
       </div>
       <Scroller />

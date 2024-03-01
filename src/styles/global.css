@@ -6,3 +6,10 @@
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+.headx {
+  opacity: 0;
+  /* animation: abc 1s linear;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; */
+}
