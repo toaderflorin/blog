@@ -8,8 +8,8 @@
 }
 
 .headx {
-  opacity: 0;
-  /* animation: abc 1s linear;
+  /* opacity: 0; */
+  animation: abc 1s linear;
   animation-duration: 1s;
-  animation-fill-mode: forwards; */
+  animation-fill-mode: forwards;
 }

@@ -33,7 +33,7 @@ export default function Index({ data }) {
   return (
     <div>
       <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
-        <img src="/img/p1.webp" />        
+        <img src="/img/p1.webp" data-src="/img/p2.webp" className="headx" loading='lazy' />
       </div>
 
       <Main posts={posts} />
