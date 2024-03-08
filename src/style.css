@@ -163,7 +163,7 @@ code {
 body {
   font-family: now, serif;
   font-size: 15px;
-  color: black;
+  color: #333;
   /* font-weight: 350; */
   line-height: 1.45;
 }

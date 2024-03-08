@@ -106,3 +106,38 @@ Indexes use B-tree structures, which generalize binary trees and allow for logar
 
 Before we get into B-trees, we need to discuss balancing binary trees and why that is important.
 
+### Quake 1 As A Case Study For Optimization
+Games are notorious performance hogs, and developing a game like Quake 1 would have been exceptionally challenging, given the limited performance of the hardware at the time. Not only that, it's also considered a masterclass in software design.
+
+<img src="quake1.jpg" class="img" loading="lazy" />
+
+A huge part of the engine is visual surface determination, but the Quake engine uses precomputed visibility sets.
+
+<img src="wireframe.png" class="img" loading="lazy" />
+
+There's a lot going on. The engine needs to figure out a lot of things:
+* A level is big, so the engine needs to figure out the exact polygons the player sees. It does so using 
+* The engine also needs to figure out what enemies need to do in reaction to the player's actions.
+* Collision detection, i.e., has the player bumped into a wall and what to do as a result.
+
+Let's try to sketch the rendering loop. Keep in mind this highly simplifies things.
+
+```c
+  Polygon[] polygons = get_visible_polygons();
+  
+  Polygon transformed_polygon;
+  ScreenSpacePoligon projected_polygon;
+  Line current_line;
+
+  for (int i = 0; i < sizeof(polygons); i++) {
+    transformed_polygon = transform(polygon, currentPosition, currentHeading);    
+    projected_polygon = project(transformed_polygon);
+  
+    for (int j = 0; j < sizeof(projected_polygon.horizontal_lines); j++) {        
+      for (int k = 0; k < get_pixels(projected_polygon.horizontal_lines[j]); k++) {
+        // implement perspective correct texture mapping for current pixel
+      }
+    }
+  }
+```
+When comparing a normal rendered picture, we can see that the polygon vertexes (corners) are much lower in number than the number of pixels. And the per pixel correct texture mapping happens inside the inner loop, where performance matters. Also, correct texture mapping requires two divides per pixel and is quite expensive. So the inner loops were written in assembly (and texture correction was done every 8 pixels--the code used linear interpolation in between).

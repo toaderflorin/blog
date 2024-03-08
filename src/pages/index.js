@@ -25,15 +25,15 @@ export default function Index({ data }) {
     }
   }
 
-  // function onImageLoad() {
-  //   const headx = document.getElementById('headx')
-  //   headx.classList.add('headx')
-  // }
+  function onImageLoad() {
+    const headx = document.getElementById('headx')
+    headx.classList.add('headx')
+  }
 
   return (
     <div>
-      <div id="back12" style={{ height: '550px', position: 'fixed', overflow: 'clip', zIndex: 0, top: 0 }}>
-        <img src="/img/p1.webp" data-src="/img/p2.webp" className="headx" loading='lazy' />
+      <div className="hero-background" style={{ background: 'red' }}>
+        {/* <img src="/img/p2.webp" srcset="/img/p1.webp 2x" className="headx" loading='lazy' /> */}
       </div>
 
       <Main posts={posts} />

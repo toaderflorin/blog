@@ -8,7 +8,9 @@ icon: "controller.png"
 image: "stack.jpg"
 cells: 2
 ---
-Something I've seen more and more in SCRUM teams is the concept of gamification. Gamification is the process of applying game-like elements and mechanics to non-game contexts to enhance user engagement, motivation, and overall experience. It involves incorporating game design elements such as points, badges, leaderboards, challenges, and rewards into non-game activities, such as marketing campaigns, educational programs, workplace training, and even daily tasks. The goal of gamification is to tap into the natural human desire for challenge, competition, and social interaction that we experience when playing games. 
+Something I've seen more and more in SCRUM teams is the concept of gamification. Gamification is the process of applying game-like elements and mechanics to non-game contexts to enhance user engagement, motivation, and overall experience. It involves incorporating game design elements such as points, badges, leaderboards, challenges, and rewards into non-game activities, such as marketing campaigns, educational programs, workplace training, and even daily tasks. 
+
+Apparently, the goal of gamification is to tap into the natural human desire for challenge, competition, and social interaction that we experience when playing games. 
 
 <img src="stack.jpg" class="img" />
 
@@ -17,15 +19,17 @@ In theory, this sounds great. Except for when it isn't.
 
 It's argued that gamification can foster social connection by providing opportunities for collaboration, competition, and peer recognition in your team, because it introduces an element of playfulness in the SCRUM and development process, but I've found the opposite to be true in a lot of cases. Gamification is always tied to metrics, e.g., number of story points closed or tickets.
 
-It can lead to people trying to game the system, which in turn can lead to resentment and a toxic environment.
-
 ## Chasing (Story) Points
 
-Imagine an NBA team. Not all players have the same role. Now imagine that all players are evaluated based on the number of points they score. What will happen is instead of the players working as a team, they will compete for the ball between themselves, as well as against the other team. In hid infamous title defense against Demian Maia, the Anderson Silva used a simple strategy. Knowing that Maya is a Brazilian Jiu Jitsu phenom, he tried to avoid getting into close contact at all costs, simply resorting to a strategy where he would pepper him with shots from 
+ In hid infamous title defense against Demian Maia, the Anderson Silva used a simple strategy. Knowing that Maya is a Brazilian Jiu Jitsu phenom, he tried to avoid getting into close contact at all costs, simply resorting to a strategy where he would pepper him with shots from 
 
 *In fact, he did the bare minimum to win the fight and retain his title.*
 
+<img src="interview.png" class="img" />
+
 He won on points, and that was the whole strategy.
+
+Imagine an NBA team. Not all players have the same role. Now imagine that all players are evaluated based on the number of points they score. What will happen is instead of the players working as a team, they will compete for the ball between themselves, as well as against the other team.
 
 In many companies, various metrics will be used in conjunction with stack ranking, which is now an infamous tactic.  
 
@@ -35,6 +39,10 @@ its targeted, or forced, distribution requirements, which meant managers had to 
 Stack ranking, also known as forced ranking, is an employee evaluation method that categorizes employees into a predetermined distribution of performance levels, typically a bell curve. This method is commonly used in software development companies to assess and compare the performance of their employees. In stack ranking, managers are tasked with placing each employee within a specific performance category, such as "exceeds expectations," "meets expectations," "needs improvement," or "underperforms." This process often involves comparing employees against each other, which can create a competitive and sometimes adversarial environment within teams.
 
 ## Writing Software Is a Collaborative Effort
+
+This cannot be said enough.
+
+<img src="remember.jpg" class="img" />
 
 While stack ranking aims to identify and reward top performers, it has been criticized for its drawbacks and negative impacts on employee morale, motivation, and overall team dynamics.
 

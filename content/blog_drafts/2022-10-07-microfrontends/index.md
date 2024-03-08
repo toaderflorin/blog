@@ -1,33 +1,14 @@
 ---
 layout: post
-title:  "Breaking The Frontend Monolith"
-date:   2023-10-10 09:39:37 +0300
+title:  "Dan Abramov Claims He Doesn't Understand Microfrontends"
+date:   2024-02-10 09:39:37 +0300
 description: "When Google announced that it would be rebooting AngularJS and that Angular 2.0 would be effectively a new framework, a lot of companies with products built on the old version were put in a difficult situation of having to either restart building their product from scratch or continue with a deprecated technology or you some kind of hybrid solution. Continuing to build on a deprecated technology is obviously risky. As time passes, there are no more updates to the library, and finding developers willing to work on it becomes harder and harder, so this isn't really an option.
 "
 icon: "polyglot.jpeg"
 categories: 
 
 ---
-A common theme on the blog is the practicality of approaches (and avoiding development dogma). For example,  Elm is a great technology stack. Still, it probably won't be on most companies' adoption lists because technologies like React or Angular are much more popular, and it's easier to find developers. It's also much more likely that those technologies will be supported in the future. Likewise, even though microservices are very popular, most projects won't start out using a microservice architecture. 
-
-### The Hybrid Monolith / Microservice Approach
-A typical pattern encountered in the wild is the hybrid monolith + satellite microservices approach. This usually occurs something like this:
-
-1. A company starts out with a new product, and even though care is taken to split the app into modules, there are usually dependencies between modules - for example, code that hits the same database tables.
-2. A decision is taken to move to a microservice architecture as the product team grows.
-3. The team attempts some refactoring and isolates some parts of the monolith into individual microservices.
-4. New functionality will be developed as new microservices.
-
-For example, a very simple schematic for an online store might look like this:
-
-<img src="satelite.svg" class="img" />
-
-A common problem with breaking up modules into microservices is transactions, because even if individual pieces of code from various modules don't call each other direcetly, they can still share data and trigger transactions in the database. And with microservices, transactions become distributed. And distributed transactions are hard. 
-
-### Microfrontends
-Microfontends, as their name suggests, are the front-end equivalent of microservices. 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BuRB3djraeM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Microfrontends are relatively now. While people have been dabbling with 
 
 Dan Abramov (of Redux fame) famously said he doesn't understand them. He also said that they can be replaced with a sound component system.
 
@@ -69,18 +50,3 @@ A central tenet of distributed systems is each piece needs to own its own data. 
 Note: global state objects such as the one introduced by Redux makes splitting React/Redux apps into smaller MFEs quite problematic. Before moving various pieces of the application into individual MFEs, it is recommended the frontend is decoupled from the global app state.
 
 MVVM applications like KnockoutJS are easy to split because components usually have their own state. Angular's services makes it harder to do this, for example, but they can be copied between MFEs, if needed.
-
-### The Problem with Redux
-Since Redux state is global, technically each component can both access and modify each piece of state. In the worst case scenario, we could have something like this:
-
-Redux is supposed to be your *view model*, NOT domain model. The domain model resides on the server in the database.
-
-So this is correct: 
-
-This isn't.
-
-Unfortunately, if your application looks like the second, you are going to have a hard time breaking it up.
-
-In reality, most 
-
-(next) Azure Hyprescale Named instances are a game changer

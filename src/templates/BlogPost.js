@@ -19,11 +19,11 @@ export default function BlogPostTemplate(props) {
       <article className="w-[700px] mx-auto pt-[10px] mb-[20px] mt-[150px] post-container" itemScope>
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          <p>
+          <p >
             <i>{post.frontmatter.date}</i>
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
+        <section style={{ fontSize: '16.3px'}} dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
       </article>
       <Scroller />
     </Layout>

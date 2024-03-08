@@ -13,3 +13,14 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
+
+.hero-background {
+  background: url(/img/p1.webp);
+  background: red;
+  height: 550px;
+  position: fixed;
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  z-index: 500;
+}
