@@ -46,7 +46,7 @@
 |* 3 |    TABLE ACCESS FULL| CATEGORIES  |   4 |    60 |   2   (0)| 00:00:01 |
 |  4 |    TABLE ACCESS FULL| PRODUCTS    |  27 |   432 |   2   (0)| 00:00:01 |
 ------------------------------------------------------------------------------</code></pre>
-<p>What happens here is;</p>
+<p>What happens here is:</p>
 <ol>
 <li>The engine doesn’t an inner join between the categories and products using the hash join algorithm.</li>
 <li>It sorts the output of this join, and selects only some columns.</li>
