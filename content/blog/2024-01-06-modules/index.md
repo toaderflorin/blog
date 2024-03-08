@@ -4,7 +4,7 @@ title:  "Should I Pre-Decouple Modules In My Modular Monolith?"
 date:   2024-01-06 09:39:37 +0300
 description: "First, when creating a new application, should you start off with a microservice architecture? Well, the prevailing wisdom is no, because there is significant cost associated with maintaining, deploying, hosting., multiple microservices.Let's also look at some microservice tenets: 1. Microservices need to own their own data, which means you need a database for each. 2. Instead of synchronous communication, you usually use message based communication to ensure decoupling.
 "
-icon: "modular.jpg"
+icon: "icon-mod.jpg"
 image: "screen.png"
 cells: 2
 ---

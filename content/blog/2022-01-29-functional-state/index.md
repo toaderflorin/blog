@@ -3,7 +3,7 @@ layout: post
 title:  "A Different Take On Handling Local State Using Hooks"
 date:   2022-01-29 00:39:37 +0300
 description: "
-When implementing simple React applications, Redux might cause significant overhead, and just using component state might be enough. There are however differences between class components and function components related to how hooks work, which we'll look at next. With classes, component state is accessible via this.state, and updating it (and triggering component rerendering) is done via this.setState. In functional components, we use the <i>useState</i> hook and instead of merging the object we're passing in, the state is replaced.
+When implementing simple React applications, Redux might cause significant overhead, and just using component state might be enough. There are however differences between class components and function components related to how hooks work, which we'll look at next. With classes, component state is accessible via this.state, and updating it (and triggering component rerendering) is done via this.setState. In functional components, we use the useState hook and instead of merging the object we're passing in, the state is replaced.
 "
 icon: "usestate.jpg"
 categories:
