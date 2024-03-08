@@ -15,12 +15,21 @@
 }
 
 .hero-background {
-  background: url(/img/p1.webp);
-  background: red;
+  background: url(/img/p2.webp);
+  /* background: red; */
   height: 550px;
   position: fixed;
   background-size: cover;
   background-position: center;
   top: 0;
-  z-index: 500;
+  /* z-index: 500; */
+}
+
+.hero-inner {
+  background: url(/img/p1.webp);
+  height: 550px;
+  position: fixed;
+  background-size: cover;
+  background-position: center;
+  top: 0;
 }

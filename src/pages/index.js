@@ -32,11 +32,14 @@ export default function Index({ data }) {
 
   return (
     <div>
-      <div className="hero-background" style={{ background: 'red' }}>
-        {/* <img src="/img/p2.webp" srcset="/img/p1.webp 2x" className="headx" loading='lazy' /> */}
+      <div className="hero-background" style={{ width: '100%' }}>
+        <div className="hero-inner"  style={{ width: '100%' }}>
+        {/* <img src="/img/p1.webp" className="headx" loading='lazy' width: "100%" /> */}
+        </div>
       </div>
 
       <Main posts={posts} />
+
       <div style={{ left: 0, right: 0, top: 0, position: 'absolute', zCIndex: 1000 }}>
         <Hero />
       </div>
@@ -68,3 +71,4 @@ export const pageQuery = graphql`
     }
   }
 `
+
