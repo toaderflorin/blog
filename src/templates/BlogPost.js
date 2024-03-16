@@ -23,7 +23,7 @@ export default function BlogPostTemplate(props) {
             <i>{post.frontmatter.date}</i>
           </p>
         </header>
-        <section style={{ fontSize: '16.3px'}} dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
+        <section style={{ fontSize: '16px'}} dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
       </article>
       <Scroller />
     </Layout>

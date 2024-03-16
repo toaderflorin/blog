@@ -1,22 +1,22 @@
 ---
 layout: post
-title:  "Is Radix UI More Easy To Customize Than MUI?"
+title:  "Is Radix UI Easier To Customize Than MUI?"
 date:   2024-01-13 09:39:37 +0300
 description: "MUI is one of the most powerful and popular of the React libraries out there, because it comes prepacked with a lot of controls (let’s face it, nobody wants to build a calendar). The idea behind it is it’s an implementation of Google’s Material Design, and it’s really opinionated in that regard, and herein lies one of its problems: a lot of designers don’t want their application to look like Gmail or Android, they will want a specific look and feel.
 "
-icon: "icon.jpg"
+icon: "radix-small.jpg"
 image: "cucumber.jpg"
 cells: 2
 ---
-MUI is one of the most powerful and popular of the React libraries out there, because it comes prepacked with a lot, and I mean a lot, of controls (and let's face it, nobody wants to build a calendar), and it's a React implementation of Google's Material Design (it's really opinionated in that regard). Which might be its Achile's heel: a lot of designers don't want their application to look like Gmail or Android, they will want a specific look and feel. 
+MUI is one of the most powerful and popular of the React libraries out there, because it comes prepacked with a lot, of controls (let's face it, nobody wants to build a calendar). It's a React implementation of Google's Material Design, and it's really opinionated in that regard. Which might be its Achile's heel, because a lot of designers don't want their application to look like Gmail or Android, they will want a look and feel that's specific to the application they are working on. 
 
 <img src="screen.jpg" class="img" />
 
-So a lot of development teams pick it up with the idea that they will change it so that it doesn't look like Material Design. And since MUI supports variants and customizing the theme, this seems like a reasonable assumption.
+Alot of development teams pick it up with the idea that they will change it so that it doesn't look like Material Design, and since MUI supports variants and customizing the theme, this seems like a reasonable assumption, at least on first look.
 
-*Here's the thing: Material has a philosophy that is based on layers, elevation and conveying it via shadows. Changing the theme will give you a variation of Material Design, not something else. And the look and feel is quite specific, people know it when they see it.*
+*Material has a philosophy that is based on layers, elevation and conveying it via shadows. Changing the theme will give you a variation of Material Design, not something else. And the look and feel is quite specific, people know it when they see it.*
 
-Can you change classes on the controls themselves? Yes. The problem here is that in order to achieve the rich look, the actual controls have a lot of DOM subelements, and this can make it quite tricky. Take the select, for example.
+Can you change classes on the controls themselves? Yes. The problem is that in order to achieve the rich look, the actual controls have a lot of DOM subelements, and this can make it quite tricky. Take the select, for example.
 
 <img src="mui-select.jpg" class="img" />
 

@@ -50,7 +50,6 @@ And for n equals 100.
 
 We quickly see that the inner loop takes much longer than the outer loop, and this gets more and more pronounced, the bigger n is. Now imagine we have three loops, or four loops. It gets progressively worse. A lot of code uses inner loops, and while the lines of code of the functionality in the inner loop might not necessarily be more than the outer loop, they have significantly more impact on performance. Which is why a lot of optimizing efforts are targeted on the inner loop code.
 
-When comparing a normal rendered picture, we can see that the polygon vertexes (corners) are much lower in number than the number of pixels. And the per pixel correct texture mapping happens inside the inner loop, where performance matters. Also, correct texture mapping requires two divides per pixel and is quite expensive. So the inner loops were written in assembly (and texture correction was done every 8 pixels--the code used linear interpolation in between).
 
 ### The Classic 3-Tier Architecture
 
@@ -79,12 +78,14 @@ Here's an example of a simple execution plan.
 |  4 |    TABLE ACCESS FULL| PRODUCTS    |  27 |   432 |   2   (0)| 00:00:01 |
 ------------------------------------------------------------------------------
 ```
-What happens here is;
+What happens here is:
 
 1. The engine doesn't an inner join between the categories and products using the hash join algorithm.
 2. It sorts the output of this join, and selects only some columns.
 
-While a hash join can be quite performant, the sort is costly. Also, keep in mind that the execution plan you are getting depends both on what indexes you have in the databases, as well as the ORM. And yes, ORM performance does matter, however. Here is an interesting graph comparing the performance of different ORMs available for Node.js.
+While a hash join can be quite performant, the sort is costly. Also, keep in mind that the execution plan you are getting depends both on what indexes you have in the databases, as well as the ORM. And yes, ORM performance does matter.
+
+Here is an interesting graph comparing the performance of different ORMs available for Node.js.
 
 <img src="performance.png" class="img" loading="lazy" />
 

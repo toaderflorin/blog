@@ -24,7 +24,7 @@ So what does this mean?
 
 What is the alternative? Well, writing a monolith. Monoliths in themselves aren't bad—actually, the term monolith refers to a unit of deployment, and in fact most projects use a monolithic architecture. You can even have a distributed monolith because if the dependencies between microservices are as such that you need to deploy multiple of them at the same time. The only potential problem arises if, at some later point, we want to move to a microservice architecture, those FK constraints will pose a problem. What would be a possible approach? Create a monolith with predefined modules and enforce strict domain boundaries.
 
-<img src="modules2.jpg" class="img" />
+<img src="modules.svg" class="img" />
 
 We would aim for something like this.
 

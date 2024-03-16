@@ -47,14 +47,7 @@ An alternative to caching are materialized views, which is also a tradeoff. Imag
 
 <img src="schema.png" class="img" loading="lazy" />
 
-A cross join between them results in data duplication.
-
-```
-|ORDER              |asdas     |asdasd              |   
-|asdasda sd         |asdasd    |                    | 
-```
-
-A lot of document stores like MongoDB employ denormalization, for example, and this makes them easy to scale horizontally (shard).
+A cross join between them results in data duplication. A lot of document stores like MongoDB employ denormalization, for example, and this makes them easy to scale horizontally (shard).
 
 ### Sharded Databases Also Require Data Duplication
 
@@ -69,12 +62,12 @@ With sharding, you have two types of tables:
 * Sharded tables.
 * Replicated tables.
 
+<img src="apic.svg" class="img" loading="lazy" />
+
 Also, each node has the same schema, and FK constraints are kept intact. So `User`, `UserAddress` and `UserOrder` will be sharded , while the *SupportedCountries* will be replicated. Again, this is a form of data duplication, and it's a price we play
 
 ### Covering Indexes Are A Form Of Materialized Views
 
 A common approach to fix read performance issues is to add indexes on the queried fields, including *covering indexes*, which are compound indexes that include all fields used in a specific query. The reason for including all the fields used in the query is for the database engine to be able to retrieve the data from the index itself, without having to look up the data in the actual table.
-
-<img src="btree-ex.png" class="img" loading="lazy" />
 
 Keep in mind this is does not only take up space on the disk, but it also means that these indexes need to be balanced, since indexes are B+trees (balanced trees).
