@@ -28,7 +28,7 @@ In this case, the reports microservice needs some data from the user service (in
 <p>Direct communication is usually used with the orchestration pattern, where an <em>orchestrator</em> (sometimes called a mediator) makes direct calls to the other microservices.</p>
 <h2>Data Duplication Pattern</h2>
 <p>In order to avoid direct calls between microservices, we can duplicate data. In our above example, the reports service would store its own user summary table in its own database.</p>
-<img src="duplication.svg" class="img" loading="lazy" />
+<img src="duplicate.svg" class="img" loading="lazy" />
 <p>The main drawback of this is async code is harder to maintain and to understand that synchronous code.</p>
 <h2>Data Domain Pattern</h2>
 <p>The last resort is to use a shared database. This is called the <em>data domain pattern</em>, but it might as well be an antipattern. It is mainly encountered when attempting to decouple a monolith application, and some parts of the domain model cannot be easily pulled apart.</p>
