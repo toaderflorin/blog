@@ -53,7 +53,7 @@ Direct communication is usually used with the orchestration pattern, where an *o
 
 In order to avoid direct calls between microservices, we can duplicate data. In our above example, the reports service would store its own user summary table in its own database. 
 
-<img src="duplication.svg" class="img" loading="lazy" />
+<img src="duplicate.svg" class="img" loading="lazy" />
 
 The main drawback of this is async code is harder to maintain and to understand that synchronous code. 
 
@@ -64,11 +64,11 @@ The last resort is to use a shared database. This is called the *data domain pat
 
 Keep in mind that this has significant disadvantages.
 
-* **Breaks encapsulation**. While calling the database directly avoids an extra round-trip to a different service (and the dependence on that service), keep in mind that there might be logic that controls what data is being exposed, and going directly to the data layer might circumvent it. This is a problem.
+* **Breaks encapsulation**. While calling the database directly avoids an extra round-trip to a different service (and the dependence on that service), it is important to keep in mind that there might be logic that controls what data is being exposed, and going directly to the data layer might circumvent it. This is a problem, because it breaks encapsulation.
 * **Indirect coupling**. Avoiding the microservice call doesn't mean there isn't any coupling, it just means that it's hidden. This means that you can't really have two independent teams or developers working on the 
 * **Migrations**. A lot of codebases use code first migrations, which means that you probably want to designate an owner of the data model, but different. What can be done here is to have a master service, and secondary ones that don't touch the schema, but this needs to be clearly indicated.
 
 ## In Closing
 
-There is no magic bullet approach where you can just use one approach, and you will almost always end up using all of them. I fact, what usually when you are decoupling your monolith is you will have *remanants of this monolith* that are not easy to break apart into smaller chunks. Keep in mind that since the goal is high cohesion, you might not want to actually break apart some parts of your monolith. As a rule of thumb: *if a certain piece is hard to pull apart, maybe it constitute it's own microservice.*
+There is no magic bullet approach where you can just use one approach, and you will almost always end up using all of them. I fact, what usually when you are decoupling your monolith is you will have *remanants of this monolith* that are not easy to break apart into smaller chunks. Keep in mind that since the goal is high cohesion, you might not want to actually break apart some parts of your monolith. As a rule of thumb: *if a certain piece is hard to pull apart, maybe it should constitute it's own microservice.*
 

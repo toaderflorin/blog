@@ -50,10 +50,11 @@ And for n equals 100.
 
 We quickly see that the inner loop takes much longer than the outer loop, and this gets more and more pronounced, the bigger n is. Now imagine we have three loops, or four loops. It gets progressively worse. A lot of code uses inner loops, and while the lines of code of the functionality in the inner loop might not necessarily be more than the outer loop, they have significantly more impact on performance. Which is why a lot of optimizing efforts are targeted on the inner loop code.
 
-
 ### The Classic 3-Tier Architecture
 
 This is quite academic, so how does this help is? We need to consider a typical web app using a 3-tier architecture.
+
+<img src="3tier.svg" class="img" loading="lazy" />
 
 1. Your API gets an HTTP request.
 2. Based on this request, you run some authorization /  request validation logic.
@@ -63,7 +64,9 @@ This is quite academic, so how does this help is? We need to consider a typical 
 6. This SQL is translated into an execution plan.
 7. The results are returned to the API, then mapped and returned to the caller.
 
-We can ask ourselves what the inner loop would be here. That would be the SQL execution plan. In fact, if you do some profiling, you will find that most of the time is being spent on the database level.
+*We can ask ourselves what the inner loop would be here.*
+
+That would be the SQL execution plan. In fact, if you do some profiling, you will find that most of the time is being spent on the database level.
 
 Here's an example of a simple execution plan.
 
@@ -89,4 +92,4 @@ Here is an interesting graph comparing the performance of different ORMs availab
 
 <img src="performance.png" class="img" loading="lazy" />
 
-As you can see, there are other factors that matter a lot more than if you're using C# instead of PHP.
+As we can see, there are factors that impact performance significantly than language or runtime.
